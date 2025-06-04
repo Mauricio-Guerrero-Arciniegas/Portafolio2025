@@ -17,8 +17,8 @@ const translations = {
       desc: "App that shows real-time weather using an API."
     },
     project3: {
-      title: "Pokémon Finder",
-      desc: "Explore Pokémon with a sleek and responsive UI."
+      title: "E-commerce",
+      desc: "Explore an E-commerce with a filter and sleek and responsive UI."
     },
     buttonLang: "Español",
     buttonTheme: "Dark mode",
@@ -36,8 +36,8 @@ const translations = {
       desc: "Aplicación que muestra el clima actual usando una API."
     },
     project3: {
-      title: "Buscador Pokémon",
-      desc: "Explora Pokémon con una interfaz moderna y responsiva."
+      title: "E-commerce",
+      desc: "Explora un E-commerce con filtrado y una interfaz moderna y responsiva."
     },
     buttonLang: "English",
     buttonTheme: "Modo oscuro",
