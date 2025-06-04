@@ -8,8 +8,15 @@
 	</head>
 	<body>
 		<div class="controls">
-			<button id="toggle-theme">Modo oscuro</button>
-			<button id="toggle-lang">Español</button>
+			<button id="toggle-theme">
+  			<img id="theme-icon" src="assets/icons/moon.png" alt="Modo oscuro" width="24" />
+  			<span id="theme-text">Modo oscuro</span>
+			</button>
+
+			<button id="toggle-lang">
+  			<img id="flag-icon" src="assets/flags/es.png" alt="Idioma" width="24" />
+  			<span id="lang-text">Español</span>
+			</button>
 		</div>
 
 		<header>
@@ -42,5 +49,15 @@
 		</section>
 
 		<script src="script.js"></script>
+		<script src="https://unpkg.com/scrollreveal"></script>
+		<script>
+			ScrollReveal().reveal('.project', {
+				origin: 'bottom',
+				distance: '50px',
+				duration: 800,
+				easing: 'ease-out',
+				interval: 200,
+			});
+		</script>
 	</body>
 </html>

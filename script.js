@@ -1,5 +1,7 @@
 const toggleTheme = document.getElementById("toggle-theme");
 const toggleLang = document.getElementById("toggle-lang");
+const flagIcon = document.getElementById("flag-icon");
+const themeIcon = document.getElementById("theme-icon");
 
 const translations = {
   en: {
@@ -45,9 +47,12 @@ const translations = {
 let currentLang = localStorage.getItem("lang") || "en";
 let darkMode = localStorage.getItem("dark") === "true";
 
+// Llama esto después de cambiar el idioma
 function applyLanguage(lang) {
   const t = translations[lang];
-  document.getElementById("welcome").textContent = t.welcome;
+
+  // Actualiza textos
+  document.getElementById("welcome").setAttribute("data-text", t.welcome);
   document.getElementById("intro").textContent = t.intro;
   document.getElementById("projects-title").textContent = t.projects;
   document.getElementById("project1-title").textContent = t.project1.title;
@@ -56,13 +61,26 @@ function applyLanguage(lang) {
   document.getElementById("project2-desc").textContent = t.project2.desc;
   document.getElementById("project3-title").textContent = t.project3.title;
   document.getElementById("project3-desc").textContent = t.project3.desc;
-  toggleLang.textContent = t.buttonLang;
-  toggleTheme.textContent = t.buttonTheme;
+  document.getElementById("theme-text").textContent = t.buttonTheme;
+document.getElementById("lang-text").textContent = t.buttonLang;
+
+  // Actualiza el tooltip del botón dark mode (no el texto visible)
+  toggleTheme.title = t.buttonTheme;
+
+  // Actualiza la bandera
+  flagIcon.src = lang === "en" ? "assets/flags/es.png" : "assets/flags/en.png";
+
+  // Llama a la animación del nombre
+  animateWelcome();
 }
 
 function applyTheme(isDark) {
   document.body.classList.toggle("dark", isDark);
   localStorage.setItem("dark", isDark);
+  
+  // Cambia el ícono según el modo
+  themeIcon.src = isDark ? "assets/icons/sun.png" : "assets/icons/moon.png";
+  themeIcon.alt = isDark ? "Modo claro" : "Modo oscuro";
 }
 
 // Init
@@ -74,11 +92,21 @@ toggleLang.addEventListener("click", () => {
   currentLang = currentLang === "en" ? "es" : "en";
   localStorage.setItem("lang", currentLang);
   applyLanguage(currentLang);
+
+  // Actualiza la imagen de la bandera
+  flagIcon.src = currentLang === "en" ? "assets/flags/es.png" : "assets/flags/en.png";
 });
 
 toggleTheme.addEventListener("click", () => {
   darkMode = !darkMode;
   applyTheme(darkMode);
+  
+  // Actualizar texto del botón modo oscuro según el estado y el idioma actual
+  const t = translations[currentLang];
+  document.getElementById("theme-text").textContent = darkMode ? (currentLang === "en" ? "Light mode" : "Modo claro") : t.buttonTheme;
+  
+  // Actualizar alt del icono también para accesibilidad
+  themeIcon.alt = darkMode ? (currentLang === "en" ? "Light mode" : "Modo claro") : (currentLang === "en" ? "Dark mode" : "Modo oscuro");
 });
 
 function animateTyping(id, text, speed = 50) {
@@ -108,19 +136,3 @@ function animateWelcome() {
   animateTyping("welcome", text);
 }
 
-// Llama esto después de cambiar el idioma
-function applyLanguage(lang) {
-  const t = translations[lang];
-  document.getElementById("welcome").setAttribute("data-text", t.welcome);
-  document.getElementById("intro").textContent = t.intro;
-  document.getElementById("projects-title").textContent = t.projects;
-  document.getElementById("project1-title").textContent = t.project1.title;
-  document.getElementById("project1-desc").textContent = t.project1.desc;
-  document.getElementById("project2-title").textContent = t.project2.title;
-  document.getElementById("project2-desc").textContent = t.project2.desc;
-  document.getElementById("project3-title").textContent = t.project3.title;
-  document.getElementById("project3-desc").textContent = t.project3.desc;
-  toggleLang.textContent = t.buttonLang;
-  toggleTheme.textContent = t.buttonTheme;
-  animateWelcome(); // 👈 ejecutar animación
-}
