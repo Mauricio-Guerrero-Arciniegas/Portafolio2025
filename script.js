@@ -6,13 +6,7 @@ const toggleThemeBtn = document.getElementById('toggle-theme');
 let currentLang = localStorage.getItem('lang') || 'es';
 let translations = {};
 
-// Espera a que la animación termine y oculta el loader
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    const introLoader = document.getElementById("intro-loader");
-    if (introLoader) introLoader.style.display = "none";
-  }, 4000); // espera 4s (3s animación + 1s fade)
-});
+
 
 // Función para cargar el JSON de traducciones
 async function loadTranslations() {
@@ -77,16 +71,27 @@ loadTranslations();
 const savedDark = localStorage.getItem('dark') === 'true';
 applyTheme(savedDark);
 
-// Ocultar el loader una vez termine la animación
 window.addEventListener("load", () => {
   setTimeout(() => {
     const introLoader = document.getElementById("intro-loader");
-    if (introLoader) introLoader.style.display = "none";
-  }, 4000); // tiempo total de animación
-});
+    const navbar = document.querySelector('.navbar');
+    const glassText = document.querySelector('.glass-text');
+    const glassSubtext = document.querySelector('.glass-subtext');
 
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    document.querySelector('.glass-text').classList.add('animate-name');
-  }, 3000); // 2s de animación + 1s de fadeOut
+    if (introLoader) introLoader.style.display = "none";
+
+    if (navbar) {
+      navbar.classList.remove('hidden');
+      void navbar.offsetWidth; // Forzar reflow
+      navbar.classList.add('show');
+    }
+
+    if (glassText) {
+      glassText.classList.add('animate-name');
+    }
+
+    if (glassSubtext) {
+      glassSubtext.classList.add('animate-subtext');
+    }
+  }, 3000); // coincide con duración animación loader + fade out
 });
