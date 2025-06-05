@@ -1,63 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Portafolio</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+		/>
 		<link rel="stylesheet" href="assets/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<div class="controls">
-			<button id="toggle-theme">
-  			<img id="theme-icon" src="assets/icons/moon.png" alt="Modo oscuro" width="24" />
-  			<span id="theme-text">Modo oscuro</span>
-			</button>
 
-			<button id="toggle-lang">
-  			<img id="flag-icon" src="assets/flags/es.png" alt="Idioma" width="24" />
-  			<span id="lang-text">Español</span>
-			</button>
+		<div id="intro-loader">
+			<svg viewBox="0 0 100 100" class="svg-m">
+				<defs>
+					<linearGradient id="grad-m" x1="0%" y1="0%" x2="100%" y2="0%">
+						<stop offset="0%" stop-color="ff0000" />
+						<stop offset="100%" stop-color="#ffffff" />
+					</linearGradient>
+				</defs>
+				<polyline
+					points="10,90 10,10 50,50 90,10 90,90"
+					stroke="url(#grad-m)"
+				/>
+			</svg>
 		</div>
 
-		<header>
-			<h1 id="welcome" data-text="Mauricio Guerrero A"></h1>
-			<p id="intro">Systems Engineer - Fullstack Developer</p>
+		<nav class="navbar">
+			<div class="controls">
+				<button id="toggle-theme">Modo oscuro</button>
+				<button id="lang-toggle">English</button>
+			</div>
+		</nav>
+		<header class="header">
+			<div class="glass-container">
+
+				<h1 class="glass-text">
+  <span>M</span><span>a</span><span>u</span><span>r</span><span>i</span><span>c</span><span>i</span><span>o</span>
+  <span>&nbsp;</span>
+		<span>G</span><span>u</span><span>e</span><span>r</span><span>r</span><span>e</span><span>r</span><span>o</span>
+		<span>&nbsp;</span>
+
+	
+</h1>
+<p class=""> Systems Engineer - Fullstack Developer</p>
+
+			</div>
 		</header>
 
-		<section class="projects">
-			<h2 id="projects-title">Projects</h2>
-			<div class="project-list">
-				<div class="project">
-					<h3 id="project1-title">React Portfolio</h3>
-					<p id="project1-desc">
-						A modern portfolio with dark mode and multi-language support.
-					</p>
-				</div>
-				<div class="project">
-					<h3 id="project2-title">Weather App</h3>
-					<p id="project2-desc">
-						App that shows real-time weather using an API.
-					</p>
-				</div>
-				<div class="project">
-					<h3 id="project3-title">E-commerce</h3>
-					<p id="project3-desc">
-						Explore an E-commerce with a filter and sleek and responsive UI.
-					</p>
-				</div>
-			</div>
-		</section>
+		<main>
+			<section class="personal-description">Personal description</section>
+			<section class="projects">Projects</section>
+			<section class="contact">contact</section>
+		</main> 
+
+		<footer></footer>
 
 		<script src="script.js"></script>
-		<script src="https://unpkg.com/scrollreveal"></script>
-		<script>
-			ScrollReveal().reveal('.project', {
-				origin: 'bottom',
-				distance: '50px',
-				duration: 800,
-				easing: 'ease-out',
-				interval: 200,
-			});
-		</script>
 	</body>
 </html>

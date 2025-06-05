@@ -1,138 +1,92 @@
-const toggleTheme = document.getElementById("toggle-theme");
-const toggleLang = document.getElementById("toggle-lang");
-const flagIcon = document.getElementById("flag-icon");
-const themeIcon = document.getElementById("theme-icon");
+const langToggle = document.getElementById('lang-toggle');
+const welcomeText = document.getElementById('welcome-text');
+const introText = document.getElementById('intro-text');
+const toggleThemeBtn = document.getElementById('toggle-theme');
 
-const translations = {
-  en: {
-    welcome: "Mauricio Guerrero A",
-    intro: "Systems Engineer - Fullstack developer.",
-    projects: "Projects",
-    project1: {
-      title: "React Portfolio",
-      desc: "A modern portfolio with dark mode and multi-language support."
-    },
-    project2: {
-      title: "Weather App",
-      desc: "App that shows real-time weather using an API."
-    },
-    project3: {
-      title: "E-commerce",
-      desc: "Explore an E-commerce with a filter and sleek and responsive UI."
-    },
-    buttonLang: "Español",
-    buttonTheme: "Dark mode",
-  },
-  es: {
-    welcome: "Mauricio Guerrero A",
-    intro: "Ingeniero de Sistemas - Desarrollador Fullstack",
-    projects: "Proyectos",
-    project1: {
-      title: "Portafolio React",
-      desc: "Un portafolio moderno con modo oscuro y soporte multilenguaje."
-    },
-    project2: {
-      title: "App del Clima",
-      desc: "Aplicación que muestra el clima actual usando una API."
-    },
-    project3: {
-      title: "E-commerce",
-      desc: "Explora un E-commerce con filtrado y una interfaz moderna y responsiva."
-    },
-    buttonLang: "English",
-    buttonTheme: "Modo oscuro",
+let currentLang = localStorage.getItem('lang') || 'es';
+let translations = {};
+
+// Espera a que la animación termine y oculta el loader
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const introLoader = document.getElementById("intro-loader");
+    if (introLoader) introLoader.style.display = "none";
+  }, 4000); // espera 4s (3s animación + 1s fade)
+});
+
+// Función para cargar el JSON de traducciones
+async function loadTranslations() {
+  try {
+    const response = await fetch('assets/translations.json');
+    translations = await response.json();
+    applyLanguage(currentLang);
+  } catch (error) {
+    console.error('Error loading translations:', error);
   }
-};
+}
 
-let currentLang = localStorage.getItem("lang") || "en";
-let darkMode = localStorage.getItem("dark") === "true";
-
-// Llama esto después de cambiar el idioma
+// Función para aplicar idioma a los elementos HTML
 function applyLanguage(lang) {
-  const t = translations[lang];
+  const translationsForLang = translations[lang];
+  if (!translationsForLang) return;
 
-  // Actualiza textos
-  document.getElementById("welcome").setAttribute("data-text", t.welcome);
-  document.getElementById("intro").textContent = t.intro;
-  document.getElementById("projects-title").textContent = t.projects;
-  document.getElementById("project1-title").textContent = t.project1.title;
-  document.getElementById("project1-desc").textContent = t.project1.desc;
-  document.getElementById("project2-title").textContent = t.project2.title;
-  document.getElementById("project2-desc").textContent = t.project2.desc;
-  document.getElementById("project3-title").textContent = t.project3.title;
-  document.getElementById("project3-desc").textContent = t.project3.desc;
-  document.getElementById("theme-text").textContent = t.buttonTheme;
-document.getElementById("lang-text").textContent = t.buttonLang;
+  Object.keys(translationsForLang).forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = translationsForLang[id];
+  });
 
-  // Actualiza el tooltip del botón dark mode (no el texto visible)
-  toggleTheme.title = t.buttonTheme;
+  currentLang = lang;
 
-  // Actualiza la bandera
-  flagIcon.src = lang === "en" ? "assets/flags/es.png" : "assets/flags/en.png";
+  // Actualiza texto del botón de tema según modo y idioma
+  const isDark = document.body.classList.contains('dark');
+  toggleThemeBtn.textContent = isDark
+    ? (lang === 'en' ? 'Light mode' : 'Modo claro')
+    : (lang === 'en' ? 'Dark mode' : 'Modo oscuro');
 
-  // Llama a la animación del nombre
-  animateWelcome();
+  // Actualiza texto del botón de idioma para mostrar el idioma al que se cambiará
+  langToggle.textContent = lang === 'es' ? 'English' : 'Español';
+
+  // Guarda idioma en localStorage
+  localStorage.setItem('lang', lang);
 }
 
+// Función para aplicar el modo oscuro o claro
 function applyTheme(isDark) {
-  document.body.classList.toggle("dark", isDark);
-  localStorage.setItem("dark", isDark);
-  
-  // Cambia el ícono según el modo
-  themeIcon.src = isDark ? "assets/icons/sun.png" : "assets/icons/moon.png";
-  themeIcon.alt = isDark ? "Modo claro" : "Modo oscuro";
+  document.body.classList.toggle('dark', isDark);
+  localStorage.setItem('dark', isDark);
+  toggleThemeBtn.textContent = isDark
+    ? (currentLang === 'en' ? 'Light mode' : 'Modo claro')
+    : (currentLang === 'en' ? 'Dark mode' : 'Modo oscuro');
 }
 
-// Init
-applyLanguage(currentLang);
-applyTheme(darkMode);
-
-// Toggle Events
-toggleLang.addEventListener("click", () => {
-  currentLang = currentLang === "en" ? "es" : "en";
-  localStorage.setItem("lang", currentLang);
-  applyLanguage(currentLang);
-
-  // Actualiza la imagen de la bandera
-  flagIcon.src = currentLang === "en" ? "assets/flags/es.png" : "assets/flags/en.png";
+// Evento para cambiar idioma al hacer click
+langToggle.addEventListener('click', () => {
+  const newLang = currentLang === 'es' ? 'en' : 'es';
+  applyLanguage(newLang);
 });
 
-toggleTheme.addEventListener("click", () => {
-  darkMode = !darkMode;
-  applyTheme(darkMode);
-  
-  // Actualizar texto del botón modo oscuro según el estado y el idioma actual
-  const t = translations[currentLang];
-  document.getElementById("theme-text").textContent = darkMode ? (currentLang === "en" ? "Light mode" : "Modo claro") : t.buttonTheme;
-  
-  // Actualizar alt del icono también para accesibilidad
-  themeIcon.alt = darkMode ? (currentLang === "en" ? "Light mode" : "Modo claro") : (currentLang === "en" ? "Dark mode" : "Modo oscuro");
+// Evento para cambiar modo oscuro/claro
+toggleThemeBtn.addEventListener('click', () => {
+  const isDarkNow = document.body.classList.contains('dark');
+  applyTheme(!isDarkNow);
 });
 
-function animateTyping(id, text, speed = 50) {
-  const el = document.getElementById(id);
-  el.innerHTML = ""; // Limpiar contenido
-  const cursor = document.createElement("span");
-  cursor.className = "cursor";
-  cursor.textContent = "|";
-  el.appendChild(cursor);
+// Al cargar la página, cargar traducciones y aplicar idioma y tema guardados
+loadTranslations();
 
-  let i = 0;
-  const interval = setInterval(() => {
-    const char = text.charAt(i);
-    if (char) {
-      cursor.insertAdjacentText("beforebegin", char);
-    }
-    i++;
-    if (i >= text.length) {
-      clearInterval(interval);
-    }
-  }, speed);
-}
+const savedDark = localStorage.getItem('dark') === 'true';
+applyTheme(savedDark);
 
-// Ejecuta animación después de aplicar idioma
-function animateWelcome() {
-  const text = document.getElementById("welcome").getAttribute("data-text");
-  animateTyping("welcome", text);
-}
+// Ocultar el loader una vez termine la animación
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const introLoader = document.getElementById("intro-loader");
+    if (introLoader) introLoader.style.display = "none";
+  }, 4000); // tiempo total de animación
+});
 
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelector('.glass-text').classList.add('animate-name');
+  }, 3000); // 2s de animación + 1s de fadeOut
+});
