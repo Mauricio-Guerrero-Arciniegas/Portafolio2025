@@ -17,6 +17,13 @@
     <!-- Loader -->
     <div id="loader">
   <svg width="300" height="300" viewBox="0 0 100 120">
+    <defs>
+      <filter id="m-shadow" x="-50%" y="-50%" width="200%" height="200%">
+        <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="cyan" />
+        <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="cyan" />
+      </filter>
+    </defs>
+
     <!-- Letra M animada -->
     <path id="m-path"
       d="M 10 100 L 10 30 L 30 80 L 50 30 L 50 100"
@@ -25,7 +32,9 @@
       stroke-width="6"
       stroke-linecap="round"
       stroke-linejoin="round"
+      filter="url(#m-shadow)"
     />
+
     <!-- Texto "dev" debajo -->
     <text x="50" y="115" text-anchor="middle" class="loader-dev">dev.</text>
   </svg>

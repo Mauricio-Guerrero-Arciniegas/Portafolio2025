@@ -21,7 +21,6 @@ body {
   align-items: center;
   z-index: 9;
   transition: opacity 0.6s ease;
-  
 }
 
 #loader svg {
@@ -31,11 +30,11 @@ body {
 }
 
 #m-path {
-  stroke: white;               /* Letra blanca */
+  stroke: white;
   stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 2px cyan) drop-shadow(0 0 10px cyan);
+  filter: url(#m-shadow); /* Compatibilidad Safari */
   stroke-dasharray: 250;
   stroke-dashoffset: 250;
   animation: drawM 3.5s ease forwards;
@@ -48,10 +47,10 @@ body {
 }
 
 .loader-dev {
-  font-family: 'Monrope', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 14px;
   fill: white;
-  text-shadow: 0 0 6px #66aaff;
+  text-shadow: 0 0 3px cyan, 0 0 6px cyan;
   opacity: 0;
   transform: translateY(20px);
   animation: devBounceIn 5.8s ease-out 1.6s forwards;
@@ -73,6 +72,7 @@ body {
     transform: translateY(0);
   }
 }
+
 
 /* Ocultar contenido por detrás mientras carga */
 body.loading main,
