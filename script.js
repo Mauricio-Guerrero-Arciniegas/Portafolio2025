@@ -2,9 +2,20 @@ const langToggle = document.getElementById('lang-toggle');
 const welcomeText = document.getElementById('welcome-text');
 const introText = document.getElementById('intro-text');
 const toggleThemeBtn = document.getElementById('toggle-theme');
+const loader = document.getElementById('loader');
+
 
 let currentLang = localStorage.getItem('lang') || 'es';
 let translations = {};
+
+function hideLoader() {
+  loader.classList.add('fade-out');
+
+  // Esperamos el tiempo de la transición para ocultarlo completamente
+  loader.addEventListener('transitionend', () => {
+    loader.style.display = 'none';
+  }, { once: true });  // 'once: true' para que el listener se quite automáticamente
+}
 
 // Función para cargar el JSON de traducciones
 async function loadTranslations() {
@@ -104,6 +115,8 @@ window.addEventListener('DOMContentLoaded', () => {
 		document.querySelector('.glass-subtext').classList.add('animate-subtext');
 	}, 2000); // mismo delay que el fadeOut del loader
 });
+
+
 
 
 
