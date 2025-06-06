@@ -183,6 +183,17 @@ body.loaded footer {
   width: 100%;
   height: 3rem;
   z-index: 100;
+
+  /* Animación inicial oculta hacia arriba */
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 2.6s ease, opacity 0.6s ease;
+}
+
+/* Al terminar el loader (cuando se agrega la clase loaded al body) */
+body.loaded .navbar {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .logo {
