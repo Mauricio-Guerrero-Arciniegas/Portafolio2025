@@ -19,7 +19,7 @@ window.addEventListener("load", () => {
         }, 300);
       }
     }, 200);
-  }, 2500);
+  }, 3500);
 });
 
 // Modo oscuro

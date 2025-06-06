@@ -36,7 +36,7 @@ body {
   filter: drop-shadow(0 0 2px cyan) drop-shadow(0 0 10px cyan);
   stroke-dasharray: 250;
   stroke-dashoffset: 250;
-  animation: drawM 1.5s ease forwards;
+  animation: drawM 3.5s ease forwards;
 }
 
 @keyframes drawM {
