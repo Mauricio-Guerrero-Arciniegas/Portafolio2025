@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden;
+}
+
 body {
 	font-family: 'Manrope', sans-serif;
 	transition: background-color 0.3s ease, color 0.3s ease;
@@ -69,11 +73,10 @@ body.dark .controls button:hover {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 9;
   display: flex;
   justify-content: space-between; /* espacio entre menú y controles */
   align-items: center;
-  padding: 0 1.5rem;
   background: rgba(13, 27, 42, 0.8); /* fondo oscuro semitransparente */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -83,10 +86,11 @@ body.dark .controls button:hover {
 }
 
 .navbar ul {
+	align-items: center;
   list-style: none;
   display: flex;
   gap: 1rem;
-  margin: 0;
+  margin: 1em;
   padding: 0;
 }
 
@@ -105,7 +109,7 @@ body.dark .controls button:hover {
 .navbar.hidden {
 	transform: translateY(-100%);
 	opacity: 0;
-	transition: transform 0.5s ease, opacity 0.5s ease;
+	transition: transform 1s ease, opacity 0.5s ease;
 }
 
 /* Navbar visible */
@@ -116,6 +120,13 @@ body.dark .controls button:hover {
 
 .controls {
 	display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Botones */
