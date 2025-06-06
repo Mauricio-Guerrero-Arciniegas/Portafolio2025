@@ -22,6 +22,7 @@ body {
   align-items: center;
   z-index: 9999;
   transition: opacity 0.6s ease;
+  -webkit-transition: opacity 0.6s ease;
 }
 
 #loader svg {
@@ -39,9 +40,15 @@ body {
   stroke-dasharray: 250;
   stroke-dashoffset: 250;
   animation: drawM 3.5s ease forwards;
+  -webkit-animation: drawM 3.5s ease forwards;
 }
 
 @keyframes drawM {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes drawM {
   to {
     stroke-dashoffset: 0;
   }
@@ -55,6 +62,7 @@ body {
   opacity: 0;
   transform: translateY(20px);
   animation: devBounceIn 5.8s ease-out 1.6s forwards;
+  -webkit-animation: devBounceIn 5.8s ease-out 1.6s forwards;
 }
 
 @keyframes devBounceIn {
@@ -73,30 +81,47 @@ body {
     transform: translateY(0);
   }
 }
+@-webkit-keyframes devBounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-5px);
+  }
+  80% {
+    -webkit-transform: translateY(3px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+  }
+}
 
-/* Ocultar contenido por detrás mientras carga */
+/* Ocultar contenido por detrás mientras carga usando solo opacity + pointer-events (mejor para Safari) */
 body.loading main,
 body.loading header,
 body.loading footer {
-  visibility: hidden;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.8s ease;
+  -webkit-transition: opacity 0.8s ease;
 }
 
 body.loaded main,
 body.loaded header,
 body.loaded footer {
-  visibility: visible;
   opacity: 1;
   pointer-events: auto;
   transition: opacity 0.8s ease;
+  -webkit-transition: opacity 0.8s ease;
 }
 
 #loader.fade-out {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.6s ease;
+  -webkit-transition: opacity 0.6s ease;
 }
 
 /* Animación para el título h1 .name */
@@ -104,6 +129,7 @@ body.loaded footer {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
   color: rgb(255, 255, 255);
   text-shadow: 0 0 1px cyan, 0 0 10px cyan;
   max-width: 90vw;
@@ -117,16 +143,18 @@ body.loaded footer {
 .section__hero .name.visible {
   opacity: 1;
   transform: translateY(0);
+  -webkit-transform: translateY(0);
 }
 
 /* Animación para los textos secundarios */
 .subtext {
   opacity: 0;
   transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
   font-size: 1.2rem;
   color: white;
   text-shadow: 0 0 1px cyan, 0 0 8px cyan;
-  transition: opacity 0.6s ease, transform 0.6s ease;
   margin-top: 0.5rem;
   text-align: center;
 }
@@ -134,10 +162,10 @@ body.loaded footer {
 .subtext.visible {
   opacity: 1;
   transform: translateY(0);
+  -webkit-transform: translateY(0);
 }
 
 /* Navbar y modo oscuro */
-
 .navbar {
   display: flex;
   align-items: center;

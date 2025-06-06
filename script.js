@@ -12,6 +12,8 @@ window.addEventListener("load", () => {
       // Mostrar el título con animación suave
       const nameTitle = document.querySelector(".section__hero .name");
       if (nameTitle) {
+        // Forzar repaint para Safari
+        void nameTitle.offsetHeight;
         nameTitle.classList.add("visible");
       }
 
@@ -19,6 +21,8 @@ window.addEventListener("load", () => {
       const subtexts = document.querySelectorAll(".section__hero .subtext");
       subtexts.forEach((el, i) => {
         setTimeout(() => {
+          // Forzar repaint para Safari
+          void el.offsetHeight;
           el.classList.add("visible");
         }, 400 * (i + 1));
       });
@@ -64,7 +68,7 @@ function setLang(lang) {
     const el = document.getElementById(key);
     if (el) {
       el.textContent = langData[lang][key];
-      // NO animar aquí los textos secundarios para evitar repetir animación al cambiar idioma
+      // No animar textos secundarios aquí para no repetir animación al cambiar idioma
     }
   }
 
