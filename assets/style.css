@@ -159,7 +159,7 @@ body.dark-mode #loader {
 
 /* Secciones */
 .section__hero {
-  height: 100vh;
+  height: calc(var(--vh) * 100);
   display: flex;
   justify-content: center; /* centra horizontal */
   align-items: center;     /* centra vertical */
@@ -228,6 +228,22 @@ body.loaded footer {
 .section__hero .name.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.section__about {
+  height: calc(var(--vh) * 100);;
+}
+
+.section__projects {
+  height: calc(var(--vh) * 100);
+}
+
+.section__contact {
+  height: calc(var(--vh) * 100);
+}
+
+.footer {
+  height: calc(var(--vh) * 30);
 }
 
 
