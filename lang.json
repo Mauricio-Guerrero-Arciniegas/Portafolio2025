@@ -4,19 +4,19 @@
     "nav_about": "About Me",
     "nav_projects": "Projects",
     "nav_contact": "Contact",
-    "section_about": "About Me",
-    "section_projects": "Projects",
-    "section_contact": "Contact",
-    "footer_text": "Copyright © 2025 Mauricio Guerrero"
+    "hero_name": "Mauricio Guerrero",
+    "hero_sub1": "Frontend Developer",
+    "hero_sub2": "Creating modern web experiences",
+    "footer_text": "© 2025 Mauricio Guerrero. All rights reserved."
   },
   "es": {
     "nav_home": "Inicio",
     "nav_about": "Sobre mí",
     "nav_projects": "Proyectos",
     "nav_contact": "Contacto",
-    "section_about": "Sobre mí",
-    "section_projects": "Proyectos",
-    "section_contact": "Contacto",
-    "footer_text": "Derechos reservados © 2025 Mauricio Guerrero"
+    "hero_name": "Mauricio Guerrero",
+    "hero_sub1": "Desarrollador Frontend",
+    "hero_sub2": "Creando experiencias web modernas",
+    "footer_text": "© 2025 Mauricio Guerrero. Todos los derechos reservados."
   }
 }

@@ -2,23 +2,27 @@ window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
 
   setTimeout(() => {
-    // Agrega clase para hacer fadeout el loader
     loader.classList.add("fade-out");
 
-    // Esperar que termine la transición (600ms) para ocultar y mostrar contenido
     setTimeout(() => {
       loader.style.display = "none";
       document.body.classList.remove("loading");
-      document.body.classList.add("loaded"); // activa fadein contenido
+      document.body.classList.add("loaded");
 
-      // Mostrar el título con animación suave un poco después
+      // Mostrar el título con animación suave
       const nameTitle = document.querySelector(".section__hero .name");
       if (nameTitle) {
-        setTimeout(() => {
-          nameTitle.classList.add("visible");
-        }, 300);
+        nameTitle.classList.add("visible");
       }
-    }, 200);
+
+      // Animar los textos secundarios con delay progresivo solo al cargar (no al cambiar idioma)
+      const subtexts = document.querySelectorAll(".section__hero .subtext");
+      subtexts.forEach((el, i) => {
+        setTimeout(() => {
+          el.classList.add("visible");
+        }, 400 * (i + 1));
+      });
+    }, 600);
   }, 3500);
 });
 
@@ -60,6 +64,7 @@ function setLang(lang) {
     const el = document.getElementById(key);
     if (el) {
       el.textContent = langData[lang][key];
+      // NO animar aquí los textos secundarios para evitar repetir animación al cambiar idioma
     }
   }
 
@@ -81,11 +86,9 @@ if (langBtn) {
 
 loadLang();
 
-function updateVh() {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+// Ajustar altura viewport para mobile
+function setVh() {
+  document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
 }
-
-window.addEventListener('resize', updateVh);
-window.addEventListener('orientationchange', updateVh);
-updateVh(); // Ejecuta al cargar
+window.addEventListener("resize", setVh);
+setVh();

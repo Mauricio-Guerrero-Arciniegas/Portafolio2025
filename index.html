@@ -1,75 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MG Portfolio</title>
-    <link rel="stylesheet" href="assets/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="script.js" defer></script>
-  </head>
-  <body class="loading">
-    <!-- Loader -->
-    <div id="loader">
-  <svg width="200" height="200" viewBox="0 0 100 120">
-    <defs>
-      <!-- Sombra para la "M" -->
-      <filter id="m-shadow" x="-50%" y="-50%" width="200%" height="200%">
-        <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="cyan" />
-        <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="cyan" />
-      </filter>
-      <!-- Sombra para el texto "dev." -->
-      <filter id="dev-shadow" x="-50%" y="-50%" width="200%" height="200%">
-        <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#66aaff" />
-      </filter>
-    </defs>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MG Portfolio</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+  <script src="script.js" defer></script>
+</head>
+<body class="loading">
+  <!-- Loader -->
+  <div id="loader">
+    <svg width="200" height="200" viewBox="0 0 100 120" >
+      <defs>
+        <filter id="m-shadow" x="-50%" y="-50%" width="200%" height="200%">
+          <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="cyan" />
+          <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="cyan" />
+        </filter>
+        <filter id="dev-shadow" x="-50%" y="-50%" width="200%" height="200%">
+          <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#66aaff" />
+        </filter>
+      </defs>
+      <g transform="translate(30, 0)">
+        <path
+          id="m-path"
+          d="M 0 100 L 0 30 L 20 80 L 40 30 L 40 100"
+          fill="none"
+          stroke="white"
+          stroke-width="6"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          filter="url(#m-shadow)"
+        />
+        <text
+          x="20"
+          y="115"
+          text-anchor="middle"
+          class="loader-dev"
+          filter="url(#dev-shadow)"
+          >dev.</text
+        >
+      </g>
+    </svg>
+  </div>
 
-    <!-- Grupo centrado -->
-    <g transform="translate(30, 0)">
-      <!-- Letra M -->
-      <path id="m-path"
-        d="M 0 100 L 0 30 L 20 80 L 40 30 L 40 100"
-        fill="none"
-        stroke="white"
-        stroke-width="6"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        filter="url(#m-shadow)"
-      />
-      <!-- Texto dev -->
-      <text x="20" y="115" text-anchor="middle" class="loader-dev" filter="url(#dev-shadow)">dev.</text>
-    </g>
-  </svg>
-</div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">M</div>
+      <ul class="nav-links">
+        <li><a id="nav_home" href="#inicio">Home</a></li>
+        <li><a id="nav_about" href="#sobre-mi">About Me</a></li>
+        <li><a id="nav_projects" href="#proyectos">Projects</a></li>
+        <li><a id="nav_contact" href="#contacto">Contact</a></li>
+      </ul>
+      <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button id="btnLang" type="button" aria-label="Change language">ES</button>
+    </nav>
+  </header>
 
-    <header>
-      <nav class="navbar">
-        <div class="logo">M</div>
-        <ul class="nav-links">
-          <li><a id="nav_home" href="#inicio">Home</a></li>
-          <li><a id="nav_about" href="#sobre-mi">About Me</a></li>
-          <li><a id="nav_projects" href="#proyectos">Projects</a></li>
-          <li><a id="nav_contact" href="#contacto">Contact</a></li>
-        </ul>
-        <button id="dark-mode-toggle" aria-label="Cambiar modo oscuro">🌙</button>
-        <button id="btnLang" type="button" aria-label="Change language">ES</button>
-      </nav>
-    </header>
+  <main>
+    <section class="section__hero" id="section_hero">
+      <div class="hero__content">
+        <h1 class="name" id="hero_name">Mauricio Guerrero</h1>
+        <p class="subtext" id="hero_sub1">Frontend Developer</p>
+        <p class="subtext" id="hero_sub2">Creating modern web experiences</p>
+      </div>
+    </section>
+    <section class="section__about" id="section_about">About Me</section>
+    <section class="section__projects" id="section_projects">Projects</section>
+    <section class="section__contact" id="section_contact">Contact</section>
+  </main>
 
-    <main>
-      <section class="section__hero" id="section_hero">
-        <h1 class="name">Mauricio Guerrero</h1>
-      </section>
-      <section class="section__about" id="section_about">About Me</section>
-      <section class="section__projects" id="section_projects">Projects</section>
-      <section class="section__contact" id="section_contact">Contact</section>
-    </main>
-
-    <footer class="footer" id="footer_text">copyright</footer>
-  </body>
+  <footer class="footer" id="footer_text">copyright</footer>
+</body>
 </html>

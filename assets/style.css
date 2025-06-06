@@ -1,3 +1,4 @@
+/* Reset y base */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +20,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9;
+  z-index: 9999;
   transition: opacity 0.6s ease;
 }
 
@@ -34,7 +35,7 @@ body {
   stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: url(#m-shadow); /* Compatibilidad Safari */
+  filter: url(#m-shadow);
   stroke-dasharray: 250;
   stroke-dashoffset: 250;
   animation: drawM 3.5s ease forwards;
@@ -47,7 +48,7 @@ body {
 }
 
 .loader-dev {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 14px;
   fill: white;
   text-shadow: 0 0 3px cyan, 0 0 6px cyan;
@@ -73,29 +74,66 @@ body {
   }
 }
 
-
 /* Ocultar contenido por detrás mientras carga */
 body.loading main,
 body.loading header,
 body.loading footer {
   visibility: hidden;
-}
-
-#loader.hidden {
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.8s ease;
+}
+
+body.loaded main,
+body.loaded header,
+body.loaded footer {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.8s ease;
+}
+
+#loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
 }
 
 /* Animación para el título h1 .name */
 .section__hero .name {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(-20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 1px cyan, 0 0 10px cyan;
+  max-width: 90vw;
+  word-wrap: break-word;
+  font-size: 3rem;
+  position: static;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .section__hero .name.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(100px);
+}
+
+/* Animación para los textos secundarios */
+.subtext {
+  opacity: 0;
+  transform: translateY(-20px);
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 0 0 1px cyan, 0 0 8px cyan;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.subtext.visible {
+  opacity: 1;
+  transform: translateY(100px);
 }
 
 /* Navbar y modo oscuro */
@@ -161,90 +199,25 @@ body.dark-mode #loader {
 .section__hero {
   height: calc(var(--vh) * 100);
   display: flex;
-  justify-content: center; /* centra horizontal */
-  align-items: center;     /* centra vertical */
+  justify-content: center;
   position: relative;
-  padding: 0 1rem; /* algo de padding para móviles */
-  text-align: center; /* para que texto quede centrado */
-
+  padding: 0 1rem;
+  text-align: center;
   background-image: url(../assets/images/wallpaper.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.name {
-  position: static; /* quitar absolute para no interferir */
-  font-size: 3rem; /* tamaño base, ajustable */
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 1px cyan, 0 0 10px cyan;
-  max-width: 90vw;
-  word-wrap: break-word;
-}
-
-@media (max-width: 600px) {
-  .name {
-    font-size: 2rem; /* texto más pequeño en pantallas chicas */
-  }
-}
-
-/* Ocultar contenido y desactivar interacción mientras carga */
-body.loading main,
-body.loading header,
-body.loading footer {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.8s ease;
-}
-
-/* Mostrar contenido con fade-in cuando cargó */
-body.loaded main,
-body.loaded header,
-body.loaded footer {
-  opacity: 1;
-  pointer-events: auto;
-  transition: opacity 0.8s ease;
-}
-
-/* Loader con transición de opacidad */
-#loader {
-  opacity: 1;
-  transition: opacity 0.6s ease;
-}
-
-/* Clase para hacer fadeout del loader */
-#loader.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Animación para el título h1 .name */
-.section__hero .name {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.section__hero .name.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.section__about {
-  height: calc(var(--vh) * 100);;
-}
-
-.section__projects {
-  height: calc(var(--vh) * 100);
-}
-
+.section__about,
+.section__projects,
 .section__contact {
   height: calc(var(--vh) * 100);
 }
 
 .footer {
   height: calc(var(--vh) * 30);
+  text-align: center;
+  padding: 1rem;
+  color: #555;
 }
-
-
-
