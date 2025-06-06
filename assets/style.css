@@ -31,11 +31,11 @@ body {
 }
 
 #m-path {
-  stroke: white;               /* Letra M blanca */
+  stroke: white;               /* Letra blanca */
   stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;
-  box-shadow: 0 0 2px cyan, 0 0 10px cyan;
+  filter: drop-shadow(0 0 2px cyan) drop-shadow(0 0 10px cyan);
   stroke-dasharray: 250;
   stroke-dashoffset: 250;
   animation: drawM 3.5s ease forwards;
