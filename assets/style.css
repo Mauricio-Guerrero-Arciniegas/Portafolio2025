@@ -26,14 +26,16 @@ body {
 
 #loader svg {
   overflow: visible;
+  display: block;
+  margin: 0 auto;
 }
 
 #m-path {
-  stroke: white;               /* Letra blanca */
+  stroke: white;               /* Letra M blanca */
   stroke-width: 6;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 2px cyan) drop-shadow(0 0 10px cyan);
+  box-shadow: 0 0 2px cyan, 0 0 10px cyan;
   stroke-dasharray: 250;
   stroke-dashoffset: 250;
   animation: drawM 3.5s ease forwards;
