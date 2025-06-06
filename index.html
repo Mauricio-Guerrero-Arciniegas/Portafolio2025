@@ -34,6 +34,12 @@
 
 		<header class="header">
 			<nav class="navbar hidden">
+				<ul>
+					<li id="nav-home">Inicio</li>
+					<li id="nav-description">Personal Description</li>
+					<li id="nav-projects">Projects</li>
+					<li id="nav-contact">Contact</li>
+				</ul>
 				<div class="controls">
 					<button id="toggle-theme">Modo oscuro</button>
 					<button id="lang-toggle">English</button>
@@ -48,7 +54,7 @@
 					><span>e</span><span>r</span><span>o</span>
 					<span>&nbsp;</span>
 				</h1>
-				<h3 class="glass-subtext">
+				<h3 id="glass-subtext" class="glass-subtext">
 					<span>S</span><span>y</span><span>s</span><span>t</span><span>e</span
 					><span>m</span><span>s</span>
 					<span>&nbsp;</span>
@@ -65,13 +71,30 @@
 		</header>
 
 		<main>
-			<section class="personal-description">Personal Description</section>
-			<section class="projects">Projects</section>
-			<section class="contact">contact</section>
+			<section id="personal-description" class="personal-description">
+	<h2 id="section-description">Personal Description</h2>
+</section>
+<section id="projects" class="projects">
+	<h2 id="section-projects">Projects</h2>
+</section>
+<section id="contact" class="contact">
+	<h2 id="section-contact">Contact</h2>
+</section>
 		</main>
 
 		<footer></footer>
 
 		<script src="script.js"></script>
+		<script src="https://unpkg.com/scrollreveal"></script>
+		<script>
+			ScrollReveal().reveal('.personal-description, .projects, .contact', {
+				delay: 300,
+				distance: '50px',
+				origin: 'bottom',
+				duration: 800,
+				easing: 'ease-out',
+				reset: false,
+			});
+		</script>
 	</body>
 </html>

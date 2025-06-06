@@ -2,11 +2,27 @@
   "es": {
     "toggle-theme": "Modo oscuro",
     "lang-toggle": "English",
-    "glass-text": "Mauricio Guerrero A"
+    "glass-text": "Mauricio Guerrero A",
+    "glass-subtext": "Ingeniero de Sistemas - Desarrollador Fullstack",
+    "nav-home": "Inicio",
+    "nav-description": "Sobre mí",
+    "nav-projects": "Proyectos",
+    "nav-contact": "Contacto",
+    "section-description": "Sobre mí",
+    "section-projects": "Proyectos",
+    "section-contact": "Contacto"
   },
   "en": {
     "toggle-theme": "Dark mode",
     "lang-toggle": "Español",
-    "glass-text": "Mauricio Guerrero A"
+    "glass-text": "Mauricio Guerrero A",
+    "glass-subtext": "Systems Engineer - Fullstack Developer",
+    "nav-home": "Home",
+    "nav-description": "About Me",
+    "nav-projects": "Projects",
+    "nav-contact": "Contact",
+    "section-description": "About Me",
+    "section-projects": "Projects",
+    "section-contact": "Contact"
   }
 }

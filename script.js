@@ -79,25 +79,31 @@ applyTheme(savedDark);
 
 window.addEventListener('load', () => {
 	setTimeout(() => {
-		const introLoader = document.getElementById('intro-loader');
+		document.getElementById('intro-loader').style.display = 'none';
+
 		const navbar = document.querySelector('.navbar');
 		const glassText = document.querySelector('.glass-text');
 		const glassSubtext = document.querySelector('.glass-subtext');
 
-		if (introLoader) introLoader.style.display = 'none';
-
-		if (navbar) {
-			navbar.classList.remove('hidden');
-			void navbar.offsetWidth; // Forzar reflow
-			navbar.classList.add('show');
-		}
-
-		if (glassText) {
-			glassText.classList.add('animate-name');
-		}
-
-		if (glassSubtext) {
-			glassSubtext.classList.add('animate-subtext');
-		}
-	}, 3000); // coincide con duración animación loader + fade out
+		navbar.classList.add('show');
+		glassText.classList.add('animate-name');
+		glassSubtext.classList.add('animate-subtext');
+	}, 2000);
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+	// Espera a que la animación del loader termine
+	setTimeout(() => {
+		// Oculta el loader (ya se hace con CSS)
+		
+		// Muestra la navbar
+		document.querySelector('.navbar').classList.add('show');
+
+		// Agrega clases de animación
+		document.querySelector('.glass-text').classList.add('animate-name');
+		document.querySelector('.glass-subtext').classList.add('animate-subtext');
+	}, 2000); // mismo delay que el fadeOut del loader
+});
+
+
+
