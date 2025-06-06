@@ -5,18 +5,24 @@
     "nav_projects": "Projects",
     "nav_contact": "Contact",
     "hero_name": "Mauricio Guerrero",
-    "hero_sub1": "Frontend Developer",
-    "hero_sub2": "Creating modern web experiences",
+    "hero_sub1": "Systems Engineer",
+    "hero_sub2": "Fullstack Developer",
+    "section_about": "About Me",
+    "section_projects": "Projects",
+    "section_contact": "Contact",
     "footer_text": "© 2025 Mauricio Guerrero. All rights reserved."
   },
   "es": {
     "nav_home": "Inicio",
-    "nav_about": "Sobre mí",
+    "nav_about": "Sobre Mí",
     "nav_projects": "Proyectos",
     "nav_contact": "Contacto",
     "hero_name": "Mauricio Guerrero",
-    "hero_sub1": "Desarrollador Frontend",
-    "hero_sub2": "Creando experiencias web modernas",
+    "hero_sub1": "Ingeniero de Sistemas",
+    "hero_sub2": "Desarrollador Fullstack",
+    "section_about": "Sobre Mí",
+    "section_projects": "Proyectos",
+    "section_contact": "Contacto",
     "footer_text": "© 2025 Mauricio Guerrero. Todos los derechos reservados."
   }
 }
