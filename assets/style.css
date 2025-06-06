@@ -509,7 +509,7 @@ body.dark .controls button:hover {
   }
 
   .navbar {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 		flex-wrap: wrap;
   }
