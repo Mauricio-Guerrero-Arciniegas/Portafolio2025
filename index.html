@@ -9,6 +9,7 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
 		/>
 		<link rel="stylesheet" href="assets/style.css" />
+		<script src="script.js" defer></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -34,7 +35,14 @@
 
 		<header class="header">
 			<nav class="navbar hidden">
-				
+				<button class="menu-toggle">☰</button>
+				<!-- Menú hamburguesa -->
+				<ul class="nav-menu">
+					<li><a href="#inicio">Inicio</a></li>
+					<li><a href="#sobre-mi">Sobre mí</a></li>
+					<li><a href="#proyectos">Proyectos</a></li>
+					<li><a href="#contacto">Contacto</a></li>
+				</ul>
 				<div class="controls">
 					<button id="toggle-theme">Modo oscuro</button>
 					<button id="lang-toggle">English</button>
@@ -67,20 +75,25 @@
 
 		<main>
 			<section id="personal-description" class="personal-description">
-	<h2 id="section-description">Personal Description</h2>
-</section>
-<section id="projects" class="projects">
-	<h2 id="section-projects">Projects</h2>
-</section>
-<section id="contact" class="contact">
-	<h2 id="section-contact">Contact</h2>
-</section>
+				<h2 id="section-description">Personal Description</h2>
+			</section>
+			<section id="projects" class="projects">
+				<h2 id="section-projects">Projects</h2>
+			</section>
+			<section id="contact" class="contact">
+				<h2 id="section-contact">Contact</h2>
+			</section>
 		</main>
 
 		<footer></footer>
 
-		<script src="script.js"></script>
-		<script src="https://unpkg.com/scrollreveal"></script>
-		
+		<script>
+			const menuToggle = document.querySelector('.menu-toggle');
+			const navMenu = document.querySelector('.nav-menu');
+
+			menuToggle.addEventListener('click', () => {
+				navMenu.classList.toggle('show');
+			});
+		</script>
 	</body>
 </html>
