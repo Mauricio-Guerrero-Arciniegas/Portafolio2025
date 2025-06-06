@@ -18,9 +18,16 @@
     <div id="loader">
   <svg width="300" height="300" viewBox="0 0 100 120">
     <defs>
+      <!-- Sombra para la letra M -->
       <filter id="m-shadow" x="-50%" y="-50%" width="200%" height="200%">
         <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="cyan" />
         <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="cyan" />
+      </filter>
+
+      <!-- Sombra para el texto "dev." -->
+      <filter id="dev-shadow" x="-50%" y="-50%" width="200%" height="200%">
+        <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="cyan" />
+        <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="cyan" />
       </filter>
     </defs>
 
@@ -35,8 +42,8 @@
       filter="url(#m-shadow)"
     />
 
-    <!-- Texto "dev" debajo -->
-    <text x="50" y="115" text-anchor="middle" class="loader-dev">dev.</text>
+    <!-- Texto "dev." con sombra SVG -->
+    <text x="50" y="115" text-anchor="middle" class="loader-dev" filter="url(#dev-shadow)">dev.</text>
   </svg>
 </div>
 
