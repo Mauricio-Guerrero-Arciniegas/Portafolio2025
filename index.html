@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MG Portfolio</title>
     <link rel="stylesheet" href="assets/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,8 +13,24 @@
     />
     <script src="script.js" defer></script>
   </head>
+  <body class="loading">
+    <!-- Loader -->
+    <div id="loader">
+  <svg width="300" height="300" viewBox="0 0 100 120">
+    <!-- Letra M animada -->
+    <path id="m-path"
+      d="M 10 100 L 10 30 L 30 80 L 50 30 L 50 100"
+      fill="none"
+      stroke="white"
+      stroke-width="6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Texto "dev" debajo -->
+    <text x="50" y="115" text-anchor="middle" class="loader-dev">dev.</text>
+  </svg>
+</div>
 
-  <body>
     <header>
       <nav class="navbar">
         <div class="logo">M</div>
