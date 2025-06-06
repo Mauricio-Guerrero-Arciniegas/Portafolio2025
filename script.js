@@ -26,7 +26,7 @@ window.addEventListener("load", () => {
           el.classList.add("visible");
         }, 400 * (i + 1));
       });
-    }, 600);
+    }, 100);
   }, 3500);
 });
 
