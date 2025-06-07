@@ -93,12 +93,15 @@ if (langBtn) {
 loadLang();
 
 // Ajustar altura viewport
-function setVH() {
+// En script.js (o inline script)
+function setVh() {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
-setVH();
-window.addEventListener('resize', setVH);
+window.addEventListener('resize', setVh);
+window.addEventListener('load', setVh);
+setVh();
+
 
 // Cerrar menú en móvil
 const navLinks = document.querySelectorAll('.nav-links a');

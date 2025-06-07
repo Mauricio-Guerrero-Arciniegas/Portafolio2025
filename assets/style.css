@@ -10,21 +10,22 @@ body {
   background-color: #fff;
   color: #222;
   transition: background-color 0.3s, color 0.3s;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 html, body {
   margin: 0; padding: 0; height: 100%;
-  overflow: hidden; /* evitar scroll nativo */
+  
 }
 
 main {
-  height: 100vh;
-  overflow: hidden; /* ocultar scroll nativo */
+  height: calc(var(--vh, 1vh) * 100);overflow: hidden; /* ocultar scroll nativo */
   position: relative;
 }
 
 main > section {
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +36,7 @@ main > section {
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden; /* evitar scroll doble */
 }
 
