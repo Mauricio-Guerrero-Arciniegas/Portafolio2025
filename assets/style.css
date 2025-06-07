@@ -137,7 +137,7 @@ body.loaded footer {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #55555569;
   backdrop-filter: blur(8px);
   position: fixed;
   width: 100%;
@@ -237,6 +237,10 @@ body.loaded footer {
 
 /* Responsive móvil */
 @media (max-width: 600px) {
+  .navbar {
+    height: 4em;
+    background-color: #55555569;
+  }
   .nav-links {
     position: absolute;
     top: 100%;
