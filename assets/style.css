@@ -448,25 +448,23 @@ body.loaded .hero__socials {
 }
 
 .section__about {
-  background-image: url(../assets/images/background2.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 3em;
 }
 
 .section__projects {
-  background-image: url(../assets/images/background3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
+  color: rgb(2, 2, 2);
   font-size: 3em;
 }
 
 .section__contact {
-  background-image: url(../assets/images/background4.avif);
+  
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
+  color: rgb(8, 8, 8);
   font-size: 3em;
 }
 
