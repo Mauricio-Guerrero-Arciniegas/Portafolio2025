@@ -382,21 +382,6 @@ body.dark-mode #loader {
   background-repeat: no-repeat;
 }
 
-.hero__content,
-.section__hero,
-.section__about,
-.section__projects,
-.section__contact {
-  height: calc(var(--vh, 1vh) * 100);
-}
-
-.footer {
-  height: calc(var(--vh) * 30);
-  text-align: center;
-  padding: 1rem;
-  color: #555;
-}
-
 /* Contenedor social dentro del hero */
 .hero__socials {
   position: absolute;
@@ -446,3 +431,42 @@ body.loaded .hero__socials {
     transform: translateX(0);
   }
 }
+
+.hero__content,
+.section__about,
+.section__projects,
+.section__contact {
+  height: calc(var(--vh, 1vh) * 100);
+}
+.section__footer {
+  height: calc(var(--vh, 1vh) * 30);
+}
+
+.section__about {
+  background-image: url(../assets/images/background2.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 3em;
+}
+
+.section__projects {
+  background-image: url(../assets/images/background3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-size: 3em;
+}
+
+.section__contact {
+  background-image: url(../assets/images/background4.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-size: 3em;
+}
+
+.section__footer {
+  background-color: rgb(32, 122, 122);
+  color: white;
+}
+
