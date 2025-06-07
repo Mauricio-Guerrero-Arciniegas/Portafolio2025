@@ -96,11 +96,12 @@ if (langBtn) {
 loadLang();
 
 // Ajustar altura viewport para mobile
-function setVh() {
-  document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+function setVH() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
-window.addEventListener("resize", setVh);
-setVh();
+setVH();
+window.addEventListener('resize', setVH);
 
 // Cerrar menú hamburguesa al hacer click en un enlace del menú (solo en móvil)
 const navLinks = document.querySelectorAll('.nav-links a');

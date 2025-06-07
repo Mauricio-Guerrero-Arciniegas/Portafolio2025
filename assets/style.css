@@ -370,7 +370,7 @@ body.dark-mode #loader {
 
 /* Secciones */
 .section__hero {
-  height: calc(var(--vh) * 100);
+  height: calc(var(--vh, 1vh) * 100);
   display: flex;
   justify-content: center;
   position: relative;
@@ -382,14 +382,12 @@ body.dark-mode #loader {
   background-repeat: no-repeat;
 }
 
-.hero__content {
-  margin-bottom: 20rem;
-}
-
+.hero__content,
+.section__hero,
 .section__about,
 .section__projects,
 .section__contact {
-  height: calc(var(--vh) * 100);
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .footer {
