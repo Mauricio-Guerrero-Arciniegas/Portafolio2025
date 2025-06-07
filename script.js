@@ -46,7 +46,7 @@ toggleBtn.addEventListener("click", () => {
 
 updateDarkModeIcon();
 
-// Multilenguaje
+// Multilenguaje con bandera
 let langData = {};
 let currentLang = localStorage.getItem("lang") || "en";
 
@@ -72,9 +72,15 @@ function setLang(lang) {
     }
   }
 
-  const langBtn = document.getElementById("btnLang");
-  if (langBtn) {
-    langBtn.textContent = lang === "en" ? "ES" : "EN";
+  const flagIcon = document.getElementById("flag-icon");
+  if (flagIcon) {
+    if (lang === "en") {
+      flagIcon.src = "assets/flags/en.png";
+      flagIcon.alt = "English flag";
+    } else if (lang === "es") {
+      flagIcon.src = "assets/flags/es.png";
+      flagIcon.alt = "Spanish flag";
+    }
   }
 }
 

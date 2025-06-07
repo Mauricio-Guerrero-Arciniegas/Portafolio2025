@@ -30,18 +30,18 @@ body {
   margin: 0 auto;
 }
 
-#m-path {
+.mountain {
+  fill: none;
   stroke: white;
-  stroke-width: 6;
-  stroke-linecap: round;
+  stroke-width: 3;
   stroke-linejoin: round;
   filter: url(#m-shadow);
-  stroke-dasharray: 250;
-  stroke-dashoffset: 250;
-  animation: drawM 3.5s ease forwards;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: drawMountain 3.5s ease forwards;
 }
 
-@keyframes drawM {
+@keyframes drawMountain {
   to {
     stroke-dashoffset: 0;
   }
@@ -188,31 +188,62 @@ body.loaded footer {
 /* Botones */
 .nav-buttons {
   display: flex;
-  gap: 1rem;
+  gap: .5rem;
   align-items: center;
   position: relative;
-  z-index: 1002;
+  z-index: 1;
+}
+
+.nav-buttons button {
+  background: none;
+  border: none;
+  padding: 0.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e0e0e0;
+  transition: color 0.3s ease;
+}
+
+.nav-buttons button:hover,
+.nav-buttons button:focus {
+  color: #66aaff;
+  outline: none;
+}
+
+.nav-buttons .icon {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 #dark-mode-toggle,
 #btnLang {
-  background-color: transparent;
-  border: 2px solid #66aaff;
-  color: #66aaff;
-  font-weight: 600;
-  padding: 0.3rem 0.6rem;
-  border-radius: 6px;
+  background: none;
+  border: none;
+  padding: 0.2rem;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #e0e0e0;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+#btnLang img {
+  width: 24px;
+  height: 16px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
 }
 
 #dark-mode-toggle:hover,
 #btnLang:hover,
 #dark-mode-toggle:focus,
 #btnLang:focus {
-  background-color: #66aaff;
-  color: #121212;
+  color: #66aaff;
   outline: none;
 }
 
@@ -279,7 +310,6 @@ body.loaded footer {
     font-size: 2rem;
   }
 
-  /* CORRECCIÓN: Alinear los botones a la derecha en móvil */
   .nav-buttons {
     position: absolute;
     top: 1rem;
@@ -287,7 +317,6 @@ body.loaded footer {
   }
 }
 
-/* Esconder checkbox en pantallas mayores a 600px */
 @media (min-width: 601px) {
   #nav-toggle {
     display: none;
