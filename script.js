@@ -34,9 +34,7 @@ window.addEventListener("load", () => {
 const toggleBtn = document.getElementById("dark-mode-toggle");
 
 function updateDarkModeIcon() {
-  toggleBtn.textContent = document.body.classList.contains("dark-mode")
-    ? "☀️"
-    : "🌙";
+  toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
 }
 
 toggleBtn.addEventListener("click", () => {
@@ -64,14 +62,15 @@ function setLang(lang) {
   currentLang = lang;
   localStorage.setItem("lang", lang);
 
+  // Actualizar textos según idioma, sin animar subtextos para no repetir animación
   for (const key in langData[lang]) {
     const el = document.getElementById(key);
     if (el) {
       el.textContent = langData[lang][key];
-      // No animar textos secundarios aquí para no repetir animación al cambiar idioma
     }
   }
 
+  // Cambiar bandera según idioma
   const flagIcon = document.getElementById("flag-icon");
   if (flagIcon) {
     if (lang === "en") {
@@ -109,8 +108,66 @@ const navToggle = document.getElementById('nav-toggle');
 
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
-    if (window.innerWidth <= 600) {
+    if (window.innerWidth <= 600 && navToggle) {
       navToggle.checked = false;
     }
   });
+});
+
+// Scroll entre secciones con rueda, teclado y nav
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('main > section');
+  let currentSection = 0;
+  let isScrolling = false;
+
+  function scrollToSection(index) {
+    if (index < 0 || index >= sections.length) return;
+    isScrolling = true;
+    currentSection = index;
+    sections[index].scrollIntoView({ behavior: 'smooth' });
+
+    // Bloquear durante la animación (aprox 1s)
+    setTimeout(() => {
+      isScrolling = false;
+    }, 1000);
+  }
+
+  // Navegación con clicks en menú
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = [...sections].findIndex(s => s.id === targetId);
+      if (targetSection !== -1) {
+        scrollToSection(targetSection);
+      }
+    });
+  });
+
+  // Scroll con rueda del mouse
+  window.addEventListener('wheel', (e) => {
+    if (isScrolling) return;
+
+    if (e.deltaY > 0) {
+      if (currentSection < sections.length - 1) scrollToSection(currentSection + 1);
+    } else if (e.deltaY < 0) {
+      if (currentSection > 0) scrollToSection(currentSection - 1);
+    }
+  }, { passive: false });
+
+  // Scroll con teclado (flechas y page up/down)
+  window.addEventListener('keydown', (e) => {
+    if (isScrolling) return;
+
+    if (['ArrowDown', 'PageDown'].includes(e.code)) {
+      e.preventDefault();
+      if (currentSection < sections.length - 1) scrollToSection(currentSection + 1);
+    } else if (['ArrowUp', 'PageUp'].includes(e.code)) {
+      e.preventDefault();
+      if (currentSection > 0) scrollToSection(currentSection - 1);
+    }
+  });
+
+  // Scroll inicial a la primera sección
+  scrollToSection(0);
 });
