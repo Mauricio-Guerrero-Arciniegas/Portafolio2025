@@ -22,7 +22,6 @@ body {
   align-items: center;
   z-index: 9999;
   transition: opacity 0.6s ease;
-  -webkit-transition: opacity 0.6s ease;
 }
 
 #loader svg {
@@ -40,7 +39,6 @@ body {
   stroke-dasharray: 250;
   stroke-dashoffset: 250;
   animation: drawM 3.5s ease forwards;
-  -webkit-animation: drawM 3.5s ease forwards;
 }
 
 @keyframes drawM {
@@ -48,21 +46,14 @@ body {
     stroke-dashoffset: 0;
   }
 }
-@-webkit-keyframes drawM {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 
 .loader-dev {
-  font-family: "Manrope", sans-serif;
   font-size: 14px;
   fill: white;
   text-shadow: 0 0 3px cyan, 0 0 6px cyan;
   opacity: 0;
   transform: translateY(20px);
   animation: devBounceIn 5.8s ease-out 1.6s forwards;
-  -webkit-animation: devBounceIn 5.8s ease-out 1.6s forwards;
 }
 
 @keyframes devBounceIn {
@@ -81,31 +72,14 @@ body {
     transform: translateY(0);
   }
 }
-@-webkit-keyframes devBounceIn {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(20px);
-  }
-  60% {
-    opacity: 1;
-    -webkit-transform: translateY(-5px);
-  }
-  80% {
-    -webkit-transform: translateY(3px);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-  }
-}
 
-/* Ocultar contenido por detrás mientras carga usando solo opacity + pointer-events (mejor para Safari) */
+/* Ocultar contenido detrás mientras carga */
 body.loading main,
 body.loading header,
 body.loading footer {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.8s ease;
-  -webkit-transition: opacity 0.8s ease;
 }
 
 body.loaded main,
@@ -114,51 +88,37 @@ body.loaded footer {
   opacity: 1;
   pointer-events: auto;
   transition: opacity 0.8s ease;
-  -webkit-transition: opacity 0.8s ease;
 }
 
 #loader.fade-out {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.6s ease;
-  -webkit-transition: opacity 0.6s ease;
 }
 
-/* Animación para el título h1 .name */
+/* Animación h1 */
 .section__hero .name {
   opacity: 0;
   transform: translateY(200px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
-  color: rgb(255, 255, 255);
+  color: white;
   text-shadow: 0 0 1px cyan, 0 0 10px cyan;
   max-width: 90vw;
-  word-wrap: break-word;
   font-size: 3rem;
-  position: static;
   text-align: center;
-  margin: 0 auto;
-  margin-top: 150px;
-}
-
-@media (max-width: 600px) {
-  .section__hero .name {
-    font-size: 2rem; /* Tamaño más pequeño para móviles */
-  }
+  margin: 150px auto 0;
 }
 
 .section__hero .name.visible {
   opacity: 1;
   transform: translateY(0);
-  -webkit-transform: translateY(0);
 }
 
-/* Animación para los textos secundarios */
+/* Textos secundarios */
 .subtext {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
   font-size: 1.2rem;
   color: white;
   text-shadow: 0 0 1px cyan, 0 0 8px cyan;
@@ -169,61 +129,168 @@ body.loaded footer {
 .subtext.visible {
   opacity: 1;
   transform: translateY(0);
-  -webkit-transform: translateY(0);
 }
 
-/* Navbar y modo oscuro */
+/* Navbar */
 .navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem 2rem;
-  background-color: #eee;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
   position: fixed;
   width: 100%;
-  height: 3rem;
-  z-index: 100;
-
-  /* Animación inicial oculta hacia arriba */
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: transform 2.6s ease, opacity 0.6s ease;
-}
-
-/* Al terminar el loader (cuando se agrega la clase loaded al body) */
-body.loaded .navbar {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.5rem;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #222;
-  font-weight: 500;
+  color: #e0e0e0;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.25rem 0;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #007bff;
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #66aaff;
+  transition: width 0.3s ease;
+  border-radius: 2px;
 }
 
-#dark-mode-toggle {
-  font-size: 1.25rem;
-  background: none;
-  border: none;
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #66aaff;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus::after {
+  width: 100%;
+}
+
+/* Botones */
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+  z-index: 1002;
+}
+
+#dark-mode-toggle,
+#btnLang {
+  background-color: transparent;
+  border: 2px solid #66aaff;
+  color: #66aaff;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+#dark-mode-toggle:hover,
+#btnLang:hover,
+#dark-mode-toggle:focus,
+#btnLang:focus {
+  background-color: #66aaff;
+  color: #121212;
+  outline: none;
+}
+
+/* Hamburguesa */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  color: #e0e0e0;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 1001;
+  transition: color 0.3s ease;
+}
+
+.hamburger:hover,
+.hamburger:focus {
+  color: #66aaff;
+}
+
+/* Responsive móvil */
+@media (max-width: 600px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    z-index: 1000;
+  }
+
+  #nav-toggle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #nav-toggle:checked ~ .nav-links {
+    max-height: 300px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .section__hero .name {
+    font-size: 2rem;
+  }
+
+  /* CORRECCIÓN: Alinear los botones a la derecha en móvil */
+  .nav-buttons {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+/* Esconder checkbox en pantallas mayores a 600px */
+@media (min-width: 601px) {
+  #nav-toggle {
+    display: none;
+  }
+}
+
+/* Modo oscuro */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;

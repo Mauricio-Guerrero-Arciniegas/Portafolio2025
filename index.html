@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MG Portfolio</title>
   <link rel="stylesheet" href="assets/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,9 +14,10 @@
   <script src="script.js" defer></script>
 </head>
 <body class="loading">
+
   <!-- Loader -->
   <div id="loader">
-    <svg width="200" height="200" viewBox="0 0 100 120" >
+    <svg width="200" height="200" viewBox="0 0 100 120" aria-label="Loader animation" role="img">
       <defs>
         <filter id="m-shadow" x="-50%" y="-50%" width="200%" height="200%">
           <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="cyan" />
@@ -37,29 +38,30 @@
           stroke-linejoin="round"
           filter="url(#m-shadow)"
         />
-        <text
-          x="20"
-          y="115"
-          text-anchor="middle"
-          class="loader-dev"
-          filter="url(#dev-shadow)"
-          >dev.</text
-        >
+        <text x="20" y="115" text-anchor="middle" class="loader-dev" filter="url(#dev-shadow)">dev.</text>
       </g>
     </svg>
   </div>
 
   <header>
     <nav class="navbar">
-      <div class="logo">M</div>
+      <!-- Checkbox para toggle hamburguesa -->
+      <input type="checkbox" id="nav-toggle" />
+<label for="nav-toggle" class="hamburger" aria-label="Toggle menu">&#9776;</label>
+
+      <!-- Menú de navegación -->
       <ul class="nav-links">
-        <li><a id="nav_home" href="#inicio">Home</a></li>
-        <li><a id="nav_about" href="#sobre-mi">About Me</a></li>
-        <li><a id="nav_projects" href="#proyectos">Projects</a></li>
-        <li><a id="nav_contact" href="#contacto">Contact</a></li>
-      </ul>
-      <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
-      <button id="btnLang" type="button" aria-label="Change language">ES</button>
+  <li><a id="nav_home" href="#inicio">Home</a></li>
+  <li><a id="nav_about" href="#sobre-mi">About Me</a></li>
+  <li><a id="nav_projects" href="#proyectos">Projects</a></li>
+  <li><a id="nav_contact" href="#contacto">Contact</a></li>
+</ul>
+
+      <!-- Botones laterales -->
+      <div class="nav-buttons">
+  <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+  <button id="btnLang" type="button" aria-label="Change language">ES</button>
+</div>
     </nav>
   </header>
 

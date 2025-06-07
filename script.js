@@ -96,3 +96,15 @@ function setVh() {
 }
 window.addEventListener("resize", setVh);
 setVh();
+
+// Cerrar menú hamburguesa al hacer click en un enlace del menú (solo en móvil)
+const navLinks = document.querySelectorAll('.nav-links a');
+const navToggle = document.getElementById('nav-toggle');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 600) {
+      navToggle.checked = false;
+    }
+  });
+});
