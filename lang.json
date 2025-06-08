@@ -6,10 +6,12 @@
     "nav_contact": "Contact",
     "hero_name": "Mauricio Guerrero",
     "hero_sub1": "Systems Engineer - Fullstack Developer",
+    "cv_download": "Download CV",
     "section_about": "About Me",
     "section_projects": "Projects",
     "section_contact": "Contact",
-    "footer_text": "© 2025 Mauricio Guerrero. All rights reserved."
+    "footer_text": "© 2025 Mauricio Guerrero. All rights reserved.",
+    "cv_text": "Download CV"
   },
   "es": {
     "nav_home": "Inicio",
@@ -18,9 +20,11 @@
     "nav_contact": "Contacto",
     "hero_name": "Mauricio Guerrero",
     "hero_sub1": "Ingeniero de Sistemas - Desarrollador Fullstack",
+    "cv_download": "Descargar CV",
     "section_about": "Sobre Mí",
     "section_projects": "Proyectos",
     "section_contact": "Contacto",
-    "footer_text": "© 2025 Mauricio Guerrero. Todos los derechos reservados."
+    "footer_text": "© 2025 Mauricio Guerrero. Todos los derechos reservados.",
+    "cv_text": "Descargar CV"
   }
 }

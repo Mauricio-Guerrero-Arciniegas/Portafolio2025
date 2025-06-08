@@ -513,42 +513,18 @@ body.loaded .hero__socials {
   color: white;
 }
 
-.icon-container {
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: absolute;
-  z-index: 4;
-  right: 0px;
-}
-
-.icon-envelope {
-  animation: swing 2s ease-in-out infinite;
-  transform-origin: center center;
-  color: white;
-}
-
-.CV {
-  color: white;
-  font-weight: 900;
-  padding: 0px 30px;
-}
-
 /* Animación rotación */
-@keyframes swing {
-  0% {
+@keyframes vaiven {
+  0%, 100% {
     transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(25deg)
   }
   50% {
-    transform: rotate(0deg);
+    transform: rotate(20deg);
   }
-  75% {
-    transform: rotate(-25deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+}
+
+.icono-vaiven {
+  display: inline-block;
+  animation: vaiven 1s ease-in-out infinite;
+  transform-origin: center bottom;
 }
