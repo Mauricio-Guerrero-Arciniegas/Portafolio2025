@@ -134,9 +134,9 @@ body.loaded footer {
   transform: translateY(200px);
   transition: opacity 0.6s ease, transform 0.6s ease;
   color: white;
-  text-shadow: 0 0 1px cyan, 0 0 10px cyan;
+  text-shadow: 0 0 1px rgba(0, 255, 255, 0.527), 0 0 10px cyan;
   max-width: 90vw;
-  font-size: 3rem;
+  font-size: clamp(40px, 6vw, 80px);
   text-align: center;
   margin: 150px auto 0;
 }
@@ -145,6 +145,7 @@ body.loaded footer {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 /* Textos secundarios */
 .subtext {
@@ -420,14 +421,8 @@ body.dark-mode #loader {
   rgba(255, 255, 255, 0) 100%); /* Ligera transparencia */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); /* Safari support */
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
   z-index: 2;
   pointer-events: none; /* Opcional, evita que interfiera con clics */
-}
-
-.hero__glass-name {
-  background-color: red;
-  color: red;
 }
 
 /* Contenedor social dentro del hero */
@@ -517,3 +512,25 @@ body.loaded .hero__socials {
   color: white;
 }
 
+.icon-container {
+  display: inline-block;
+  cursor: pointer;
+  /* Para centrar el ícono si quieres */
+  /* text-align: center; */
+}
+
+.icon-envelope {
+  animation: spin 3s linear infinite;
+  transform-origin: center center;
+  color: #0077cc; /* Color azul, cambia a tu gusto */
+}
+
+/* Animación rotación */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
           el.classList.add("visible");
         }, 400 * (i + 1));
       });
-    }, 100);
+    }, 200);
   }, 3500);
 });
 
