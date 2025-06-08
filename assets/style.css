@@ -203,14 +203,14 @@ body.loaded footer {
   bottom: -4px;
   width: 0%;
   height: 2px;
-  background-color: #66aaff;
+  background-color: #ffffff;
   transition: width 0.3s ease;
   border-radius: 2px;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
-  color: #66aaff;
+  color: cyan;
 }
 
 .nav-links a:hover::after,
@@ -241,7 +241,7 @@ body.loaded footer {
 
 .nav-buttons button:hover,
 .nav-buttons button:focus {
-  color: #66aaff;
+  color: #66abff;
   outline: none;
 }
 
@@ -451,7 +451,7 @@ body.dark-mode #loader {
 
 .social-icon:hover,
 .social-icon:focus {
-  color: #66aaff;
+  color: cyan;
   outline: none;
 }
 
@@ -527,4 +527,8 @@ body.loaded .hero__socials {
   display: inline-block;
   animation: vaiven 1s ease-in-out infinite;
   transform-origin: center bottom;
+}
+
+.icono-vaiven::hover{
+  color: cyan;
 }
