@@ -427,6 +427,7 @@ body.dark-mode #loader {
 
 /* Contenedor social dentro del hero */
 .hero__socials {
+  margin-top: 12rem;
   position: absolute;
   top: 50%;
   right: 2rem;
@@ -513,24 +514,41 @@ body.loaded .hero__socials {
 }
 
 .icon-container {
-  display: inline-block;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  /* Para centrar el ícono si quieres */
-  /* text-align: center; */
+  position: absolute;
+  z-index: 4;
+  right: 0px;
 }
 
 .icon-envelope {
-  animation: spin 3s linear infinite;
+  animation: swing 2s ease-in-out infinite;
   transform-origin: center center;
-  color: #0077cc; /* Color azul, cambia a tu gusto */
+  color: white;
+}
+
+.CV {
+  color: white;
+  font-weight: 900;
+  padding: 0px 30px;
 }
 
 /* Animación rotación */
-@keyframes spin {
-  from {
+@keyframes swing {
+  0% {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    transform: rotate(25deg)
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
