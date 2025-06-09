@@ -8,8 +8,6 @@
 body {
   font-family: "Manrope", sans-serif;
   background-color: #fff;
-  color: #222;
-  transition: background-color 0.3s, color 0.3s;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -52,7 +50,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  z-index: 9;
   transition: opacity 0.6s ease;
 }
 
@@ -128,24 +126,91 @@ body.loaded footer {
   transition: opacity 0.6s ease;
 }
 
-/* Animación h1 */
+.title {
+  z-index: 4;
+}
+
+/* h1 */
 .section__hero .name {
-  opacity: 0;
-  transform: translateY(200px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  color: white;
-  text-shadow: 0 0 1px rgba(0, 255, 255, 0.527), 0 0 10px cyan;
   max-width: 90vw;
   font-size: clamp(40px, 6vw, 80px);
   text-align: center;
   margin: 150px auto 0;
 }
 
-.section__hero .name.visible {
-  opacity: 1;
-  transform: translateY(0);
+.name {
+  position: relative;
+  display: inline-block;
+  z-index: 4;
 }
 
+/* Fondo visible a través del texto */
+.container {
+  position: relative;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+}
+
+/* Fondo real */
+.background {
+  position: absolute;
+  inset: 0;
+  background: url(/assets/images/wallpaper1.jpg) no-repeat center/cover;
+  z-index: 1;
+}
+
+/* Glassmorphism encima */
+.glass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* ajusta el ancho según lo que necesites */
+  height: calc(var(--vh, 1vh) * 100);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 2;
+}
+
+/* Texto que "recorta" y deja ver fondo debajo del glass */
+.cutout-text {
+  margin-top: 150px;
+  position: relative;
+  z-index: 3;
+  font-size: clamp(40px, 10vw, 120px);
+  font-weight: 900;
+  color: transparent;
+
+  background: url(/assets/images/wallpaper1.jpg) no-repeat center/cover;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  mix-blend-mode: overlay;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+
+  /* 🔽 Borde blanco semi-transparente */
+  -webkit-text-stroke: .1px rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 600px) {
+  .cutout-text {
+    margin-top: 180px;
+    font-size: clamp(40px, 10vw, 120px);
+    font-weight: 900;
+  }
+}
+
+.guerrero {
+  font-size: clamp(40px, 6vw, 80px);
+  color: rgb(233, 15, 15); /* O cualquier otro color */
+  text-shadow: 0 0 5px cyan, 0 0 10px cyan;
+}
 
 /* Textos secundarios */
 .subtext {
@@ -380,9 +445,8 @@ body.dark-mode #loader {
   display: flex;
   justify-content: center;
   position: relative;
-  padding: 0 1rem;
+  padding: 0 0rem;
   text-align: center;
-  background-image: url(../assets/images/wallpaper1.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -394,35 +458,6 @@ body.dark-mode #loader {
 .hero__socials {
   position: relative;
   z-index: 3;
-}
-
-.section__hero::before {
-  content: ""; /* Necesario para que el pseudo-elemento se renderice */
-  position: absolute; /* Lo posiciona encima del fondo */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, #ffffff00 0%, #000000f6 100%);
-  z-index: 1;
-}
-
-/* GLASSMORPHISM solo en mitad izquierda */
-.glass-left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-  to bottom,
-  rgba(255, 255, 255, 0.08) 0%,
-  rgba(255, 255, 255, 0.04) 60%,
-  rgba(255, 255, 255, 0) 100%); /* Ligera transparencia */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  z-index: 2;
-  pointer-events: none; /* Opcional, evita que interfiera con clics */
 }
 
 /* Contenedor social dentro del hero */
@@ -466,8 +501,8 @@ body.loaded .hero__socials {
   .hero__socials {
     top: auto;
     bottom: 2rem;
-    right: 2rem;
-    flex-direction: row;
+    right: 70%;
+    flex-direction: column;
     transform: translateX(100%);
   }
 
@@ -476,7 +511,6 @@ body.loaded .hero__socials {
   }
 }
 
-.hero__content,
 .section__about,
 .section__projects,
 .section__contact {
@@ -529,8 +563,6 @@ body.loaded .hero__socials {
       alternate infinite
       cubic-bezier(.2, .65, .6, 1);
   }
-
-
 
 .icono-vaiven::hover{
   color: cyan;
