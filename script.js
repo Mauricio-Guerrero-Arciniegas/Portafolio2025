@@ -181,7 +181,7 @@ function splitLettersWithSpecial(selector, specialIndices) {
 }
 
 // Para Mauricio: queremos efecto en letras 5,6,7 que son "c"(5),"i"(6),"o"(7)
-splitLettersWithSpecial('.cutout-text', [0,1,2,3,4,5,6,7]);
+splitLettersWithSpecial('.cutout-text', [0,1,2]);
 
 // Para Guerrero: queremos efecto en letras 0,1,2 que son "G"(0),"u"(1),"e"(2)
 splitLettersWithSpecial('.guerrero-text', [0,1,2]);
