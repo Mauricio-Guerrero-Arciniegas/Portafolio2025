@@ -31,11 +31,11 @@ window.addEventListener("load", () => {
 const toggleBtn = document.getElementById("dark-mode-toggle");
 
 function updateDarkModeIcon() {
-  toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+  toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 }
 
 toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+  document.body.classList.toggle("dark");
   updateDarkModeIcon();
 });
 
@@ -115,57 +115,6 @@ navLinks.forEach(link => {
   });
 });
 
-// Scroll por secciones
-document.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('main > section');
-  let currentSection = 0;
-  let isScrolling = false;
-
-  function scrollToSection(index) {
-    if (index < 0 || index >= sections.length) return;
-    isScrolling = true;
-    currentSection = index;
-    sections[index].scrollIntoView({ behavior: 'smooth' });
-
-    setTimeout(() => {
-      isScrolling = false;
-    }, 1000);
-  }
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1);
-      const targetSection = [...sections].findIndex(s => s.id === targetId);
-      if (targetSection !== -1) {
-        scrollToSection(targetSection);
-      }
-    });
-  });
-
-  window.addEventListener('wheel', (e) => {
-    if (isScrolling) return;
-    if (e.deltaY > 0 && currentSection < sections.length - 1) {
-      scrollToSection(currentSection + 1);
-    } else if (e.deltaY < 0 && currentSection > 0) {
-      scrollToSection(currentSection - 1);
-    }
-  }, { passive: false });
-
-  window.addEventListener('keydown', (e) => {
-    if (isScrolling) return;
-
-    if (['ArrowDown', 'PageDown'].includes(e.code)) {
-      e.preventDefault();
-      if (currentSection < sections.length - 1) scrollToSection(currentSection + 1);
-    } else if (['ArrowUp', 'PageUp'].includes(e.code)) {
-      e.preventDefault();
-      if (currentSection > 0) scrollToSection(currentSection - 1);
-    }
-  });
-
-  scrollToSection(0);
-});
 
 function splitLettersWithSpecial(selector, specialIndices) {
   const element = document.querySelector(selector);
@@ -207,3 +156,4 @@ cards.forEach(card => {
     card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
   });
 });
+

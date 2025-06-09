@@ -611,8 +611,8 @@ body.loaded .hero__socials {
 /* Sección About */
 .section__about {
   padding: 6rem 2rem;
-  background: linear-gradient(to bottom, #0a0a0a, #0d1b2a, #1b263b);
-  color: #ffffff;
+  background: linear-gradient(to top, #e0f7fa, #3b91c4, #030303); /* cyan claro */
+  color: #00284d; /* azul oscuro verdoso */
   transition: background 0.5s ease, color 0.5s ease;
 }
 
@@ -625,13 +625,13 @@ body.loaded .hero__socials {
 #about_title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: #ffffff; /* azul oscuro */
 }
 
 #about_description {
   font-size: 1.1rem;
   margin-bottom: 3rem;
-  color: #cfd8e0;
+  color: #ffffff; /* azul oscuro */
 }
 
 /* Cards */
@@ -643,52 +643,62 @@ body.loaded .hero__socials {
 }
 
 .about__card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 188, 212, 0.1); /* cyan traslúcido */
+  border: 1px solid rgba(0, 151, 167, 0.6); /* cyan más oscuro */
   border-radius: 1rem;
   padding: 2rem;
   width: 280px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 105, 92, 0.3); /* azul oscuro */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease, background 0.4s ease;
   transform-style: preserve-3d;
   perspective: 1000px;
-  backdrop-filter: blur(10px);
   cursor: pointer;
 }
 
 .about__card:hover {
   transform: rotateY(10deg) rotateX(5deg) scale(1.03);
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 30px rgba(0, 96, 100, 0.6); /* cyan oscuro */
 }
 
 .about__card h3 {
-  color: #00b4d8;
+  color: #234e9e; /* cyan oscuro */
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
 .about__card p {
-  color: #f1f1f1;
+  color: #004d40; /* azul oscuro */
   font-size: 1rem;
 }
 
 /* --- Modo oscuro --- */
 body.dark .section__about {
-  background: linear-gradient(to bottom, #050505, #08101c, #0d1b2a);
-  color: #e0e0e0;
+  background: linear-gradient(to bottom, #002f2f, #004d4d, #006666); /* azul oscuro/teal */
+  color: #b2ebf2; /* cyan claro */
+}
+
+body.dark #about_title {
+  color: #4dd0e1; /* cyan brillante */
+  text-shadow: 0 0 10px #4dd0e1, 0 0 20px #4dd0e1;
+}
+
+body.dark #about_description {
+  color: #80deea; /* cyan claro suave */
 }
 
 body.dark .about__card {
-  background: rgba(0, 0, 0, 0.2);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(5, 57, 99, 0.8);
+  border: 2px solid #4dd0e1;
+  box-shadow: 0 0 12px #4dd0e1;
 }
 
 body.dark .about__card h3 {
-  color: #48cae4;
+  color: #4dd0e1;
+  text-shadow: 0 0 8px #4dd0e1;
 }
 
 body.dark .about__card p {
-  color: #d0d0d0;
+  color: #b2ebf2;
 }
 
 /* --- Responsive Fix: Navbar fijo en móviles --- */
@@ -703,8 +713,8 @@ body.dark .about__card p {
   }
 
   .about__card {
-    transform: none;
-    animation: none;
+    transform: none !important;
+    animation: none !important;
     width: 90%;
   }
 }
@@ -715,12 +725,13 @@ body.dark .about__card p {
 
 
 
-.section__projects {
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: rgb(2, 2, 2);
-  font-size: 3em;
-}
+/*Seccion proyectos*/
+
+
+
+
+
+
 
 .section__contact {
   
