@@ -212,7 +212,7 @@ body.loaded footer {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 9vw;
+  padding: 0 6vw;
 }
 
 .guerrero-text {
@@ -230,7 +230,8 @@ body.loaded footer {
   .text-wrapper {
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    
+  padding: 0 2vw;
     margin-top: 20px;
   }
 }
