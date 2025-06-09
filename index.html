@@ -114,10 +114,27 @@
 		<main>
 			<section class="section__hero" id="hero">
 				<div class="container">
-					<div class="background"></div> <!-- fondo -->
-					<div class="glass"></div>      <!-- glassmorphism -->
-					<h1 class="cutout-text">Mauricio Guerrero</h1> <!-- texto "recortado" -->
-				</div>
+  <div class="background"></div> <!-- fondo -->
+  <div class="glass"></div>      <!-- glassmorphism -->
+  <div class="text-wrapper">
+    <h1 class="cutout-text">Mauricio</h1>
+<h1 class="guerrero-text">Guerrero</h1>
+
+<script>
+  function splitLetters(selector) {
+    const element = document.querySelector(selector);
+    const text = element.textContent;
+    element.innerHTML = text.split('').map(letter => {
+      if (letter === ' ') return ' '; // conserva espacios
+      return `<span class="letter">${letter}</span>`;
+    }).join('');
+  }
+
+  splitLetters('.cutout-text');
+  splitLetters('.guerrero-text');
+</script>
+  </div>
+</div>
 				
 
 

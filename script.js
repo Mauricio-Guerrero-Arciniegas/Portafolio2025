@@ -166,3 +166,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   scrollToSection(0);
 });
+
+function splitLettersWithSpecial(selector, specialIndices) {
+  const element = document.querySelector(selector);
+  const text = element.textContent;
+  element.innerHTML = text.split('').map((letter, i) => {
+    if (letter === ' ') return ' ';
+    // Si el índice está en specialIndices, aplica clase 'special-letter'
+    if (specialIndices.includes(i)) {
+      return `<span class="letter special-letter">${letter}</span>`;
+    }
+    return `<span class="letter">${letter}</span>`;
+  }).join('');
+}
+
+// Para Mauricio: queremos efecto en letras 5,6,7 que son "c"(5),"i"(6),"o"(7)
+splitLettersWithSpecial('.cutout-text', [0,1,2,3,4,5,6,7]);
+
+// Para Guerrero: queremos efecto en letras 0,1,2 que son "G"(0),"u"(1),"e"(2)
+splitLettersWithSpecial('.guerrero-text', [0,1,2]);

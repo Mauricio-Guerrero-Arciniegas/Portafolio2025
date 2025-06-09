@@ -167,7 +167,15 @@ body.loaded footer {
   left: 0;
   width: 50%; /* ajusta el ancho según lo que necesites */
   height: calc(var(--vh, 1vh) * 100);
-  background: rgba(255, 255, 255, 0.15);
+
+  /* Degradado para que el glass se desvanezca hacia abajo */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.15) 0%,       /* parte superior con glass */
+    rgba(255, 255, 255, 0.15) 50%,      /* hasta el 70% sigue igual */
+    rgba(255, 255, 255, 0) 100%         /* y se desvanece completamente */
+  );
+
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 2;
@@ -175,7 +183,6 @@ body.loaded footer {
 
 /* Texto que "recorta" y deja ver fondo debajo del glass */
 .cutout-text {
-  margin-top: 150px;
   position: relative;
   z-index: 3;
   font-size: clamp(40px, 10vw, 120px);
@@ -198,18 +205,54 @@ body.loaded footer {
   -webkit-text-stroke: .1px rgba(255, 255, 255, 0.6);
 }
 
+.text-wrapper {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 9vw;
+}
+
+.guerrero-text {
+  margin-top: 230px;
+  font-size: clamp(40px, 10vw, 120px);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.4),
+    0 0 10px rgba(0, 255, 255, 0.2);
+  user-select: none;
+}
+
 @media (max-width: 600px) {
-  .cutout-text {
-    margin-top: 180px;
-    font-size: clamp(40px, 10vw, 120px);
-    font-weight: 900;
+  .text-wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
   }
 }
 
-.guerrero {
-  font-size: clamp(40px, 6vw, 80px);
-  color: rgb(233, 15, 15); /* O cualquier otro color */
-  text-shadow: 0 0 5px cyan, 0 0 10px cyan;
+.letter {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #fff;
+}
+
+/* Efecto especial: por ejemplo, escala y cambio de color */
+.special-letter {
+  color: #0ff;
+  font-weight: 900;
+  text-shadow: 0 0 2px rgba(0, 255, 255, 0.068);
+}
+
+/* También puedes animar el efecto para que sea más cool */
+.special-letter:hover {
+  transform: scale(1.5) rotate(10deg);
+  color: #0ff;
+  text-shadow: 0 0 15px #0ff, 0 0 30px rgba(0, 255, 255, 0.438);
 }
 
 /* Textos secundarios */
