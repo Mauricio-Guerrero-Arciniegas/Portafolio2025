@@ -185,3 +185,25 @@ splitLettersWithSpecial('.cutout-text', [0,1,2]);
 
 // Para Guerrero: queremos efecto en letras 0,1,2 que son "G"(0),"u"(1),"e"(2)
 splitLettersWithSpecial('.guerrero-text', [0,1,2]);
+
+const cards = document.querySelectorAll('.about__card');
+
+cards.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left; // posición del cursor dentro de la tarjeta
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * 10; // rotación X max 10 grados
+    const rotateY = ((x - centerX) / centerX) * 10; // rotación Y max 10 grados
+
+    card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+  });
+});

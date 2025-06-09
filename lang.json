@@ -11,7 +11,16 @@
     "section_projects": "Projects",
     "section_contact": "Contact",
     "footer_text": "© 2025 Mauricio Guerrero. All rights reserved.",
-    "cv_text": "Download CV"
+    "cv_text": "Download CV",
+
+    "about_title": "About Me",
+    "about_description": "I'm a fullstack developer passionate about technology, design, and innovation. I love creating digital experiences that combine functionality, aesthetics, and performance.",
+    "about_card1_title": "Frontend",
+    "about_card1_text": "HTML, CSS, JavaScript, React",
+    "about_card2_title": "Backend",
+    "about_card2_text": "Node.js, Express, MongoDB",
+    "about_card3_title": "Others",
+    "about_card3_text": "Git, Figma, REST APIs, Web Animations"
   },
   "es": {
     "nav_home": "Inicio",
@@ -25,6 +34,15 @@
     "section_projects": "Proyectos",
     "section_contact": "Contacto",
     "footer_text": "© 2025 Mauricio Guerrero. Todos los derechos reservados.",
-    "cv_text": "Descargar CV"
+    "cv_text": "Descargar CV",
+
+    "about_title": "Sobre Mí",
+    "about_description": "Soy un desarrollador fullstack apasionado por la tecnología, el diseño y la innovación. Me gusta crear experiencias digitales que combinan funcionalidad, estética y rendimiento.",
+    "about_card1_title": "Frontend",
+    "about_card1_text": "HTML, CSS, JavaScript, React",
+    "about_card2_title": "Backend",
+    "about_card2_text": "Node.js, Express, MongoDB",
+    "about_card3_title": "Otros",
+    "about_card3_text": "Git, Figma, APIs REST, Animaciones Web"
   }
 }
