@@ -20,7 +20,23 @@
     "about_card2_title": "Backend",
     "about_card2_text": "Node.js, Express, MongoDB",
     "about_card3_title": "Others",
-    "about_card3_text": "Git, Figma, REST APIs, Web Animations"
+    "about_card3_text": "Git, Figma, REST APIs, Web Animations",
+
+     "projects.theGameAwards": "Modern promotional site design for The Game Awards. Focused on visuals and layout structure.",
+      "projects.maflife": "Complete online store built with React. Includes cart, product filters, and responsive design.",
+      "projects.avatar": "Landing page inspired by the movie Avatar. Smooth animations and immersive visual style.",
+      "projects.calculator": "Functional calculator built with HTML, CSS, and JavaScript. Clean design and basic validations.",
+      "projects.chatApp": "Real-time messaging app made with React Native. Smooth chat experience and built-in notifications.",
+      "projects.socialMedia": "Facebook-style social media design using React Native. Intuitive UI and reusable components.",
+      "projects.homeopathy": "Informative website about homeopathy. Includes services, contact section, and blog built in React.",
+      "projects.tinder": "Tinder-like interface clone with swipe animations and mobile-focused design.",
+      "projects.rickAndMorty": "Rick & Morty API consumption in React. Character filters and dynamic search functionality.",
+      "projects.specialized": "E-commerce website for bicycles. Interactive catalog, filters, and visually appealing design.",
+      "projects.nike": "Nike online store clone. Zoomable products, functional cart, and modern layout in React.",
+      "projects.weatherApp": "Real-time weather app using an API. Auto-location and extended forecast features.",
+      "all":"All Projects",
+      "search_placeholder": "Search projects..."
+
   },
   "es": {
     "nav_home": "Inicio",
@@ -43,6 +59,21 @@
     "about_card2_title": "Backend",
     "about_card2_text": "Node.js, Express, MongoDB",
     "about_card3_title": "Otros",
-    "about_card3_text": "Git, Figma, APIs REST, Animaciones Web"
+    "about_card3_text": "Git, Figma, APIs REST, Animaciones Web",
+
+    "projects.theGameAwards": "Diseño moderno de sitio promocional para los Game Awards. Enfocado en la estética visual y estructura tipo layout.",
+    "projects.maflife": "Tienda online completa desarrollada en React. Integra carrito, filtros de productos y diseño responsive.",
+    "projects.avatar": "Landing page inspirada en la película Avatar. Animaciones sutiles y estilo visual inmersivo.",
+    "projects.calculator": "Calculadora funcional hecha con HTML, CSS y JavaScript. Diseño limpio y validaciones básicas.",
+    "projects.chatApp": "Aplicación de mensajería en tiempo real creada con React Native. Chat fluido y notificaciones integradas.",
+    "projects.socialMedia": "Diseño de red social estilo Facebook usando React Native. Interfaz intuitiva y componentes reutilizables.",
+    "projects.homeopathy": "Sitio web informativo sobre homeopatía. Sección de servicios, contacto y blog integrada con React.",
+    "projects.tinder": "Clon de la interfaz de Tinder con animaciones swipe y diseño centrado en la experiencia móvil.",
+    "projects.rickAndMorty": "Consumo de API de Rick & Morty en React. Filtros por personaje y búsqueda dinámica.",
+    "projects.specialized": "Página web de e-commerce para bicicletas. Catálogo interactivo, filtros y diseño visualmente atractivo.",
+    "projects.nike": "Clon de tienda online de Nike. Productos con zoom, carrito funcional y diseño moderno con React.",
+    "projects.weatherApp": "App del clima en tiempo real utilizando una API. Ubicación automática y pronóstico extendido.",
+    "all": "Todos los Proyectos",
+    "search_placeholder": "Buscar proyectos..."
   }
 }

@@ -9,7 +9,6 @@ window.addEventListener("load", () => {
       document.body.classList.remove("loading");
       document.body.classList.add("loaded");
 
-      // Mostrar el título con animación suave
       const nameTitle = document.querySelector(".section__hero .name");
       if (nameTitle) {
         void nameTitle.offsetHeight;
@@ -67,7 +66,13 @@ function setLang(lang) {
     }
   }
 
-  // Mostrar bandera del idioma al que se cambiará
+  // ✅ Actualizar placeholder del buscador
+  const searchInput = document.getElementById("searchInput");
+  if (searchInput && langData[lang]["search_placeholder"]) {
+    searchInput.placeholder = langData[lang]["search_placeholder"];
+  }
+
+  // Cambiar bandera
   const flagIcon = document.getElementById("flag-icon");
   if (flagIcon) {
     if (lang === "en") {
@@ -93,7 +98,6 @@ if (langBtn) {
 loadLang();
 
 // Ajustar altura viewport
-// En script.js (o inline script)
 function setVh() {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -101,7 +105,6 @@ function setVh() {
 window.addEventListener('resize', setVh);
 window.addEventListener('load', setVh);
 setVh();
-
 
 // Cerrar menú en móvil
 const navLinks = document.querySelectorAll('.nav-links a');
@@ -115,13 +118,11 @@ navLinks.forEach(link => {
   });
 });
 
-
 function splitLettersWithSpecial(selector, specialIndices) {
   const element = document.querySelector(selector);
   const text = element.textContent;
   element.innerHTML = text.split('').map((letter, i) => {
     if (letter === ' ') return ' ';
-    // Si el índice está en specialIndices, aplica clase 'special-letter'
     if (specialIndices.includes(i)) {
       return `<span class="letter special-letter">${letter}</span>`;
     }
@@ -129,25 +130,22 @@ function splitLettersWithSpecial(selector, specialIndices) {
   }).join('');
 }
 
-// Para Mauricio: queremos efecto en letras 5,6,7 que son "c"(5),"i"(6),"o"(7)
-splitLettersWithSpecial('.cutout-text', [0,1,2]);
-
-// Para Guerrero: queremos efecto en letras 0,1,2 que son "G"(0),"u"(1),"e"(2)
-splitLettersWithSpecial('.guerrero-text', [0,1,2]);
+splitLettersWithSpecial('.cutout-text', [0, 1, 2]);
+splitLettersWithSpecial('.guerrero-text', [0, 1, 2]);
 
 const cards = document.querySelectorAll('.about__card');
 
 cards.forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left; // posición del cursor dentro de la tarjeta
+    const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = ((y - centerY) / centerY) * 10; // rotación X max 10 grados
-    const rotateY = ((x - centerX) / centerX) * 10; // rotación Y max 10 grados
+    const rotateX = ((y - centerY) / centerY) * 10;
+    const rotateY = ((x - centerX) / centerX) * 10;
 
     card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
   });
@@ -166,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const viewerImg = document.getElementById('fullscreenImage');
   const closeBtn = document.getElementById('closeViewer');
 
-  // Función para filtrar proyectos
   function filterProjects() {
     const searchTerm = searchInput.value.toLowerCase();
     const selectedCategory = categoryFilter.value;
@@ -185,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
   searchInput.addEventListener('input', filterProjects);
   categoryFilter.addEventListener('change', filterProjects);
 
-  // Abrir imagen pantalla completa al click
   projectItems.forEach(item => {
     item.addEventListener('click', () => {
       const imgSrc = item.getAttribute('data-img');
@@ -195,21 +191,17 @@ document.addEventListener('DOMContentLoaded', () => {
       viewerImg.alt = altText;
       viewer.style.display = 'flex';
 
-      // Para accesibilidad: enfocar el botón cerrar
       closeBtn.focus();
-      // Evitar scroll de fondo
       document.body.style.overflow = 'hidden';
     });
   });
 
-  // Cerrar vista ampliada
   closeBtn.addEventListener('click', () => {
     viewer.style.display = 'none';
     viewerImg.src = '';
     document.body.style.overflow = '';
   });
 
-  // Cerrar con Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && viewer.style.display === 'flex') {
       viewer.style.display = 'none';
@@ -248,21 +240,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   closeBtn.addEventListener('click', closeViewer);
 
-  // Cerrar con tecla Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && viewer.style.display === 'flex') {
       closeViewer();
     }
   });
 
-  // Cerrar al hacer clic en el fondo
   overlay.addEventListener('click', closeViewer);
-
-  // ✅ Cerrar al hacer clic en la imagen
   viewerImg.addEventListener('click', closeViewer);
 });
-
-
-
 
 
