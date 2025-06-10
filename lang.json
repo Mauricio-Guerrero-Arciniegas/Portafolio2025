@@ -21,6 +21,7 @@
     "about_card2_text": "Node.js, Express, MongoDB",
     "about_card3_title": "Others",
     "about_card3_text": "Git, Figma, REST APIs, Web Animations",
+    "projects.title": "Projects",
 
      "projects.theGameAwards": "Modern promotional site design for The Game Awards. Focused on visuals and layout structure.",
       "projects.maflife": "Complete online store built with React. Includes cart, product filters, and responsive design.",
@@ -73,7 +74,7 @@
     "about_card2_text": "Node.js, Express, MongoDB",
     "about_card3_title": "Otros",
     "about_card3_text": "Git, Figma, APIs REST, Animaciones Web",
-
+    "projects.title": "Proyectos",
     "projects.theGameAwards": "Diseño moderno de sitio promocional para los Game Awards. Enfocado en la estética visual y estructura tipo layout.",
     "projects.maflife": "Tienda online completa desarrollada en React. Integra carrito, filtros de productos y diseño responsive.",
     "projects.avatar": "Landing page inspirada en la película Avatar. Animaciones sutiles y estilo visual inmersivo.",
