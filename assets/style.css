@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --bg-color: #f5f5f5;
   --text-primary: #1a1a1a;
@@ -51,7 +56,9 @@ html, body {
   margin: 0; padding: 0;
   height: calc(var(--vh, 1vh) * 100);
   overflow-y: auto;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+
 }
 
 main {
@@ -753,6 +760,11 @@ body.dark .about__card p {
   position: relative;
 }
 
+.projects__container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Filtros */
 .projects__filters {
   display: flex;
@@ -796,10 +808,15 @@ body.dark .about__card p {
   -webkit-overflow-scrolling: touch;
   /* padding-inline: 1rem;  <-- ya agregado arriba */
   box-sizing: border-box;
-
+  width: 100%; /* en lugar de 100vw */
+  overflow-x: auto;
+  display: flex;
+  gap: 1rem;
 }
 
 .project__item {
+   flex: 0 0 auto; /* para que no se expandan */
+   max-width: 90vw;
   height: 200px;
   overflow: hidden;
   min-width: 280px;
