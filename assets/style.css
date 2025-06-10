@@ -1067,14 +1067,31 @@ body.dark .contact__card p {
 	color: #9ba8ab;
 }
 
+@media (min-width: 768px) {
+  .project__item {
+    flex: 0 0 60%;
+  }
+}
+
 /* SCROLL MANAGMENT */
 
 .projects__carousel {
   display: flex;
   overflow-x: auto;
+  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  gap: 1rem;
+  gap: 2rem;
   padding: 1rem 0;
+}
+
+.project__item {
+  flex: 0 0 80%; /* o 100% si quieres que ocupe toda la pantalla */
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  min-width: 300px; /* asegúrate de tener un ancho mínimo */
+  max-width: 600px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
 }
 
 /* Ocultar scrollbar nativo */
@@ -1091,7 +1108,7 @@ body.dark .contact__card p {
   position: absolute;
   top: 90%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 5;
   background-color: rgba(17, 33, 45, 0.8);
   color: #fff;
   border: none;

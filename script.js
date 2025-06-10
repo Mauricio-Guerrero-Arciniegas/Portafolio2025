@@ -162,14 +162,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const projectItems = document.querySelectorAll('.project__item');
 
   function filterProjects() {
-    const searchTerm = searchInput.value.toLowerCase();
+    const searchTerm = searchInput.value.toLowerCase().trim();
     const selectedCategory = categoryFilter.value;
 
     projectItems.forEach(item => {
-      const title = item.getAttribute('data-title').toLowerCase();
+      const title = item.querySelector('h3').textContent.toLowerCase();
+      const description = item.querySelector('p').textContent.toLowerCase();
       const category = item.getAttribute('data-category');
 
-      const matchesSearch = title.includes(searchTerm);
+      const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
       const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
 
       item.style.display = matchesSearch && matchesCategory ? 'block' : 'none';
@@ -178,22 +179,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   searchInput.addEventListener('input', filterProjects);
   categoryFilter.addEventListener('change', filterProjects);
+
+  // Filtro inicial
+  filterProjects();
 });
-
-// SCROLL MANAGMENT
-
-const carousel = document.getElementById('projectsCarousel');
-const scrollLeftBtn = document.querySelector('.scroll-btn.left');
-const scrollRightBtn = document.querySelector('.scroll-btn.right');
-
-scrollLeftBtn.addEventListener('click', () => {
-  carousel.scrollBy({ left: -300, behavior: 'smooth' });
-});
-
-scrollRightBtn.addEventListener('click', () => {
-  carousel.scrollBy({ left: 300, behavior: 'smooth' });
-});
-
 // Vista fullscreen animada para proyectos
 document.addEventListener('DOMContentLoaded', () => {
   const projectItems = document.querySelectorAll('.project__item');
@@ -265,3 +254,25 @@ document.addEventListener('DOMContentLoaded', () => {
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+// Scroll Carrusel
+
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.getElementById('projectsCarousel');
+  const btnLeft = document.querySelector('.scroll-btn.left');
+  const btnRight = document.querySelector('.scroll-btn.right');
+
+  btnLeft.addEventListener('click', () => {
+    carousel.scrollBy({
+      left: -300,
+      behavior: 'smooth',
+    });
+  });
+
+  btnRight.addEventListener('click', () => {
+    carousel.scrollBy({
+      left: 300,
+      behavior: 'smooth',
+    });
+  });
+});
