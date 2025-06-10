@@ -36,14 +36,14 @@
       "projects.weatherApp": "Real-time weather app using an API. Auto-location and extended forecast features.",
       "all":"All Projects",
       "search_placeholder": "Search projects...",
-      "contact-title": "Contacto",
-  "contact-subtitle": "Send me a Message !",
-  "contact-name": "Name",
-  "contact-email": "Email address",
-  "contact-message": "Your Message",
-  "contact-send": "Send Email",
-  "contact-sms": "Send SMS",
-  "contact-whatsapp": "WhatsApp"
+      "contact_title": "Contact",
+      "contact_description": "Do you have a project or an idea? Let's talk!",
+      "contact_card1_title": "Email",
+      "contact_card1_text": "Send me an email directly",
+      "contact_card2_title": "SMS",
+      "contact_card2_text": "Send me a text message",
+      "contact_card3_title": "WhatsApp",
+      "contact_card3_text": "Let's chat on WhatsApp"
 
   },
   "es": {
@@ -83,13 +83,14 @@
     "projects.weatherApp": "App del clima en tiempo real utilizando una API. Ubicación automática y pronóstico extendido.",
     "all": "Todos los Proyectos",
     "search_placeholder": "Buscar proyectos...",
-    "contact-title": "Contacto",
-  "contact-subtitle": "¿Quieres trabajar conmigo? ¡Envíame un mensaje!",
-  "contact-name": "Nombre",
-  "contact-email": "Correo electrónico",
-  "contact-message": "Tu mensaje",
-  "contact-send": "Enviar correo",
-  "contact-sms": "Enviar SMS",
-  "contact-whatsapp": "WhatsApp"
+
+    "contact_title": "Contacto",
+    "contact_description": "¿Tienes un proyecto o una idea? ¡Hablemos!",
+    "contact_card1_title": "Email",
+    "contact_card1_text": "Envíame un correo directamente",
+    "contact_card2_title": "SMS",
+    "contact_card2_text": "Envíame un mensaje de texto",
+    "contact_card3_title": "WhatsApp",
+    "contact_card3_text": "Conversemos por WhatsApp"
   }
 }

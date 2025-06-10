@@ -118,6 +118,7 @@ navLinks.forEach(link => {
   });
 });
 
+// Separacion de letras para Hero
 function splitLettersWithSpecial(selector, specialIndices) {
   const element = document.querySelector(selector);
   const text = element.textContent;
@@ -133,6 +134,7 @@ function splitLettersWithSpecial(selector, specialIndices) {
 splitLettersWithSpecial('.cutout-text', [0, 1, 2]);
 splitLettersWithSpecial('.guerrero-text', [0, 1, 2]);
 
+// Funcionalidad para proyectos
 const cards = document.querySelectorAll('.about__card');
 
 cards.forEach(card => {
@@ -154,6 +156,8 @@ cards.forEach(card => {
     card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
   });
 });
+
+// Filer and Select Section functions
 
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');

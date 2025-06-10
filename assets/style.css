@@ -624,6 +624,7 @@ body.loaded .hero__socials {
 /* Sección About */
 .section__about {
   min-height: 130dvh;
+  background-image: url(../assets/images/background2.jpg);
   background: linear-gradient(to top, #9c9e9e, #ccd0cf, #030303); 
   color: #00284d; /* azul oscuro verdoso */
   background-color: #ccd0cf;
@@ -753,10 +754,12 @@ body.dark .about__card p {
 .section__projects {
   min-height: 100dvh;
   padding: 3rem 0rem;
-  background-color: #9c9e9e;
+  background: rgba(204, 208, 207, 0.15); /* fondo translúcido */
+  backdrop-filter: blur(12px);
   color: var(--color-text-main);
   box-sizing: border-box;
   position: relative;
+  border-bottom: 1px solid var(--color-border); /* opcional */
 }
 
 .projects__container {
@@ -811,7 +814,7 @@ body.dark .about__card p {
   overflow: hidden;
   flex-shrink: 0;
   scroll-snap-align: start;
-  background: #ccd0cf; /* color-border con opacidad */
+  background: var(--color-border);
   border: 1px solid var(--color-border);
   border-radius: 1rem;
   padding: 1rem;
@@ -824,11 +827,12 @@ body.dark .about__card p {
 
 .project__item p {
   font-size: 0.9rem;
-  color: var(--text-secondary-color); /* ajusta según tu esquema */
+  color: var(--text-secondary-color);
   margin-top: 0.5rem;
   line-height: 1.4;
   text-align: center;
   padding: 0 0.5rem;
+  word-break: break-word;
 }
 
 /* Responsive para dispositivos pequeños */
@@ -857,7 +861,7 @@ body.dark .about__card p {
 .project__item h3 {
   margin-top: 0.5rem;
   font-size: 1.1rem;
-  color: #234e9e;
+  color: var(--color-accent);
 }
 
 /* Vista pantalla completa */
@@ -902,6 +906,11 @@ body.dark .about__card p {
   z-index: 1;
 }
 
+body.dark .section__projects {
+  background: #06141bee;
+  backdrop-filter: blur(14px);
+}
+
 /* Scrollbar */
 .projects__carousel::-webkit-scrollbar {
   height: 8px;
@@ -941,91 +950,115 @@ body.dark .project__item h3 {
 
 
 
+/* Seccion Contact*/
 
+.section__contact {
+  min-height: 100dvh;
+  background: linear-gradient(to top, #ccd0cf, #ffffff, #9BA8AB);
+  color: #00284d;
+  padding: 4rem 1rem 8rem 1rem;
+}
 
-#contact {
-  padding: 4rem 2rem;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+.contact__container {
+  max-width: 1000px;
+  margin: 0 auto;
   text-align: center;
-  max-width: 800px;
-  margin: auto;
 }
 
-#contact h2 {
+#contact_title {
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: #234e9e;
 }
 
-#contact p {
-  margin-bottom: 2rem;
+#contact_description {
   font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: #4A5C6A;
 }
 
-#contact-form {
+.contact__methods {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-#contact-form input,
-#contact-form textarea {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: var(--input-bg, #fff);
-  color: var(--text-color);
-  resize: vertical;
-}
-
-#contact-form button {
-  padding: 0.75rem;
-  font-size: 1rem;
-  background-color: #4a5c6a;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-#contact-form button:hover {
-  background-color: #253745;
-}
-
-.contact-buttons {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
   justify-content: center;
-  flex-wrap:wrap;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.contact-btn {
-  padding: 0.75rem 1.5rem;
+.contact__card {
+  background-color: #dfe4e3;
+  border: 1px solid rgba(0, 151, 167, 0.6);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 280px;
   text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-  color: white;
+  color: #00284d;
+  box-shadow: 0 10px 20px rgba(0, 105, 92, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.contact-btn.sms {
-  background-color: #0066cc;
+.contact__card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 30px rgba(0, 96, 100, 0.6);
 }
 
-.contact-btn.sms:hover {
-  background-color: #004999;
+.contact__card h3 {
+  color: #234e9e;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.contact-btn.whatsapp {
-  background-color: #25d366;
+.contact__card p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
 }
 
-.contact-btn.whatsapp:hover {
-  background-color: #128c7e;
+/* --- Dark mode Contact --- */
+body.dark .section__contact {
+  background: linear-gradient(to bottom, #06141B, #11212D);
+  color: var(--color-text-main);
 }
 
+body.dark #contact_title {
+  color: #CCD0CF;
+  text-shadow: 0 0 6px var(--color-accent);
+}
+
+body.dark #contact_description {
+  color: #9BA8AB;
+}
+
+body.dark .contact__card {
+  background: rgba(37, 55, 69, 0.5);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  color: #CCD0CF;
+}
+
+body.dark .contact__card h3 {
+  color: #CCD0CF;
+  text-shadow: 0 0 6px var(--color-accent);
+}
+
+body.dark .contact__card p {
+  color: #9BA8AB;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .section__contact {
+    padding-top: 6rem;
+  }
+
+  .contact__methods {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact__card {
+    width: 90%;
+  }
+}
 
 
 

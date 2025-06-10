@@ -120,19 +120,7 @@
     <h1 class="cutout-text">Mauricio</h1>
 <h1 class="guerrero-text">Guerrero</h1>
 
-<script>
-  function splitLetters(selector) {
-    const element = document.querySelector(selector);
-    const text = element.textContent;
-    element.innerHTML = text.split('').map(letter => {
-      if (letter === ' ') return ' '; // conserva espacios
-      return `<span class="letter">${letter}</span>`;
-    }).join('');
-  }
 
-  splitLetters('.cutout-text');
-  splitLetters('.guerrero-text');
-</script>
   </div>
 </div>
 				
@@ -256,74 +244,74 @@
 
     <!-- Carrusel de proyectos -->
     <div class="projects__carousel" id="projectsCarousel">
-      <div class="project__item" data-img="./assets/images/the game awards.png" data-category="Layout" data-title="Proyecto 1">
-        <img src="./assets/images/the game awards.png" alt="Proyecto 1" />
+      <div class="project__item" data-img="./assets/images/the game awards.png" data-category="Layout">
+        <img src="./assets/images/the game awards.png" alt="Diseño moderno de sitio promocional para los Game Awards. Enfocado en la estética visual y estructura tipo layout." />
         <h3>The Game Awards</h3>
         <p id="projects.theGameAwards">Diseño moderno de sitio promocional para los Game Awards. Enfocado en la estética visual y estructura tipo layout.</p>
       </div>
 
-      <div class="project__item" data-img="./assets/images/Madlife.png" data-category="React Js" data-title="Proyecto 2">
-        <img src="./assets/images/Madlife.png" alt="Proyecto 2" />
+      <div class="project__item" data-img="./assets/images/Madlife.png" data-category="React Js">
+        <img src="./assets/images/Madlife.png" alt="Tienda online completa desarrollada en React. Integra carrito, filtros de productos y diseño responsive." />
         <h3>Madlife E-commerce</h3>
         <p id="projects.maflife">Tienda online completa desarrollada en React. Integra carrito, filtros de productos y diseño responsive.</p>
       </div>
 
-      <div class="project__item" data-img="./assets/images/Avatar.png" data-category="Layout" data-title="Proyecto 3">
-        <img src="./assets/images/Avatar.png" alt="Proyecto 3" />
+      <div class="project__item" data-img="./assets/images/Avatar.png" data-category="Layout">
+        <img src="./assets/images/Avatar.png" alt="Landing page inspirada en la película Avatar. Animaciones sutiles y estilo visual inmersivo." />
         <h3>Avatar</h3>
         <p id="projects.avatar">Landing page inspirada en la película Avatar. Animaciones sutiles y estilo visual inmersivo.</p>
       </div>
 
-      <div class="project__item" data-img="./assets/images/Calculator.png" data-category="HTML - CSS - JavaScript" data-title="Proyecto 4">
-        <img src="./assets/images/Calculator.png" alt="Proyecto 4" />
+      <div class="project__item" data-img="./assets/images/Calculator.png" data-category="HTML - CSS - JavaScript">
+        <img src="./assets/images/Calculator.png" alt="Calculadora funcional hecha con HTML, CSS y JavaScript. Diseño limpio y validaciones básicas." />
         <h3>Calculator Js</h3>
         <p id="projects.calculator">Calculadora funcional hecha con HTML, CSS y JavaScript. Diseño limpio y validaciones básicas.</p>
       </div>
 
-      <div class="project__item" data-img="./assets/images/Chat App.png" data-category="React Native" data-title="Proyecto 5">
-        <img src="./assets/images/Chat App.png" alt="Proyecto 5" />
+      <div class="project__item" data-img="./assets/images/Chat App.png" data-category="React Native">
+        <img src="./assets/images/Chat App.png" alt="Aplicación de mensajería en tiempo real creada con React Native. Chat fluido y notificaciones integradas." />
         <h3>Chat App</h3>
         <p id="projects.chatApp">Aplicación de mensajería en tiempo real creada con React Native. Chat fluido y notificaciones integradas.</p>
       </div>
 
-      <div class="project__item" data-img="./assets/images/Facebook.png" data-category="React Native" data-title="Proyecto 6">
-        <img src="./assets/images/Facebook.png" alt="Proyecto 6" />
+      <div class="project__item" data-img="./assets/images/Facebook.png" data-category="React Native" >
+        <img src="./assets/images/Facebook.png" alt="Diseño de red social estilo Facebook usando React Native. Interfaz intuitiva y componentes reutilizables." />
         <h3>Social Media</h3>
         <p id="projects.socialMedia">Diseño de red social estilo Facebook usando React Native. Interfaz intuitiva y componentes reutilizables.</p>
       </div>
 
-      <div class="project__item" data-img="./assets/images/Homeopathy.png" data-category="React Js" data-title="Proyecto 7">
-        <img src="./assets/images/Homeopathy.png" alt="Proyecto 7" />
+      <div class="project__item" data-img="./assets/images/Homeopathy.png" data-category="React Js">
+        <img src="./assets/images/Homeopathy.png" alt="Sitio web informativo sobre homeopatía. Sección de servicios, contacto y blog integrada con React." />
         <h3>Homeopathy</h3>
         <p id="projects.homeopathy">Sitio web informativo sobre homeopatía. Sección de servicios, contacto y blog integrada con React.</p>
       </div>
 
-      <div class="project__item" data-img="./assets/images/Tinder.png" data-category="Layout" data-title="Proyecto 8">
-        <img src="./assets/images/Tinder.png" alt="Proyecto 8" />
+      <div class="project__item" data-img="./assets/images/Tinder.png" data-category="Layout">
+        <img src="./assets/images/Tinder.png" alt="Clon de la interfaz de Tinder con animaciones swipe y diseño centrado en la experiencia móvil." />
         <h3>Tinder</h3>
         <p id="projects.tinder">Clon de la interfaz de Tinder con animaciones swipe y diseño centrado en la experiencia móvil.</p>
       </div>
 
-      <div class="project__item" data-img="./assets/images/Rick and Morty.png" data-category="React Js" data-title="Proyecto 9">
-        <img src="./assets/images/Rick and Morty.png" alt="Proyecto 9" />
+      <div class="project__item" data-img="./assets/images/Rick and Morty.png" data-category="React Js">
+        <img src="./assets/images/Rick and Morty.png" alt="Consumo de API de Rick & Morty en React. Filtros por personaje y búsqueda dinámica." />
         <h3>Rick & Morty</h3>
         <p id="projects.rickAndMorty">Consumo de API de Rick & Morty en React. Filtros por personaje y búsqueda dinámica.</p>
       </div>
 
-      <div class="project__item" data-img="./assets/images/Specialized.png" data-category="React Js" data-title="Proyecto 10">
-        <img src="./assets/images/Specialized.png" alt="Proyecto 10" />
+      <div class="project__item" data-img="./assets/images/Specialized.png" data-category="React Js">
+        <img src="./assets/images/Specialized.png" alt="Página web de e-commerce para bicicletas. Catálogo interactivo, filtros y diseño visualmente atractivo." />
         <h3>Specialized</h3>
         <p id="projects.specialized">Página web de e-commerce para bicicletas. Catálogo interactivo, filtros y diseño visualmente atractivo.</p>
       </div>
 
-      <div class="project__item" data-img="./assets/images/Nike.png" data-category="React Js" data-title="Proyecto 11">
-        <img src="./assets/images/Nike.png" alt="Proyecto 11" />
+      <div class="project__item" data-img="./assets/images/Nike.png" data-category="React Js">
+        <img src="./assets/images/Nike.png" alt="Clon de tienda online de Nike. Productos con zoom, carrito funcional y diseño moderno con React." />
         <h3>Nike E-commerce</h3>
         <p id="projects.nike">Clon de tienda online de Nike. Productos con zoom, carrito funcional y diseño moderno con React.</p>
       </div>
 
-      <div class="project__item" data-img="./assets/images/Weather App.png" data-category="React Js" data-title="Proyecto 12">
-        <img src="./assets/images/Weather App.png" alt="Proyecto 12" />
+      <div class="project__item" data-img="./assets/images/Weather App.png" data-category="React Js">
+        <img src="./assets/images/Weather App.png" alt="App del clima en tiempo real utilizando una API. Ubicación automática y pronóstico extendido." />
         <h3>Weather App</h3>
         <p id="projects.weatherApp">App del clima en tiempo real utilizando una API. Ubicación automática y pronóstico extendido.</p>
       </div>
@@ -340,20 +328,27 @@
 
 
 
-		<section id="contact">
-  <h2 id="contact-title">Contacto</h2>
-  <p id="contact-subtitle">¿Quieres trabajar conmigo? ¡Envíame un mensaje!</p>
+		<section class="section__contact" id="contact">
+  <div class="contact__container">
+    <h2 id="contact_title">Contacto</h2>
+    <p id="contact_description">
+      ¿Tienes un proyecto o una idea? ¡Hablemos!
+    </p>
 
-  <form id="contact-form">
-    <input type="text" id-placeholder="contact-name" name="name" placeholder="Nombre" required />
-    <input type="email" id="contact-email" name="email" placeholder="Correo electrónico" required />
-    <textarea id="contact-message" name="message" rows="5" placeholder="Tu mensaje" required></textarea>
-    <button type="submit" id="contact-send">Enviar correo</button>
-  </form>
-
-  <div class="contact-buttons">
-    <a href="sms:+573205285432" class="contact-btn sms" id="contact-sms">Enviar SMS</a>
-    <a href="https://wa.me/573205285432" target="_blank" class="contact-btn whatsapp" id="contact-whatsapp">WhatsApp</a>
+    <div class="contact__methods">
+      <a href="mailto:maurizioguerrero@hotmail.com" class="contact__card" target="_blank">
+        <h3 id="contact_card1_title">Email</h3>
+        <p id="contact_card1_text">Envíame un correo directamente</p>
+      </a>
+      <a href="sms:+573205285432" class="contact__card" target="_blank">
+        <h3 id="contact_card2_title">SMS</h3>
+        <p id="contact_card2_text">Envíame un mensaje de texto</p>
+      </a>
+      <a href="https://wa.me/+573205285432" class="contact__card" target="_blank">
+        <h3 id="contact_card3_title">WhatsApp</h3>
+        <p id="contact_card3_text">Conversemos por WhatsApp</p>
+      </a>
+    </div>
   </div>
 </section>
 
