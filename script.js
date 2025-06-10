@@ -1,3 +1,4 @@
+// Loader animado y aparición del Hero
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
 
@@ -58,7 +59,6 @@ function setLang(lang) {
   currentLang = lang;
   localStorage.setItem("lang", lang);
 
-  // Actualizar textos
   for (const key in langData[lang]) {
     const el = document.getElementById(key);
     if (el) {
@@ -66,19 +66,17 @@ function setLang(lang) {
     }
   }
 
-  // ✅ Actualizar placeholder del buscador
   const searchInput = document.getElementById("searchInput");
   if (searchInput && langData[lang]["search_placeholder"]) {
     searchInput.placeholder = langData[lang]["search_placeholder"];
   }
 
-  // Cambiar bandera
   const flagIcon = document.getElementById("flag-icon");
   if (flagIcon) {
     if (lang === "en") {
       flagIcon.src = "assets/flags/es.png";
       flagIcon.alt = "Cambiar a español";
-    } else if (lang === "es") {
+    } else {
       flagIcon.src = "assets/flags/en.png";
       flagIcon.alt = "Switch to English";
     }
@@ -118,7 +116,7 @@ navLinks.forEach(link => {
   });
 });
 
-// Separacion de letras para Hero
+// Separación de letras para Hero
 function splitLettersWithSpecial(selector, specialIndices) {
   const element = document.querySelector(selector);
   const text = element.textContent;
@@ -134,7 +132,7 @@ function splitLettersWithSpecial(selector, specialIndices) {
 splitLettersWithSpecial('.cutout-text', [0, 1, 2]);
 splitLettersWithSpecial('.guerrero-text', [0, 1, 2]);
 
-// Funcionalidad para proyectos
+// Tarjetas interactivas
 const cards = document.querySelectorAll('.about__card');
 
 cards.forEach(card => {
@@ -157,16 +155,11 @@ cards.forEach(card => {
   });
 });
 
-// Filer and Select Section functions
-
+// Filtro y búsqueda de proyectos
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const categoryFilter = document.getElementById('categoryFilter');
   const projectItems = document.querySelectorAll('.project__item');
-
-  const viewer = document.getElementById('fullscreenViewer');
-  const viewerImg = document.getElementById('fullscreenImage');
-  const closeBtn = document.getElementById('closeViewer');
 
   function filterProjects() {
     const searchTerm = searchInput.value.toLowerCase();
@@ -185,36 +178,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   searchInput.addEventListener('input', filterProjects);
   categoryFilter.addEventListener('change', filterProjects);
-
-  projectItems.forEach(item => {
-    item.addEventListener('click', () => {
-      const imgSrc = item.getAttribute('data-img');
-      const altText = item.querySelector('img').alt || 'Proyecto ampliado';
-
-      viewerImg.src = imgSrc;
-      viewerImg.alt = altText;
-      viewer.style.display = 'flex';
-
-      closeBtn.focus();
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    viewer.style.display = 'none';
-    viewerImg.src = '';
-    document.body.style.overflow = '';
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && viewer.style.display === 'flex') {
-      viewer.style.display = 'none';
-      viewerImg.src = '';
-      document.body.style.overflow = '';
-    }
-  });
 });
 
+// Vista fullscreen animada para proyectos
 document.addEventListener('DOMContentLoaded', () => {
   const projectItems = document.querySelectorAll('.project__item');
   const viewer = document.getElementById('fullscreenViewer');
@@ -222,36 +188,66 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = document.getElementById('closeViewer');
   const overlay = document.getElementById('overlayBackground');
 
+  function openViewerWithAnimation(img) {
+    const rect = img.getBoundingClientRect();
+    const clone = img.cloneNode();
+
+    clone.style.position = 'fixed';
+    clone.style.left = `${rect.left}px`;
+    clone.style.top = `${rect.top}px`;
+    clone.style.width = `${rect.width}px`;
+    clone.style.height = `${rect.height}px`;
+    clone.style.zIndex = '1000';
+    clone.style.transition = 'all 1s ease-in-out';
+    clone.style.objectFit = 'fill';
+    clone.style.borderRadius = '1rem';
+
+    document.body.appendChild(clone);
+
+    requestAnimationFrame(() => {
+      clone.style.left = '50%';
+      clone.style.top = '50%';
+      clone.style.transform = 'translate(-50%, -50%)';
+      clone.style.width = '90%';
+      clone.style.height = '80vh';
+      clone.style.borderRadius = '0.5rem';
+    });
+
+    clone.addEventListener('transitionend', () => {
+      viewerImg.src = img.src;
+      viewerImg.alt = img.alt || 'Proyecto ampliado';
+      viewer.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      document.body.removeChild(clone);
+      closeBtn.focus();
+    }, { once: true });
+  }
+
   function closeViewer() {
-    viewer.style.display = 'none';
+    viewer.classList.remove('active');
     viewerImg.src = '';
     document.body.style.overflow = '';
   }
 
   projectItems.forEach(item => {
     item.addEventListener('click', () => {
-      const imgSrc = item.getAttribute('data-img');
-      const altText = item.querySelector('img').alt || 'Proyecto ampliado';
-
-      viewerImg.src = imgSrc;
-      viewerImg.alt = altText;
-      viewer.style.display = 'flex';
-
-      closeBtn.focus();
-      document.body.style.overflow = 'hidden';
+      const img = item.querySelector('img');
+      if (img) openViewerWithAnimation(img);
     });
   });
 
   closeBtn.addEventListener('click', closeViewer);
+  overlay.addEventListener('click', closeViewer);
+  viewerImg.addEventListener('click', closeViewer);
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && viewer.style.display === 'flex') {
+    if (e.key === 'Escape' && viewer.classList.contains('active')) {
       closeViewer();
     }
   });
-
-  overlay.addEventListener('click', closeViewer);
-  viewerImg.addEventListener('click', closeViewer);
 });
 
-
+// Botón scrollToTop (puedes llamarlo desde el botón del footer)
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}

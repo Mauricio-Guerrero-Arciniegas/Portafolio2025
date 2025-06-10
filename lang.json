@@ -43,7 +43,12 @@
       "contact_card2_title": "SMS",
       "contact_card2_text": "Send me a text message",
       "contact_card3_title": "WhatsApp",
-      "contact_card3_text": "Let's chat on WhatsApp"
+      "contact_card3_text": "Let's chat on WhatsApp",
+      "footer_nav_home": "Home",
+    "footer_nav_about": "About Me",
+    "footer_nav_projects": "Projects",
+    "footer_nav_contact": "Contact",
+    "footer_text": "© 2025 Mauricio Guerrero. All rights reserved."
 
   },
   "es": {
@@ -91,6 +96,12 @@
     "contact_card2_title": "SMS",
     "contact_card2_text": "Envíame un mensaje de texto",
     "contact_card3_title": "WhatsApp",
-    "contact_card3_text": "Conversemos por WhatsApp"
+    "contact_card3_text": "Conversemos por WhatsApp",
+
+    "footer_nav_home": "Inicio",
+    "footer_nav_about": "Sobre Mí",
+    "footer_nav_projects": "Proyectos",
+    "footer_nav_contact": "Contacto",
+    "footer_text": "© 2025 Mauricio Guerrero. Todos los derechos reservados."
   }
 }
