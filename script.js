@@ -180,6 +180,20 @@ document.addEventListener('DOMContentLoaded', () => {
   categoryFilter.addEventListener('change', filterProjects);
 });
 
+// SCROLL MANAGMENT
+
+const carousel = document.getElementById('projectsCarousel');
+const scrollLeftBtn = document.querySelector('.scroll-btn.left');
+const scrollRightBtn = document.querySelector('.scroll-btn.right');
+
+scrollLeftBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: -300, behavior: 'smooth' });
+});
+
+scrollRightBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: 300, behavior: 'smooth' });
+});
+
 // Vista fullscreen animada para proyectos
 document.addEventListener('DOMContentLoaded', () => {
   const projectItems = document.querySelectorAll('.project__item');
