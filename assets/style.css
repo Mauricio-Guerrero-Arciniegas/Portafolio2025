@@ -637,13 +637,13 @@ body.loaded .hero__socials {
 #about_title {
 	font-size: 2.5rem;
 	margin-bottom: 1rem;
-	color: #ffffff; /* azul oscuro */
+	color: #ffffff; 
 }
 
 #about_description {
 	font-size: 1.1rem;
 	margin-bottom: 3rem;
-	color: #ffffff; /* azul oscuro */
+	color: #ffffff; 
 }
 
 /* Cards */
@@ -724,6 +724,20 @@ body.dark .about__card p {
 	color: #9ba8ab;
 	font-weight: 300;
 }
+.scroll-btn {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
 /* RESPONSIVE ABOUT SECTION */
 @media (max-width: 600px) {
@@ -755,11 +769,12 @@ body.dark .about__card p {
 	position: relative;
 }
 .projects__title {
-	font-size: 2rem;
-	text-align: center;
-	margin-bottom: 2rem;
-	color: var(--text-primary);
-	text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+	font-size: 2.5rem;
+  text-align: center;
+  padding: 5rem 0rem 5rem 0rem;
+  color: #ffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
 }
 .projects__container {
 	max-width: 100%;
@@ -783,10 +798,43 @@ body.dark .about__card p {
 	color: var(--color-text-main);
 	font-size: 1rem;
 	transition: all 0.3s ease;
+  margin: 0rem 2rem;
 }
 .projects__filters input::placeholder {
 	color: var(--color-text-muted);
 	opacity: 0.7;
+}
+
+.projects__filters {
+  position: relative;
+  z-index: 100; /* Asegura que el contenedor tenga z-index */
+}
+
+.suggestions {
+  list-style: none;
+  padding: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #11212d;
+  color: #9ba8ab;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 8px;
+  display: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 5; /* Asegúrate de que esté sobre todo */
+}
+
+.suggestions li {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 /* CARRUSEL */
@@ -799,8 +847,8 @@ body.dark .about__card p {
 	padding-bottom: 1rem;
 	padding-inline: 1rem;
 	box-sizing: border-box;
-	max-width: 95vw;
-	width: 100%;
+	max-width: 85%;
+  margin: 0 auto;
 }
 .project__item {
 	flex: 0 0 auto;
@@ -846,6 +894,10 @@ body.dark .about__card p {
 	#categoryFilter {
 		margin: 0px 10px;
 	}
+  .projects__title {
+    padding: .5rem;
+  }
+  
 }
 .project__item:hover {
 	transform: scale(1.05);
@@ -914,14 +966,66 @@ body.dark .section__projects {
 }
 
 /* SCROLLBAR */
-.projects__carousel::-webkit-scrollbar {
-	height: 8px;
+
+/* Botones de scroll */
+.scroll-btn {
+  position: absolute;
+  transform: translateY(-50%);
+  z-index: 5;
+  background-color: rgba(17, 33, 45, 0.8);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease;
 }
 
-.projects__carousel::-webkit-scrollbar-thumb {
-	background-color: var(--color-accent);
-	border-radius: 4px;
+.scroll-btn:hover {
+  background-color: rgba(17, 33, 45, 1);
 }
+
+.scroll-btn.left {
+  left: 1rem;
+}
+
+.scroll-btn.right {
+  right: 1rem;
+}
+
+.section__projects {
+  position: relative;
+}
+
+.projects__carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.project__item {
+  flex: 0 0 80%; 
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  min-width: 300px; 
+  max-width: 600px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+/* Ocultar scrollbar nativo */
+.projects__carousel::-webkit-scrollbar {
+  display: none;
+}
+.projects__carousel {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 
 /* DARK MODE SECTION PROJECTS */
 
@@ -947,7 +1051,7 @@ body.dark .projects__filters input::placeholder {
 }
 
 body.dark .project__item {
-	background: rgba(37, 55, 69, 0.5); /* color-accent con transparencia */
+	background: rgba(37, 55, 69, 0.5); 
 	border: 1px solid var(--color-border);
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 	backdrop-filter: blur(10px);
@@ -1073,73 +1177,10 @@ body.dark .contact__card p {
   }
 }
 
-/* SCROLL MANAGMENT */
-
-.projects__carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  gap: 2rem;
-  padding: 1rem 0;
-}
-
-.project__item {
-  flex: 0 0 80%; /* o 100% si quieres que ocupe toda la pantalla */
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
-  min-width: 300px; /* asegúrate de tener un ancho mínimo */
-  max-width: 600px;
-  margin: 0 auto;
-  transition: transform 0.3s ease;
-}
-
-/* Ocultar scrollbar nativo */
-.projects__carousel::-webkit-scrollbar {
-  display: none;
-}
-.projects__carousel {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Botones de scroll */
-.scroll-btn {
-  position: absolute;
-  top: 90%;
-  transform: translateY(-50%);
-  z-index: 5;
-  background-color: rgba(17, 33, 45, 0.8);
-  color: #fff;
-  border: none;
-  padding: 0.75rem 1rem;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.5rem;
-  transition: background-color 0.3s ease;
-}
-
-.scroll-btn:hover {
-  background-color: rgba(17, 33, 45, 1);
-}
-
-.scroll-btn.left {
-  left: 1rem;
-}
-
-.scroll-btn.right {
-  right: 1rem;
-}
-
-/* Para asegurar que la sección esté en posición relativa */
-.section__projects {
-  position: relative;
-}
-
 /* RESPONSIVE CONTACT SECTION */
 @media (max-width: 600px) {
 	.section__contact {
-		padding: 25rem 0rem 25rem 0rem;
+		padding: 24rem 0rem 25rem 0rem;
 	}
 
 	.contact__methods {
