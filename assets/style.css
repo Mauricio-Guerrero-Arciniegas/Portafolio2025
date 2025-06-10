@@ -624,9 +624,9 @@ body.loaded .hero__socials {
 /* Sección About */
 .section__about {
   min-height: 130dvh;
-  background: linear-gradient(to top, #e0f7fa, #3b91c4, #030303); /* cyan claro */
+  background: linear-gradient(to top, #9c9e9e, #ccd0cf, #030303); 
   color: #00284d; /* azul oscuro verdoso */
-  background-color: var(--color-bg-secondary);
+  background-color: #ccd0cf;
 }
 
 .about__container {
@@ -753,7 +753,7 @@ body.dark .about__card p {
 .section__projects {
   min-height: 100dvh;
   padding: 3rem 0rem;
-  background-color: #9ba8ab;
+  background-color: #9c9e9e;
   color: var(--color-text-main);
   box-sizing: border-box;
   position: relative;
@@ -778,13 +778,14 @@ body.dark .about__card p {
   padding: 0.6rem 1rem;
   border-radius: 0.5rem;
   border: 1px solid var(--color-border);
-  background: transparent;
+  background: var(--color-bg);
   color: var(--color-text-main);
   font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .projects__filters input::placeholder {
-  color: var(--color-text-main);
+  color: var(--color-text-muted);
   opacity: 0.7;
 }
 
@@ -796,41 +797,48 @@ body.dark .about__card p {
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   padding-bottom: 1rem;
-  padding-inline: 1rem; /* deja espacio a los lados */
+  padding-inline: 1rem;
   box-sizing: border-box;
-  
   max-width: 95vw;
-  overflow-x: auto;
-  display: flex;
-  gap: 1.5rem;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  /* padding-inline: 1rem;  <-- ya agregado arriba */
-  box-sizing: border-box;
-  width: 100%; /* en lugar de 100vw */
-  overflow-x: auto;
-  display: flex;
-  gap: 1rem;
+  width: 100%;
 }
 
 .project__item {
-   flex: 0 0 auto; /* para que no se expandan */
-   max-width: 90vw;
-  height: 200px;
-  overflow: hidden;
+  flex: 0 0 auto;
   min-width: 280px;
+  max-width: 90vw;
+  height: 400px;
+  overflow: hidden;
   flex-shrink: 0;
   scroll-snap-align: start;
-  background: rgba(37, 55, 69, 0.6);
+  background: #ccd0cf; /* color-border con opacidad */
   border: 1px solid var(--color-border);
   border-radius: 1rem;
   padding: 1rem;
   text-align: center;
   backdrop-filter: blur(8px);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
   box-sizing: border-box;
 }
+
+.project__item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary-color); /* ajusta según tu esquema */
+  margin-top: 0.5rem;
+  line-height: 1.4;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+/* Responsive para dispositivos pequeños */
+@media (max-width: 768px) {
+  .project__item p {
+    font-size: 0.85rem;
+    padding: 0 0.25rem;
+  }
+}
+
 
 .project__item:hover {
   transform: scale(1.05);
@@ -838,19 +846,18 @@ body.dark .about__card p {
 
 .project__item img {
   width: 100%;
-  max-height: 140px; /* Ajusta según tu diseño */
+  max-height: 140px;
   border-radius: 0.5rem;
-  object-fit: cover; /* O usa 'contain' si prefieres mostrar todo */
+  object-fit: cover;
   pointer-events: none;
   display: block;
   margin: 0 auto;
 }
 
-
 .project__item h3 {
   margin-top: 0.5rem;
   font-size: 1.1rem;
-  color: var(--color-text-main);
+  color: #234e9e;
 }
 
 /* Vista pantalla completa */
@@ -864,9 +871,11 @@ body.dark .about__card p {
   z-index: 999;
   padding: 2rem;
 }
+
 .project__fullscreen.active {
   display: flex;
 }
+
 .project__fullscreen img {
   max-width: 90%;
   max-height: 80vh;
@@ -874,6 +883,7 @@ body.dark .about__card p {
   cursor: zoom-out;
   z-index: 2;
 }
+
 .close__btn {
   position: absolute;
   top: 1rem;
@@ -885,13 +895,14 @@ body.dark .about__card p {
   z-index: 3;
   cursor: pointer;
 }
+
 .overlay__background {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-/* Scrollbar estilo (opcional) */
+/* Scrollbar */
 .projects__carousel::-webkit-scrollbar {
   height: 8px;
 }
@@ -900,6 +911,35 @@ body.dark .about__card p {
   background-color: var(--color-accent);
   border-radius: 4px;
 }
+
+/* Modo oscuro */
+
+
+
+body.dark .projects__filters input,
+body.dark .projects__filters select {
+  background: var(--color-bg);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+}
+
+body.dark .projects__filters input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+body.dark .project__item {
+  background: rgba(37, 55, 69, 0.5); /* color-accent con transparencia */
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+body.dark .project__item h3 {
+  color: var(--color-text-main);
+}
+
+
 
 
 
