@@ -217,20 +217,110 @@
     <div class="about__cards">
       <div class="about__card">
         <h3 id="about_card1_title">Frontend</h3>
-        <p id="about_card1_text">HTML, CSS, JavaScript, React</p>
+        <p id="about_card1_text">HTML5, CSS, BEM, SASS, JavaScript, React, React Native</p>
       </div>
       <div class="about__card">
         <h3 id="about_card2_title">Backend</h3>
         <p id="about_card2_text">Node.js, Express, MongoDB</p>
       </div>
-      
+      <div class="about__card">
+        <h3 id="about_card3_title">Git & GitHub</h3>
+        <p id="about_card3_text">Control de versiones, colaboración y flujo de trabajo con GitHub</p>
+      </div>
     </div>
   </div>
 </section>
 
 
 
-		<section>projects</section>
+		<section class="section__projects" id="projects">
+  <div class="projects__container">
+
+    <!-- Filtros -->
+    <div class="projects__filters">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Buscar proyectos..."
+        aria-label="Buscar proyectos"
+      />
+
+      <select id="categoryFilter" aria-label="Filtrar por categoría">
+        <option value="all">Todos</option>
+        <option value="frontend">Frontend</option>
+        <option value="backend">Backend</option>
+        <option value="fullstack">Fullstack</option>
+        <option value="design">Diseño</option>
+      </select>
+    </div>
+
+    <!-- Carrusel de proyectos -->
+    <div class="projects__carousel" id="projectsCarousel">
+      <div class="project__item" data-img="./assets/images/Avatar.png" data-category="frontend" data-title="Proyecto 1">
+        <img src="./assets/images/Avatar.png" alt="Proyecto 1" />
+        <h3>Proyecto 1</h3>
+      </div>
+
+      <!-- Reemplaza estas rutas con las correctas si aún marca 404 -->
+      <div class="project__item" data-img="img/p2-full.png" data-category="backend" data-title="Proyecto 2">
+        <img src="img/p2-thumb.png" alt="Proyecto 2" />
+        <h3>Proyecto 2</h3>
+      </div>
+
+      <div class="project__item" data-img="img/p3-full.png" data-category="fullstack" data-title="Proyecto 3">
+        <img src="img/p3-thumb.png" alt="Proyecto 3" />
+        <h3>Proyecto 3</h3>
+      </div>
+
+      <div class="project__item" data-img="img/p4-full.png" data-category="design" data-title="Proyecto 4">
+        <img src="img/p4-thumb.png" alt="Proyecto 4" />
+        <h3>Proyecto 4</h3>
+      </div>
+
+      <!-- Proyectos 5 al 12 -->
+      <div class="project__item" data-img="img/p5-full.png" data-category="frontend" data-title="Proyecto 5">
+        <img src="img/p5-thumb.png" alt="Proyecto 5" />
+        <h3>Proyecto 5</h3>
+      </div>
+      <div class="project__item" data-img="img/p6-full.png" data-category="backend" data-title="Proyecto 6">
+        <img src="img/p6-thumb.png" alt="Proyecto 6" />
+        <h3>Proyecto 6</h3>
+      </div>
+      <div class="project__item" data-img="img/p7-full.png" data-category="fullstack" data-title="Proyecto 7">
+        <img src="img/p7-thumb.png" alt="Proyecto 7" />
+        <h3>Proyecto 7</h3>
+      </div>
+      <div class="project__item" data-img="img/p8-full.png" data-category="design" data-title="Proyecto 8">
+        <img src="img/p8-thumb.png" alt="Proyecto 8" />
+        <h3>Proyecto 8</h3>
+      </div>
+      <div class="project__item" data-img="img/p9-full.png" data-category="frontend" data-title="Proyecto 9">
+        <img src="img/p9-thumb.png" alt="Proyecto 9" />
+        <h3>Proyecto 9</h3>
+      </div>
+      <div class="project__item" data-img="img/p10-full.png" data-category="backend" data-title="Proyecto 10">
+        <img src="img/p10-thumb.png" alt="Proyecto 10" />
+        <h3>Proyecto 10</h3>
+      </div>
+      <div class="project__item" data-img="img/p11-full.png" data-category="fullstack" data-title="Proyecto 11">
+        <img src="img/p11-thumb.png" alt="Proyecto 11" />
+        <h3>Proyecto 11</h3>
+      </div>
+      <div class="project__item" data-img="img/p12-full.png" data-category="design" data-title="Proyecto 12">
+        <img src="img/p12-thumb.png" alt="Proyecto 12" />
+        <h3>Proyecto 12</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vista pantalla completa -->
+  <div class="project__fullscreen" id="fullscreenViewer" role="dialog" aria-modal="true" aria-label="Vista ampliada del proyecto">
+    <div class="overlay__background" id="overlayBackground"></div>
+    <button class="close__btn" id="closeViewer" aria-label="Cerrar vista ampliada">&times;</button>
+    <img src="" alt="" id="fullscreenImage" />
+  </div>
+</section>
+
 
 
 			<section class="section__contact" id="contact">Contact</section>

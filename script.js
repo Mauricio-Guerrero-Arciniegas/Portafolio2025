@@ -157,3 +157,112 @@ cards.forEach(card => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.getElementById('searchInput');
+  const categoryFilter = document.getElementById('categoryFilter');
+  const projectItems = document.querySelectorAll('.project__item');
+
+  const viewer = document.getElementById('fullscreenViewer');
+  const viewerImg = document.getElementById('fullscreenImage');
+  const closeBtn = document.getElementById('closeViewer');
+
+  // Función para filtrar proyectos
+  function filterProjects() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const selectedCategory = categoryFilter.value;
+
+    projectItems.forEach(item => {
+      const title = item.getAttribute('data-title').toLowerCase();
+      const category = item.getAttribute('data-category');
+
+      const matchesSearch = title.includes(searchTerm);
+      const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
+
+      item.style.display = matchesSearch && matchesCategory ? 'block' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('input', filterProjects);
+  categoryFilter.addEventListener('change', filterProjects);
+
+  // Abrir imagen pantalla completa al click
+  projectItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const imgSrc = item.getAttribute('data-img');
+      const altText = item.querySelector('img').alt || 'Proyecto ampliado';
+
+      viewerImg.src = imgSrc;
+      viewerImg.alt = altText;
+      viewer.style.display = 'flex';
+
+      // Para accesibilidad: enfocar el botón cerrar
+      closeBtn.focus();
+      // Evitar scroll de fondo
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Cerrar vista ampliada
+  closeBtn.addEventListener('click', () => {
+    viewer.style.display = 'none';
+    viewerImg.src = '';
+    document.body.style.overflow = '';
+  });
+
+  // Cerrar con Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && viewer.style.display === 'flex') {
+      viewer.style.display = 'none';
+      viewerImg.src = '';
+      document.body.style.overflow = '';
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const projectItems = document.querySelectorAll('.project__item');
+  const viewer = document.getElementById('fullscreenViewer');
+  const viewerImg = document.getElementById('fullscreenImage');
+  const closeBtn = document.getElementById('closeViewer');
+  const overlay = document.getElementById('overlayBackground');
+
+  function closeViewer() {
+    viewer.style.display = 'none';
+    viewerImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  projectItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const imgSrc = item.getAttribute('data-img');
+      const altText = item.querySelector('img').alt || 'Proyecto ampliado';
+
+      viewerImg.src = imgSrc;
+      viewerImg.alt = altText;
+      viewer.style.display = 'flex';
+
+      closeBtn.focus();
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  closeBtn.addEventListener('click', closeViewer);
+
+  // Cerrar con tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && viewer.style.display === 'flex') {
+      closeViewer();
+    }
+  });
+
+  // Cerrar al hacer clic en el fondo
+  overlay.addEventListener('click', closeViewer);
+
+  // ✅ Cerrar al hacer clic en la imagen
+  viewerImg.addEventListener('click', closeViewer);
+});
+
+
+
+
+
