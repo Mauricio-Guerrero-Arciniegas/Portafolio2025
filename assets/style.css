@@ -748,13 +748,12 @@ body.dark .about__card p {
 
 
 
-
 /*Seccion proyectos*/
 /* Contenedor sección */
 .section__projects {
   min-height: 100dvh;
   padding: 3rem 0rem;
-  background-color: var(--color-bg-secondary);
+  background-color: #9ba8ab;
   color: var(--color-text-main);
   box-sizing: border-box;
   position: relative;
