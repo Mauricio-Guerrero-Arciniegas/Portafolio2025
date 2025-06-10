@@ -35,7 +35,15 @@
       "projects.nike": "Nike online store clone. Zoomable products, functional cart, and modern layout in React.",
       "projects.weatherApp": "Real-time weather app using an API. Auto-location and extended forecast features.",
       "all":"All Projects",
-      "search_placeholder": "Search projects..."
+      "search_placeholder": "Search projects...",
+      "contact-title": "Contacto",
+  "contact-subtitle": "Send me a Message !",
+  "contact-name": "Name",
+  "contact-email": "Email address",
+  "contact-message": "Your Message",
+  "contact-send": "Send Email",
+  "contact-sms": "Send SMS",
+  "contact-whatsapp": "WhatsApp"
 
   },
   "es": {
@@ -74,6 +82,14 @@
     "projects.nike": "Clon de tienda online de Nike. Productos con zoom, carrito funcional y diseño moderno con React.",
     "projects.weatherApp": "App del clima en tiempo real utilizando una API. Ubicación automática y pronóstico extendido.",
     "all": "Todos los Proyectos",
-    "search_placeholder": "Buscar proyectos..."
+    "search_placeholder": "Buscar proyectos...",
+    "contact-title": "Contacto",
+  "contact-subtitle": "¿Quieres trabajar conmigo? ¡Envíame un mensaje!",
+  "contact-name": "Nombre",
+  "contact-email": "Correo electrónico",
+  "contact-message": "Tu mensaje",
+  "contact-send": "Enviar correo",
+  "contact-sms": "Enviar SMS",
+  "contact-whatsapp": "WhatsApp"
   }
 }

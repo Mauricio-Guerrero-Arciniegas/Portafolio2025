@@ -340,7 +340,25 @@
 
 
 
-			<section class="section__contact" id="contact">Contact</section>
+		<section id="contact">
+  <h2 id="contact-title">Contacto</h2>
+  <p id="contact-subtitle">¿Quieres trabajar conmigo? ¡Envíame un mensaje!</p>
+
+  <form id="contact-form">
+    <input type="text" id-placeholder="contact-name" name="name" placeholder="Nombre" required />
+    <input type="email" id="contact-email" name="email" placeholder="Correo electrónico" required />
+    <textarea id="contact-message" name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+    <button type="submit" id="contact-send">Enviar correo</button>
+  </form>
+
+  <div class="contact-buttons">
+    <a href="sms:+573205285432" class="contact-btn sms" id="contact-sms">Enviar SMS</a>
+    <a href="https://wa.me/573205285432" target="_blank" class="contact-btn whatsapp" id="contact-whatsapp">WhatsApp</a>
+  </div>
+</section>
+
+
+
 			<section class="section__footer" id="footer">copyright</section>
 		</main>
 	</body>
