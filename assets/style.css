@@ -607,6 +607,8 @@ body.loaded .hero__socials {
   justify-content: center;
   align-items: center;
   color: var(--text-color);
+	
+	height: auto;
 }
 
 .section__about::before {
@@ -785,6 +787,7 @@ body.dark .about__card p {
   align-items: center;
   color: var(--text-color);
 	z-index: 0;
+	height: auto;
 }
 
 /* Fondo translúcido con degradado y textura */
@@ -792,16 +795,11 @@ body.dark .about__card p {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(
-      rgba(6, 20, 27, 0.85),
-      rgba(6, 20, 27, 0.85)
-    ),
-    url(../assets/images/Backgrounds/background3.jpg);
+  background-image: url(../assets/images/Backgrounds/background3.jpg);
   background-blend-mode: overlay;
   background-size: cover;
   background-position: center;
   transform: scale(1.1);
-  opacity: 0.9;
   z-index: -1;
   pointer-events: none;
 }
@@ -1121,6 +1119,8 @@ body.dark .project__item p {
   align-items: center;
   color: var(--text-color);
   transition: background 0.4s ease, color 0.4s ease;
+	
+	height: auto;
 }
 
 /* Fondo visual con imagen y degradado */
