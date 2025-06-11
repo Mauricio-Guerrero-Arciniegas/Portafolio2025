@@ -208,7 +208,7 @@ body.loaded footer {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 50%; /* ajusta el ancho según lo que necesites */
+	width: 49%; /* ajusta el ancho según lo que necesites */
 	height: calc(var(--vh, 1vh) * 100);
 
 	/* Degradado para que el glass se desvanezca hacia abajo */
@@ -245,38 +245,33 @@ body.loaded footer {
 	-webkit-text-fill-color: transparent;
 	user-select: none;
 
-	/* 🔽 Borde blanco semi-transparente */
-	-webkit-text-stroke: 0.1px rgba(255, 255, 255, 0.6);
-}
-
-.text-wrapper {
-	position: relative;
-	z-index: 3;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	width: 100%;
-	padding: 0 6vw;
-}
-
-.guerrero-text {
-	margin-top: 230px;
-	font-size: clamp(40px, 10vw, 120px);
-	font-weight: 900;
-	color: rgba(255, 255, 255, 0.85);
-	text-shadow: 0 0 5px rgba(255, 255, 255, 0.418),
-		0 0 10px rgba(0, 255, 255, 0.2);
-	user-select: none;
 }
 
 @media (max-width: 600px) {
 	.text-wrapper {
+    white-space: nowrap;
 		flex-direction: row;
 		align-items: center;
 
-		padding: 0 4vw;
-		margin-top: 30px;
+		padding: 0 0vw;
+		margin-top: 10px;
 	}
+  .cutout-text {
+    -webkit-text-stroke: 1px white;
+    text-stroke: 1px white;
+  }
+  
+}
+
+.text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  z-index: 3;
+  bottom: 10%;
 }
 
 .letter {
@@ -287,9 +282,12 @@ body.loaded footer {
 
 /* Efecto especial: por ejemplo, escala y cambio de color */
 .special-letter {
-	color: rgba(0, 255, 255, 0.493);
+	color: rgba(0, 255, 255, 0.507);
 	font-weight: 900;
-	text-shadow: 0 0 2px rgba(0, 255, 255, 0.479);
+	text-shadow: 0 0 1px rgba(0, 255, 255, 0.123);
+  font-size: 2em;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.507);
+	text-stroke: 1px rgba(0, 255, 255, 0.493);
 }
 
 /* También puedes animar el efecto para que sea más cool */
@@ -297,23 +295,6 @@ body.loaded footer {
 	transform: scale(1.5) rotate(10deg);
 	color: #0ff;
 	text-shadow: 0 0 15px #0ff, 0 0 30px rgba(0, 255, 255, 0.438);
-}
-
-/* Textos secundarios */
-.subtext {
-	opacity: 0;
-	transform: translateY(20px);
-	transition: opacity 0.6s ease, transform 0.6s ease;
-	font-size: 1.2rem;
-	color: white;
-	text-shadow: 0 0 1px cyan, 0 0 8px cyan;
-	margin-top: 0.9rem;
-	text-align: center;
-}
-
-.subtext.visible {
-	opacity: 1;
-	transform: translateY(0);
 }
 
 /* Navbar */
