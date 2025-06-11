@@ -614,7 +614,6 @@ body.loaded .hero__socials {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(6, 20, 27, 0.7), rgba(6, 20, 27, 0.3)),
     url(../assets/images/Backgrounds/background3.jpg);
   background-blend-mode: overlay;
   background-size: cover;
@@ -638,6 +637,15 @@ body.loaded .hero__socials {
   letter-spacing: 1px;
 }
 
+.me1 {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.me2 {
+  color: white;
+}
+
 #about_description {
   font-size: 1.1rem;
   margin-bottom: 3rem;
@@ -648,7 +656,7 @@ body.loaded .hero__socials {
 .about__cards {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
