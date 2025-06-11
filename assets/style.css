@@ -617,15 +617,22 @@ body.loaded .hero__socials {
 /* ABOUT SECTION */
 
 .section__about {
-	min-height: 100svh;
+	min-height: 100vh; /* Fallback */
+	min-height: 100svh; /* Safari moderno (iOS 15.4+) */
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	background: linear-gradient(
 			to bottom,
-			/* dirección del gradiente */ rgb(0, 0, 0),
-			#ccd0cf
+			rgba(6, 20, 27, 0.95),
+			rgba(204, 208, 207, 0.9)
 		),
 		#ccd0cf;
-	background-size: contain, cover;
-	color: #00284d;
+	background-size: cover;
+	color: var(--text-color);
+	transition: background 0.4s ease, color 0.4s ease;
 }
 
 .about__container {
@@ -742,7 +749,7 @@ body.dark .about__card p {
 /* RESPONSIVE ABOUT SECTION */
 @media (max-width: 600px) {
 	.section__about {
-		padding: 25rem 0rem;
+		padding: 5rem 1rem;
 	}
 
 	.about__cards {
@@ -751,22 +758,32 @@ body.dark .about__card p {
 	}
 
 	.about__card {
-		transform: none !important;
-		animation: none !important;
-		width: 90%;
-	}
+		 padding: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+	
+  #about_title {
+    font-size: 2rem;
+  }
+
+  #about_description {
+    font-size: 1rem;
+  }
 }
 
 /* PROJECTS SECTION*/
 .section__projects {
-	min-height: 100svh;
-	padding: 3rem 0rem;
-	background: #ccd0cf;
-	background-repeat: repeat;
-	background-size: contain; 
-	color: var(--color-text-main);
-	box-sizing: border-box;
-	position: relative;
+  min-height: 100svh;
+  padding: 3rem 1rem;
+  background: #ccd0cf;
+  color: var(--color-text-main, #06141B);
+  background-repeat: repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  position: relative;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 .projects__title {
 	font-size: 2.5rem;
@@ -807,7 +824,7 @@ body.dark .about__card p {
 
 .projects__filters {
   position: relative;
-  z-index: 100; /* Asegura que el contenedor tenga z-index */
+  z-index: 4; /* Asegura que el contenedor tenga z-index */
 }
 
 .suggestions {
@@ -825,7 +842,7 @@ body.dark .about__card p {
   border-radius: 8px;
   display: none;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 5; /* Asegúrate de que esté sobre todo */
+  z-index: 4; /* Asegúrate de que esté sobre todo */
 }
 
 .suggestions li {
@@ -882,8 +899,8 @@ body.dark .about__card p {
 /* RESPONSIVE PROJECTS SECTION */
 @media (max-width: 600px) {
   .section__projects {
-    padding: 25rem 0rem;
-}
+    padding: 3rem 1rem;
+  }
 	.project__item p {
 		font-size: 0.85rem;
 		padding: 0 0.25rem;
@@ -895,8 +912,23 @@ body.dark .about__card p {
 		margin: 0px 10px;
 	}
   .projects__title {
-    padding: .5rem;
+    font-size: 2rem;
+  padding: 2rem 1rem;
   }
+  .projects__filters input,
+.projects__filters select {
+  margin: 0.5rem 0;
+  width: 100%;
+}
+.projects__carousel {
+  max-width: 100%;
+  padding-inline: 0.5rem;
+  gap: 1rem;
+}
+.project__item {
+  width: 90vw;
+  margin: 0 auto;
+}
   
 }
 .project__item:hover {
@@ -1073,125 +1105,200 @@ body.dark .project__item p {
 	opacity: 1;
 }
 
-
-
-
-
-/* Seccion Contact*/
+/* CONTACT SECTION */
 
 .section__contact {
-	min-height: 100svh;
-	background: #ccd0cf;
-	color: #00284d;
-	padding: 4rem 1rem 8rem 1rem;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 2rem;
+  background: #ccd0cf;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 .contact__container {
-	max-width: 1000px;
-	margin: 0 auto;
-	text-align: center;
+  max-width: 900px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 96, 100, 0.25);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 151, 167, 0.6);
 }
 
 #contact_title {
-	font-size: 2.5rem;
-	margin-bottom: 1rem;
-	color: #234e9e;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #234e9e;
 }
 
 #contact_description {
-	font-size: 1.1rem;
-	margin-bottom: 3rem;
-	color: #4a5c6a;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #333;
 }
 
+/* FLIP CARDS */
 .contact__methods {
-	display: flex;
-	justify-content: center;
-	gap: 2rem;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-.contact__card {
-	background-color: #dfe4e3;
-	border: 1px solid rgba(0, 151, 167, 0.6);
-	border-radius: 1rem;
-	padding: 2rem;
-	width: 280px;
-	text-decoration: none;
-	color: #00284d;
-	box-shadow: 0 10px 20px rgba(0, 105, 92, 0.3);
-	transition: transform 0.4s ease, box-shadow 0.4s ease;
+.flip-card {
+  background: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
 }
 
-.contact__card:hover {
-	transform: scale(1.05);
-	box-shadow: 0 20px 30px rgba(0, 96, 100, 0.6);
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
 }
 
-.contact__card h3 {
-	color: #234e9e;
-	font-size: 1.5rem;
-	margin-bottom: 1rem;
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
 }
 
-.contact__card p {
-	font-size: 1rem;
-	color: var(--color-text-muted);
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  backface-visibility: hidden;
+  border: 1px solid rgba(0, 151, 167, 0.4);
 }
 
-/* --- Dark mode Contact --- */
+.flip-card-front i,
+.flip-card-back i {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.flip-card-front span,
+.flip-card-back span {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-card-back a {
+  text-decoration: none;
+  color: #234e9e;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flip-card-back a:hover {
+  color: #10243d;
+}
+
+/* DARK MODE */
 body.dark .section__contact {
-	background: #11212d;
-	color: var(--color-text-main);
+  background: #11212d;
+  color: #ccd0cf;
+}
+
+body.dark .contact__container {
+  background-color: rgba(37, 55, 69, 0.6);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 body.dark #contact_title {
-	color: #ccd0cf;
-	text-shadow: 0 0 6px var(--color-accent);
+  color: #ccd0cf;
+  text-shadow: 0 0 6px var(--color-accent);
 }
 
 body.dark #contact_description {
-	color: #9ba8ab;
+  color: #9ba8ab;
 }
 
-body.dark .contact__card {
-	background: rgba(37, 55, 69, 0.5);
-	border: 1px solid var(--color-border);
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-	backdrop-filter: blur(10px);
-	color: #ccd0cf;
+body.dark .flip-card-front,
+body.dark .flip-card-back {
+  background-color: rgba(17, 33, 45, 0.8);
+  border: 1px solid rgba(204, 208, 207, 0.2);
+  color: #ccd0cf;
 }
 
-body.dark .contact__card h3 {
-	color: #ccd0cf;
-	text-shadow: 0 0 6px var(--color-accent);
+body.dark .flip-card-back a {
+  color: #9ba8ab;
 }
 
-body.dark .contact__card p {
-	color: #9ba8ab;
+body.dark .flip-card-back a:hover {
+  color: #ccd0cf;
 }
 
-@media (min-width: 768px) {
-  .project__item {
-    flex: 0 0 60%;
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section__contact {
+    padding: 4rem 1rem;
+  }
+
+  #contact_title {
+    font-size: 2rem;
+  }
+
+  #contact_description {
+    font-size: 1rem;
+  }
+
+  .flip-card {
+    width: 160px;
+    height: 160px;
+  }
+
+  .flip-card-front i,
+  .flip-card-back i {
+    font-size: 2rem;
+  }
+
+  .flip-card-front span,
+  .flip-card-back span {
+    font-size: 1rem;
   }
 }
 
-/* RESPONSIVE CONTACT SECTION */
-@media (max-width: 600px) {
-	.section__contact {
-		padding: 24rem 0rem 25rem 0rem;
-	}
-
-	.contact__methods {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.contact__card {
-		width: 90%;
-	}
+/* Mostrar SMS solo en móvil */
+.mobile-only {
+  display: none;
 }
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: inline-block;
+  }
+}
+
+
  /* FOOTER SECTION */
 .footer {
 	background-color: #11212d;

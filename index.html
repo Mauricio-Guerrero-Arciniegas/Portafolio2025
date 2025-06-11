@@ -332,29 +332,63 @@
 
 
 
-		<section class="section__contact" id="contact">
+		<section id="contact" class="section__contact">
   <div class="contact__container">
-    <h2 id="contact_title">Contacto</h2>
-    <p id="contact_description">
-      ¿Tienes un proyecto o una idea? ¡Hablemos!
-    </p>
+    <h2 id="contact_title" data-i18n="contact_title">Contact Me</h2>
+    <p id="contact_description" data-i18n="contact_description">Feel free to reach out via any method below.</p>
 
     <div class="contact__methods">
-      <a href="mailto:maurizioguerrero@hotmail.com" class="contact__card" target="_blank">
-        <h3 id="contact_card1_title">Email</h3>
-        <p id="contact_card1_text">Envíame un correo directamente</p>
-      </a>
-      <a href="sms:+573205285432" class="contact__card" target="_blank">
-        <h3 id="contact_card2_title">SMS</h3>
-        <p id="contact_card2_text">Envíame un mensaje de texto</p>
-      </a>
-      <a href="https://wa.me/+573205285432" class="contact__card" target="_blank">
-        <h3 id="contact_card3_title">WhatsApp</h3>
-        <p id="contact_card3_text">Conversemos por WhatsApp</p>
-      </a>
+      <!-- Email Card -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fas fa-envelope"></i>
+            <span id="contact_email" data-i18n="contact_email">Email</span>
+          </div>
+          <div class="flip-card-back">
+            <a href="mailto:yourmail@example.com" target="_blank" rel="noopener">
+              <i class="fas fa-paper-plane"></i>
+              <span data-i18n="send_email">Send Email</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SMS Card -->
+      <div class="flip-card" id="smsLink">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fas fa-sms"></i>
+            <span id="contact_sms" data-i18n="contact_sms">Text Message</span>
+          </div>
+          <div class="flip-card-back">
+            <a href="#" id="smsAction">
+              <i class="fas fa-paper-plane"></i>
+              <span data-i18n="send_sms">Send SMS</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- WhatsApp Card -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <i class="fab fa-whatsapp"></i>
+            <span id="contact_whatsapp" data-i18n="contact_whatsapp">WhatsApp</span>
+          </div>
+          <div class="flip-card-back">
+            <a href="https://wa.me/1234567890" target="_blank" rel="noopener">
+              <i class="fas fa-paper-plane"></i>
+              <span data-i18n="send_whatsapp">Send WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
 
 
 

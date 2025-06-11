@@ -155,11 +155,16 @@ cards.forEach(card => {
   });
 });
 
-// Filtro y búsqueda de proyectos
+// Filtro, búsqueda y sugerencias de proyectos
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const categoryFilter = document.getElementById('categoryFilter');
   const projectItems = document.querySelectorAll('.project__item');
+  const suggestionsList = document.getElementById('suggestionsList');
+
+  const titles = Array.from(projectItems).map(item =>
+    item.querySelector('h3').textContent.trim()
+  );
 
   function filterProjects() {
     const searchTerm = searchInput.value.toLowerCase().trim();
@@ -177,12 +182,47 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  searchInput.addEventListener('input', filterProjects);
+  function showSuggestions(value) {
+    suggestionsList.innerHTML = '';
+    const filtered = value
+      ? titles.filter(title => title.toLowerCase().includes(value.toLowerCase()))
+      : titles;
+
+    filtered.forEach(title => {
+      const li = document.createElement('li');
+      li.textContent = title;
+      li.addEventListener('click', () => {
+        searchInput.value = title;
+        filterProjects();
+        searchInput.value = ''; // limpiar input
+        suggestionsList.style.display = 'none';
+      });
+      suggestionsList.appendChild(li);
+    });
+
+    suggestionsList.style.display = filtered.length ? 'block' : 'none';
+  }
+
+  searchInput.addEventListener('focus', () => {
+    showSuggestions('');
+  });
+
+  searchInput.addEventListener('input', () => {
+    showSuggestions(searchInput.value);
+    filterProjects();
+  });
+
   categoryFilter.addEventListener('change', filterProjects);
 
-  // Filtro inicial
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#searchInput') && !e.target.closest('#suggestionsList')) {
+      suggestionsList.style.display = 'none';
+    }
+  });
+
   filterProjects();
 });
+
 // Vista fullscreen animada para proyectos
 document.addEventListener('DOMContentLoaded', () => {
   const projectItems = document.querySelectorAll('.project__item');
@@ -250,13 +290,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Botón scrollToTop (puedes llamarlo desde el botón del footer)
+// Botón scrollToTop
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // Scroll Carrusel
-
 document.addEventListener('DOMContentLoaded', () => {
   const carousel = document.getElementById('projectsCarousel');
   const btnLeft = document.querySelector('.scroll-btn.left');
@@ -275,72 +314,4 @@ document.addEventListener('DOMContentLoaded', () => {
       behavior: 'smooth',
     });
   });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const searchInput = document.getElementById('searchInput');
-  const categoryFilter = document.getElementById('categoryFilter');
-  const projectItems = document.querySelectorAll('.project__item');
-  const suggestionsList = document.getElementById('suggestionsList');
-
-  // Extrae todos los títulos desde los proyectos
-  const titles = Array.from(projectItems).map(item =>
-    item.querySelector('h3').textContent.trim()
-  );
-
-  function filterProjects() {
-    const searchTerm = searchInput.value.toLowerCase();
-    const selectedCategory = categoryFilter.value;
-
-    projectItems.forEach(item => {
-      const title = item.querySelector('h3').textContent.toLowerCase();
-      const category = item.getAttribute('data-category');
-
-      const matchesSearch = title.includes(searchTerm);
-      const matchesCategory = selectedCategory === 'all' || category === selectedCategory;
-
-      item.style.display = matchesSearch && matchesCategory ? 'block' : 'none';
-    });
-  }
-
-  function showSuggestions(value) {
-    suggestionsList.innerHTML = '';
-    const filtered = value
-      ? titles.filter(title => title.toLowerCase().includes(value.toLowerCase()))
-      : titles; // Si está vacío, muestra todos
-
-    filtered.forEach(title => {
-      const li = document.createElement('li');
-      li.textContent = title;
-      li.addEventListener('click', () => {
-        searchInput.value = title;
-        suggestionsList.style.display = 'none';
-        filterProjects();
-      });
-      suggestionsList.appendChild(li);
-    });
-
-    suggestionsList.style.display = filtered.length ? 'block' : 'none';
-  }
-
-  // Mostrar todos los títulos al hacer foco
-  searchInput.addEventListener('focus', () => {
-    showSuggestions('');
-  });
-
-  // Filtrar sugerencias al escribir
-  searchInput.addEventListener('input', () => {
-    showSuggestions(searchInput.value);
-    filterProjects();
-  });
-
-  // Ocultar si se hace clic fuera
-  document.addEventListener('click', e => {
-    if (!e.target.closest('#searchInput') && !e.target.closest('#suggestionsList')) {
-      suggestionsList.style.display = 'none';
-    }
-  });
-
-  // Filtrar por categoría
-  categoryFilter.addEventListener('change', filterProjects);
 });

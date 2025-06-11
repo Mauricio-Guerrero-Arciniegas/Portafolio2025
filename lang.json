@@ -49,7 +49,12 @@
     "footer_nav_about": "About Me",
     "footer_nav_projects": "Projects",
     "footer_nav_contact": "Contact",
-    "footer_text": "© 2025 Mauricio Guerrero. All rights reserved."
+    "footer_text": "© 2025 Mauricio Guerrero. All rights reserved.",
+    "contact_title": "Contact Me",
+    "contact_description": "Feel free to reach out via any method below.",
+    "contact_email": "Email",
+    "contact_sms": "Text Message",
+    "contact_whatsapp": "WhatsApp"
 
   },
   "es": {
@@ -103,6 +108,11 @@
     "footer_nav_about": "Sobre Mí",
     "footer_nav_projects": "Proyectos",
     "footer_nav_contact": "Contacto",
-    "footer_text": "© 2025 Mauricio Guerrero. Todos los derechos reservados."
+    "footer_text": "© 2025 Mauricio Guerrero. Todos los derechos reservados.",
+    "contact_title": "Contáctame",
+    "contact_description": "No dudes en comunicarte por cualquiera de los siguientes medios.",
+    "contact_email": "Correo Electrónico",
+    "contact_sms": "Mensaje de Texto",
+    "contact_whatsapp": "WhatsApp"
   }
 }
