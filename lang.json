@@ -12,6 +12,7 @@
     "section_contact": "Contact",
     "footer_text": "© 2025 Mauricio Guerrero. All rights reserved.",
     "cv_text": "Download CV",
+    "me2": "Systems Engineer - Fullstack Developer",
 
     "about_title": "About Me",
     "about_description": "I'm a fullstack developer passionate about technology, design, and innovation. I love creating digital experiences that combine functionality, aesthetics, and performance.",
@@ -54,7 +55,13 @@
     "contact_description": "Feel free to reach out via any method below.",
     "contact_email": "Email",
     "contact_sms": "Text Message",
-    "contact_whatsapp": "WhatsApp"
+    "contact_whatsapp": "WhatsApp",
+    "highlight_experience_title": "Experience",
+    "highlight_experience_text": "+2 years developing frontend and fullstack projects.",
+    "highlight_education_title": "Education",
+    "highlight_education_text": "Systems Engineer – University training in web development.",
+    "highlight_languages_title": "Languages",
+    "highlight_languages_text": "Native Spanish, Intermediate English (B2)."
 
   },
   "es": {
@@ -70,6 +77,7 @@
     "section_contact": "Contacto",
     "footer_text": "© 2025 Mauricio Guerrero. Todos los derechos reservados.",
     "cv_text": "Descargar CV",
+    "me2": "Ingeniero de Sistemas - Desarrollador Fullstack",
 
     "about_title": "Sobre Mí",
     "about_description": "Soy un desarrollador fullstack apasionado por la tecnología, el diseño y la innovación. Me gusta crear experiencias digitales que combinan funcionalidad, estética y rendimiento.",
@@ -113,6 +121,12 @@
     "contact_description": "No dudes en comunicarte por cualquiera de los siguientes medios.",
     "contact_email": "Correo Electrónico",
     "contact_sms": "Mensaje de Texto",
-    "contact_whatsapp": "WhatsApp"
+    "contact_whatsapp": "WhatsApp",
+    "highlight_experience_title": "Experiencia",
+    "highlight_experience_text": "+2 años desarrollando proyectos frontend y fullstack.",
+    "highlight_education_title": "Educación",
+    "highlight_education_text": "Ingeniero de Sistemas – Formación universitaria en desarrollo web.",
+    "highlight_languages_title": "Idiomas",
+    "highlight_languages_text": "Español nativo, Inglés intermedio (B2)."
   }
 }

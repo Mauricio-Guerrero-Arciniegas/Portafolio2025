@@ -17,6 +17,10 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 />
 		<script src="script.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
 	</head>
 	<body class="loading">
 		<!-- Loader -->
@@ -201,29 +205,64 @@
 
 
 		<section class="section__about" id="about">
-      <div class="about__container" id="about_container">
-        <h2 id="about_title">Sobre Mí</h2>
-        <p class="me1">Mauricio Guerrero A.</p>
-        <p class="me2">Ingeniero de Sistemas - Fullstack Developer</p>
+  <div class="about__container">
+    <h2 id="about_title">Sobre Mí</h2>
+
+    <div class="about__content">
+      <div class="about__icon-wrapper">
+  <div data-lucide="graduation-cap" class="about__icon"></div>
+</div>
+</div>
+        <p class="me1" id="me1">Mauricio Guerrero A.</p>
+        <p class="me2" id="me2">Ingeniero de Sistemas - Fullstack Developer</p>
         <p id="about_description">
-          apasionado por la tecnología, el diseño y la innovación...
+          Apasionado por la tecnología, el diseño y la innovación. Me especializo en construir
+          experiencias digitales funcionales, accesibles y visualmente atractivas. Me encanta resolver
+          problemas, aprender constantemente y trabajar en equipo para lograr productos de alto impacto.
         </p>
-        <div class="about__cards">
-          <div class="about__card">
-            <h3 id="about_card1_title">Frontend</h3>
-            <p id="about_card1_text">HTML5, CSS, BEM, SASS, JavaScript, React, React Native</p>
-          </div>
-          <div class="about__card">
-            <h3 id="about_card2_title">Backend</h3>
-            <p id="about_card2_text">Node.js, Express, MongoDB</p>
-          </div>
-          <div class="about__card">
-            <h3 id="about_card3_title">Git & GitHub</h3>
-            <p id="about_card3_text">Control de versiones, colaboración y flujo de trabajo con GitHub</p>
-          </div>
+      </div>
+
+      <div class="about__highlights">
+        <div class="about__highlight">
+          <i class="lucide lucide-monitor-smartphone"></i>
+          <h3 id="highlight_experience_title">Experiencia</h3>
+          <p id="highlight_experience_text">+2 años desarrollando proyectos frontend y fullstack.</p>
+        </div>
+        <div class="about__highlight">
+          <i class="lucide lucide-graduation-cap"></i>
+          <h3 id="highlight_education_title">Educación</h3>
+          <p id="highlight_education_text">Ingeniero de Sistemas – Formación universitaria en desarrollo web.</p>
+        </div>
+        <div class="about__highlight">
+          <i class="lucide lucide-globe"></i>
+          <h3 id="highlight_languages_title">Idiomas</h3>
+          <p id="highlight_languages_text">Español nativo, Inglés intermedio (B2).</p>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div class="about__cards">
+      <div class="about__card">
+        <h3 id="about_card1_title">Frontend</h3>
+        <p id="about_card1_text">HTML5, CSS3, SASS, BEM, JavaScript, React, React Native</p>
+      </div>
+      <div class="about__card">
+        <h3 id="about_card2_title">Backend</h3>
+        <p id="about_card2_text">Node.js, Express.js, MongoDB, REST APIs</p>
+      </div>
+      <div class="about__card">
+        <h3 id="about_card3_title">Herramientas</h3>
+        <p id="about_card3_text">Git, GitHub, Figma, Postman, Vite, npm, Netlify</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CDN para íconos Lucide -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
 
 
 
