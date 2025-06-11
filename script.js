@@ -130,7 +130,6 @@ function splitLettersWithSpecial(selector, specialIndices) {
 }
 
 splitLettersWithSpecial('.cutout-text', [0,1,2,3,4,5,6,7]);
-splitLettersWithSpecial('.guerrero', [0]);
 
 // Tarjetas interactivas
 const cards = document.querySelectorAll('.about__card');
