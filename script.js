@@ -95,16 +95,7 @@ if (langBtn) {
 
 loadLang();
 
-// VIEWPORT
-function setVh() {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-window.addEventListener('resize', setVh);
-window.addEventListener('load', setVh);
-setVh();
-
-// Cerrar menú en móvil
+// MOBILE CLOSE MENU
 const navLinks = document.querySelectorAll('.nav-links a');
 const navToggle = document.getElementById('nav-toggle');
 
@@ -116,7 +107,7 @@ navLinks.forEach(link => {
   });
 });
 
-// Separación de letras para Hero
+// HERO TEXT SEPARATION
 function splitLettersWithSpecial(selector, specialIndices) {
   const element = document.querySelector(selector);
   const text = element.textContent;
@@ -131,7 +122,7 @@ function splitLettersWithSpecial(selector, specialIndices) {
 
 splitLettersWithSpecial('.cutout-text', [0,1,2,3,4,5,6,7]);
 
-// Tarjetas interactivas
+// INTERACTIVE CARDS
 const cards = document.querySelectorAll('.about__card');
 
 cards.forEach(card => {
@@ -154,7 +145,7 @@ cards.forEach(card => {
   });
 });
 
-// Filtro, búsqueda y sugerencias de proyectos
+// FILTER AND SEARCH INPUT
 document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const categoryFilter = document.getElementById('categoryFilter');
@@ -193,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
       li.addEventListener('click', () => {
         searchInput.value = title;
         filterProjects();
-        searchInput.value = ''; // limpiar input
+        searchInput.value = ''; 
         suggestionsList.style.display = 'none';
       });
       suggestionsList.appendChild(li);
@@ -222,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
   filterProjects();
 });
 
-// Vista fullscreen animada para proyectos
+// VFULLSCREEN CARDS
 document.addEventListener('DOMContentLoaded', () => {
   const projectItems = document.querySelectorAll('.project__item');
   const viewer = document.getElementById('fullscreenViewer');
@@ -289,12 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Botón scrollToTop
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// Scroll Carrusel
+// SCROLL CARRUSEL
 document.addEventListener('DOMContentLoaded', () => {
   const carousel = document.getElementById('projectsCarousel');
   const btnLeft = document.querySelector('.scroll-btn.left');
