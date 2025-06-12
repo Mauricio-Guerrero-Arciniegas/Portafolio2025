@@ -13,516 +13,496 @@
 		/>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 		<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 		<script src="script.js" defer></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
+    <script>
+      lucide.createIcons();
+    </script>
 	</head>
-	<body class="loading">
-		<!-- Loader -->
-		<div id="loader" role="img" aria-label="Loading animation">
-			<svg
-				width="200"
-				height="200"
-				viewBox="0 0 100 120"
-				aria-hidden="true"
-				focusable="false"
-			>
-				<defs>
-					<filter id="m-shadow" x="-50%" y="-50%" width="200%" height="200%">
-						<feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="cyan" />
-						<feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="cyan" />
-					</filter>
-					<filter id="dev-shadow" x="-50%" y="-50%" width="200%" height="200%">
-						<feDropShadow
-							dx="0"
-							dy="0"
-							stdDeviation="2"
-							flood-color="#66aaff"
-						/>
-					</filter>
-				</defs>
-				<g>
-					<!-- Montañas -->
-					<path
-						id="mountain-path"
-						d="M10 120 L40 65 L50 85 L70 60 L90 90"
-						fill="none"
-						stroke="white"
-						stroke-width="6"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						filter="url(#m-shadow)"
-						stroke-dasharray="280"
-						stroke-dashoffset="280"
-						style="animation: drawMountain 3.5s ease forwards"
-					/>
-					<!-- Texto dev. -->
-					<text
-						x="60"
-						y="110"
-						text-anchor="middle"
-						class="loader-dev"
-						filter="url(#dev-shadow)"
-					>
-						Dev.
-					</text>
-				</g>
-			</svg>
-		</div>
-
-		<header>
-			<nav class="navbar">
-				<!-- Checkbox para toggle hamburguesa -->
-				<input type="checkbox" id="nav-toggle" />
-				<label for="nav-toggle" class="hamburger" aria-label="Toggle menu"
-					>&#9776;</label
-				>
-
-				<!-- Menú de navegación -->
-				<ul class="nav-links">
-					<li><a id="nav_home" href="#hero">Home</a></li>
-					<li><a id="nav_about" href="#about">About Me</a></li>
-					<li><a id="nav_projects" href="#projects">Projects</a></li>
-					<li><a id="nav_contact" href="#contact">Contact</a></li>
-				</ul>
-
-				<!-- Botones laterales -->
-				<div class="nav-buttons">
-					<!-- Botón de modo oscuro -->
-					<button
-						id="dark-mode-toggle"
-						aria-label="Alternar modo oscuro"
-						type="button"
-					>
-						<!-- Ícono de luna -->
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="icon"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2"
-						>
-							<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-						</svg>
-					</button>
-
-					<!-- Botón de idioma con bandera -->
-					<button id="btnLang" aria-label="Cambiar idioma" type="button">
-						<img id="flag-icon" src="assets/flags/en.png" alt="English flag" />
-					</button>
-				</div>
-			</nav>
-		</header>
-
-		<main>
-			<section class="section__hero" id="hero">
-  <div class="container">
-    <div class="hero__overlay">
-      <div class="background"></div> <!-- fondo con imagen -->
-      <div class="glass"></div>      <!-- efecto glassmorphism -->
-    </div>
-
-    <div class="text-wrapper">
-      <h1 class="cutout-text">Mauricio</h1>
-    </div>
-  </div>
-
-  <div class="hero__socials" aria-label="Social media links">
-    <!-- GitHub -->
-    <a
-      href="https://github.com/Mauricio-Guerrero-Arciniegas"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="GitHub"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="icon social-icon"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-      >
-        <path
-          d="M12 0a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.2c-3.34.73-4.04-1.6-4.04-1.6a3.18 3.18 0 0 0-1.34-1.75c-1.1-.75.08-.74.08-.74a2.51 2.51 0 0 1 1.83 1.23 2.55 2.55 0 0 0 3.47 1 2.54 2.54 0 0 1 .76-1.6c-2.67-.3-5.48-1.33-5.48-5.93a4.63 4.63 0 0 1 1.23-3.2 4.3 4.3 0 0 1 .12-3.16s1-.32 3.3 1.23a11.43 11.43 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23a4.3 4.3 0 0 1 .12 3.16 4.63 4.63 0 0 1 1.23 3.2c0 4.61-2.81 5.62-5.49 5.93a2.85 2.85 0 0 1 .81 2.22v3.29c0 .32.21.69.83.58A12 12 0 0 0 12 0z"
-        />
-      </svg>
-    </a>
-
-    <!-- LinkedIn -->
-    <a
-      href="https://www.linkedin.com/in/mauricio-guerrero-827582220/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="LinkedIn"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="icon social-icon"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        width="24"
-        height="24"
-      >
-        <path
-          d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.061-1.865-3.061-1.865 0-2.151 1.46-2.151 2.967v5.698h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.562 2.838-1.562 3.034 0 3.6 2 3.6 4.59v5.605z"
-        />
-      </svg>
-    </a>
-
-    <!-- Descargar CV -->
-    <a
-      href="assets/CV Mauricio Guerrero SPANISH.pdf"
-      download="MauricioGuerrero_CV.pdf"
-      aria-label="Descargar CV"
-      style="display: inline-flex; flex-direction: column; align-items: center; text-decoration: none; color: #ffffff;"
-    >
-      <svg
-        class="icono-vaiven icon social-icon"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        viewBox="0 0 24 24"
-      >
-        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-        <polyline points="14 2 14 8 20 8" />
-        <line x1="12" y1="12" x2="12" y2="18" />
-        <polyline points="9 15 12 18 15 15" />
-      </svg>
-      <span id="cv_text" style="font-size: 12px; margin-top: 4px;">Descargar CV</span>
-    </a>
-  </div>
-</section>
-
-
-		<section class="section__about" id="about">
-  <div class="about__container">
-    <h2 id="about_title">Sobre Mí</h2>
-
-    <div class="about__content">
-      <div class="about__icon-wrapper">
-  <div data-lucide="graduation-cap" class="about__icon"></div>
-</div>
-</div>
-        <p class="me1" id="me1">Mauricio Guerrero A.</p>
-        <p class="me2" id="me2">Ingeniero de Sistemas - Fullstack Developer</p>
-        <p id="about_description">
-          Apasionado por la tecnología, el diseño y la innovación. Me especializo en construir
-          experiencias digitales funcionales, accesibles y visualmente atractivas. Me encanta resolver
-          problemas, aprender constantemente y trabajar en equipo para lograr productos de alto impacto.
-        </p>
-      </div>
-
-      <div class="about__highlights">
-        <div class="about__highlight">
-          <i class="lucide lucide-monitor-smartphone"></i>
-          <h3 id="highlight_experience_title">Experiencia</h3>
-          <p id="highlight_experience_text">+2 años desarrollando proyectos frontend y fullstack.</p>
-        </div>
-        <div class="about__highlight">
-          <i class="lucide lucide-graduation-cap"></i>
-          <h3 id="highlight_education_title">Educación</h3>
-          <p id="highlight_education_text">Ingeniero de Sistemas – Formación universitaria en desarrollo web.</p>
-        </div>
-        <div class="about__highlight">
-          <i class="lucide lucide-globe"></i>
-          <h3 id="highlight_languages_title">Idiomas</h3>
-          <p id="highlight_languages_text">Español nativo, Inglés intermedio (B2).</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="about__cards">
-      <div class="about__card">
-        <h3 id="about_card1_title">Frontend</h3>
-        <p id="about_card1_text">HTML5, CSS3, SASS, BEM, JavaScript, React, React Native</p>
-      </div>
-      <div class="about__card">
-        <h3 id="about_card2_title">Backend</h3>
-        <p id="about_card2_text">Node.js, Express.js, MongoDB, REST APIs</p>
-      </div>
-      <div class="about__card">
-        <h3 id="about_card3_title">Herramientas</h3>
-        <p id="about_card3_text">Git, GitHub, Figma, Postman, Vite, npm, Netlify</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CDN para íconos Lucide -->
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-  lucide.createIcons();
-</script>
-
-
-
-		<section class="section__projects" id="projects">
-  <div class="projects__container">
-<h2 class="projects__title" id="projects.title" data-i18n="projects.title">Proyectos</h2>
-    <!-- Filtros -->
-    <div class="projects__filters">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Buscar proyectos..."
-        aria-label="Buscar proyectos"
-      />
-			<ul id="suggestionsList" class="suggestions"></ul>
-
-      <select id="categoryFilter" aria-label="Filtrar por categoría">
-        <option id="all" value="all">Todos</option>
-        <option id="html" value="HTML - CSS - JavaScript">HTML - CSS - JavaScript</option>
-        <option id="layout" value="Layout">Layout</option>
-        <option id="react" value="React Js">React Js</option>
-        <option id="native" value="React Native">React Native</option>
-      </select>
-    </div>
-			<button class="scroll-btn left" aria-label="Scroll izquierdo">&#10094;</button>
-			<button class="scroll-btn right" aria-label="Scroll derecho">&#10095;</button>
-
-    <!-- Carrusel de proyectos -->
-    <div class="projects__carousel" id="projectsCarousel">
-
-      <div class="project__item" data-img="./assets/images/the game awards.png" data-category="Layout">
-        <img src="./assets/images/the game awards.png" alt="Diseño moderno de sitio promocional para los Game Awards. Enfocado en la estética visual y estructura tipo layout." />
-        <h3>The Game Awards</h3>
-        <p id="projects.theGameAwards">Diseño moderno de sitio promocional para los Game Awards. Enfocado en la estética visual y estructura tipo layout.</p>
-        <div class="project__link">
-          <a href="https://github.com/Mauricio-Guerrero-Arciniegas/The_Game_Awards" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
-            <i data-lucide="github" class="github__icon"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="project__item" data-img="./assets/images/Madlife.png" data-category="React Js">
-        <img src="./assets/images/Madlife.png" alt="Tienda online completa desarrollada en React. Integra carrito, filtros de productos y diseño responsive." />
-        <h3>Madlife E-commerce</h3>
-        <p id="projects.maflife">Tienda online completa desarrollada en React. Integra carrito, filtros de productos y diseño responsive.</p>
-        <div class="project__link">
-          <a href="https://github.com/Mauricio-Guerrero-Arciniegas/madlife" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
-            <i data-lucide="github" class="github__icon"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="project__item" data-img="./assets/images/Avatar.png" data-category="Layout">
-        <img src="./assets/images/Avatar.png" alt="Landing page inspirada en la película Avatar. Animaciones sutiles y estilo visual inmersivo." />
-        <h3>Avatar</h3>
-        <p id="projects.avatar">Landing page inspirada en la película Avatar. Animaciones sutiles y estilo visual inmersivo.</p>
-        <div class="project__link">
-          <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Avatar-The-way-of-Water" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
-            <i data-lucide="github" class="github__icon"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="project__item" data-img="./assets/images/Calculator.png" data-category="HTML - CSS - JavaScript">
-        <img src="./assets/images/Calculator.png" alt="Calculadora funcional hecha con HTML, CSS y JavaScript. Diseño limpio y validaciones básicas." />
-        <h3>Calculator Js</h3>
-        <p id="projects.calculator">Calculadora funcional hecha con HTML, CSS y JavaScript. Diseño limpio y validaciones básicas.</p>
-        <div class="project__link">
-          <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Calculator" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
-            <i data-lucide="github" class="github__icon"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="project__item" data-img="./assets/images/Chat App.png" data-category="React Native">
-        <img src="./assets/images/Chat App.png" alt="Aplicación de mensajería en tiempo real creada con React Native. Chat fluido y notificaciones integradas." />
-        <h3>Chat App</h3>
-        <p id="projects.chatApp">Aplicación de mensajería en tiempo real creada con React Native. Chat fluido y notificaciones integradas.</p>
-        <div class="project__link">
-          <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Whatsapp-React-native" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
-            <i data-lucide="github" class="github__icon"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="project__item" data-img="./assets/images/Facebook.png" data-category="React Native" >
-        <img src="./assets/images/Facebook.png" alt="Diseño de red social estilo Facebook usando React Native. Interfaz intuitiva y componentes reutilizables." />
-        <h3>Social Media</h3>
-        <p id="projects.socialMedia">Diseño de red social estilo Facebook usando React Native. Interfaz intuitiva y componentes reutilizables.</p>
-        <div class="project__link">
-          <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Friends-App-React-native" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
-            <i data-lucide="github" class="github__icon"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="project__item" data-img="./assets/images/Homeopathy.png" data-category="React Js">
-        <img src="./assets/images/Homeopathy.png" alt="Sitio web informativo sobre homeopatía. Sección de servicios, contacto y blog integrada con React." />
-        <h3>Homeopathy</h3>
-        <p id="projects.homeopathy">Sitio web informativo sobre homeopatía. Sección de servicios, contacto y blog integrada con React.</p>
-        <div class="project__link">
-          <a href="https://github.com/Mauricio-Guerrero-Arciniegas/homeophatics-webpage-beta" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
-            <i data-lucide="github" class="github__icon"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="project__item" data-img="./assets/images/Tinder.png" data-category="Layout">
-        <img src="./assets/images/Tinder.png" alt="Clon de la interfaz de Tinder con animaciones swipe y diseño centrado en la experiencia móvil." />
-        <h3>Tinder</h3>
-        <p id="projects.tinder">Clon de la interfaz de Tinder con animaciones swipe y diseño centrado en la experiencia móvil.</p>
-        <div class="project__link">
-          <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Tinder-clone" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
-            <i data-lucide="github" class="github__icon"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="project__item" data-img="./assets/images/Rick and Morty.png" data-category="React Js">
-        <img src="./assets/images/Rick and Morty.png" alt="Consumo de API de Rick & Morty en React. Filtros por personaje y búsqueda dinámica." />
-        <h3>Rick & Morty</h3>
-        <p id="projects.rickAndMorty">Consumo de API de Rick & Morty en React. Filtros por personaje y búsqueda dinámica.</p>
-        <div class="project__link">
-          <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Rick-Morty" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
-            <i data-lucide="github" class="github__icon"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="project__item" data-img="./assets/images/Specialized.png" data-category="React Js">
-        <img src="./assets/images/Specialized.png" alt="Página web de e-commerce para bicicletas. Catálogo interactivo, filtros y diseño visualmente atractivo." />
-        <h3>Specialized</h3>
-        <p id="projects.specialized">Página web de e-commerce para bicicletas. Catálogo interactivo, filtros y diseño visualmente atractivo.</p>
-        <div class="project__link">
-          <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Ecommerce" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
-            <i data-lucide="github" class="github__icon"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="project__item" data-img="./assets/images/Nike.png" data-category="React Js">
-        <img src="./assets/images/Nike.png" alt="Clon de tienda online de Nike. Productos con zoom, carrito funcional y diseño moderno con React." />
-        <h3>Nike E-commerce</h3>
-        <p id="projects.nike">Clon de tienda online de Nike. Productos con zoom, carrito funcional y diseño moderno con React.</p>
-        <div class="project__link">
-          <a href="https://github.com/Mauricio-Guerrero-Arciniegas/NikeApp" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
-            <i data-lucide="github" class="github__icon"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="project__item" data-img="./assets/images/Weather App.png" data-category="React Js">
-        <img src="./assets/images/Weather App.png" alt="App del clima en tiempo real utilizando una API. Ubicación automática y pronóstico extendido." />
-        <h3>Weather App</h3>
-        <p id="projects.weatherApp">App del clima en tiempo real utilizando una API. Ubicación automática y pronóstico extendido.</p>
-        <div class="project__link">
-          <a href="https://github.com/Mauricio-Guerrero-Arciniegas/WeatherApp" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
-            <i data-lucide="github" class="github__icon"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Vista pantalla completa -->
-  <div class="project__fullscreen" id="fullscreenViewer" role="dialog" aria-modal="true" aria-label="Vista ampliada del proyecto">
-    <div class="overlay__background" id="overlayBackground"></div>
-    <button class="close__btn" id="closeViewer" aria-label="Cerrar vista ampliada">&times;</button>
-    <img src="" alt="" id="fullscreenImage" />
-  </div>
-</section>
-
-
-
-		<section id="contact" class="section__contact">
-  <div class="contact__container">
-    <h2 id="contact_title" data-i18n="contact_title">Contact Me</h2>
-    <p id="contact_description" data-i18n="contact_description">Feel free to reach out via any method below.</p>
-
-    <div class="contact__methods">
-      <!-- Email -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <i class="fas fa-envelope"></i>
-            <span id="contact_email">Email</span>
-          </div>
-          <div class="flip-card-back">
-            <a href="mailto:yourmail@example.com" target="_blank" rel="noopener">
-              <i class="fas fa-envelope"></i>
-              <span data-i18n="contact_email">Send Email</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- SMS -->
-      <div class="flip-card mobile-only">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <i class="fas fa-sms"></i>
-            <span id="contact_sms">SMS</span>
-          </div>
-          <div class="flip-card-back">
-            <a href="#" id="smsLink">
-              <i class="fas fa-sms"></i>
-              <span data-i18n="contact_sms">Send SMS</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- WhatsApp -->
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <i class="fab fa-whatsapp"></i>
-            <span id="contact_whatsapp">WhatsApp</span>
-          </div>
-          <div class="flip-card-back">
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener">
-              <i class="fab fa-whatsapp"></i>
-              <span data-i18n="contact_whatsapp">Send Message</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-			<footer class="footer">
-  <div class="footer__content">
-    <h3 class="footer__name" id="footer_name">Mauricio Guerrero</h3>
-    
-    <ul class="footer__nav">
-      <li><a href="#hero" id="footer_nav_home">Inicio</a></li>
-      <li><a href="#about" id="footer_nav_about">Sobre Mí</a></li>
-      <li><a href="#projects" id="footer_nav_projects">Proyectos</a></li>
-      <li><a href="#contact" id="footer_nav_contact">Contacto</a></li>
-    </ul>
-
-    <div class="footer__socials">
-      <a href="https://github.com/Mauricio-Guerrero-Arciniegas" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/mauricio-guerrero-827582220/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    </div>
-
-    <p class="footer__copy" id="footer_text">© 2025 Mauricio Guerrero. Todos los derechos reservados.</p>
-  </div>
-
   
-</footer>
+  <body class="loading">
+      <div id="loader" role="img" aria-label="Loading animation">
+        <svg
+          width="200"
+          height="200"
+          viewBox="0 0 100 120"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <defs>
+            <filter id="m-shadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="cyan" />
+              <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="cyan" />
+            </filter>
+            <filter id="dev-shadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow
+                dx="0"
+                dy="0"
+                stdDeviation="2"
+                flood-color="#66aaff"
+              />
+            </filter>
+          </defs>
+          <g>
+            <!-- Montañas -->
+            <path
+              id="mountain-path"
+              d="M10 120 L40 65 L50 85 L70 60 L90 90"
+              fill="none"
+              stroke="white"
+              stroke-width="6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              filter="url(#m-shadow)"
+              stroke-dasharray="280"
+              stroke-dashoffset="280"
+              style="animation: drawMountain 3.5s ease forwards"
+            />
+            <!-- Texto dev. -->
+            <text
+              x="60"
+              y="110"
+              text-anchor="middle"
+              class="loader-dev"
+              filter="url(#dev-shadow)"
+            >
+              Dev.
+            </text>
+          </g>
+        </svg>
+      </div>
+
+      <header>
+        <nav class="navbar">
+          <input type="checkbox" id="nav-toggle" />
+          <label for="nav-toggle" class="hamburger" aria-label="Toggle menu"
+            >&#9776;</label
+          >
+
+          <ul class="nav-links">
+            <li><a id="nav_home" href="#hero">Home</a></li>
+            <li><a id="nav_about" href="#about">About Me</a></li>
+            <li><a id="nav_projects" href="#projects">Projects</a></li>
+            <li><a id="nav_contact" href="#contact">Contact</a></li>
+          </ul>
+
+          <div class="nav-buttons">
+            <button
+              id="dark-mode-toggle"
+              aria-label="Alternar modo oscuro"
+              type="button"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            </button>
+
+            <button id="btnLang" aria-label="Cambiar idioma" type="button">
+              <img id="flag-icon" src="assets/flags/en.png" alt="English flag" />
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <main class="scroll-container">
+
+        <section class="section__hero scroll-section" id="hero">
+          <div class="container">
+            <div class="hero__overlay">
+              <div class="background"></div> 
+              <div class="glass"></div>      
+              <div class="text-wrapper">
+                <h1 class="cutout-text">Mauricio</h1>
+              </div>
+          </div>
+
+            <div class="hero__socials" aria-label="Social media links">
+             
+              <a
+                href="https://github.com/Mauricio-Guerrero-Arciniegas"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="icon social-icon"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 0a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.2c-3.34.73-4.04-1.6-4.04-1.6a3.18 3.18 0 0 0-1.34-1.75c-1.1-.75.08-.74.08-.74a2.51 2.51 0 0 1 1.83 1.23 2.55 2.55 0 0 0 3.47 1 2.54 2.54 0 0 1 .76-1.6c-2.67-.3-5.48-1.33-5.48-5.93a4.63 4.63 0 0 1 1.23-3.2 4.3 4.3 0 0 1 .12-3.16s1-.32 3.3 1.23a11.43 11.43 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23a4.3 4.3 0 0 1 .12 3.16 4.63 4.63 0 0 1 1.23 3.2c0 4.61-2.81 5.62-5.49 5.93a2.85 2.85 0 0 1 .81 2.22v3.29c0 .32.21.69.83.58A12 12 0 0 0 12 0z"
+                  />
+                </svg>
+              </a>
+
+      <a
+        href="https://www.linkedin.com/in/mauricio-guerrero-827582220/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon social-icon"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          width="24"
+          height="24"
+        >
+          <path
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.785-1.75-1.75s.784-1.75 1.75-1.75 1.75.785 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.061-1.865-3.061-1.865 0-2.151 1.46-2.151 2.967v5.698h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.562 2.838-1.562 3.034 0 3.6 2 3.6 4.59v5.605z"
+          />
+        </svg>
+      </a>
+
+      <a
+        href="assets/CV Mauricio Guerrero SPANISH.pdf"
+        download="MauricioGuerrero_CV.pdf"
+        aria-label="Descargar CV"
+        style="display: inline-flex; flex-direction: column; align-items: center; text-decoration: none; color: #ffffff;"
+      >
+        <svg
+          class="icono-vaiven icon social-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="12" y1="12" x2="12" y2="18" />
+          <polyline points="9 15 12 18 15 15" />
+        </svg>
+        <span id="cv_text" style="font-size: 12px; margin-top: 4px;">Descargar CV</span>
+      </a>
+    </div>
+  </section>
+
+
+      <section class="section__about scroll-section" id="about">
+    <div class="about__container">
+      <h2 id="about_title">Sobre Mí</h2>
+
+      <div class="about__content">
+        <div class="about__icon-wrapper">
+    <div data-lucide="graduation-cap" class="about__icon"></div>
+  </div>
+  </div>
+          <p class="me1" id="me1">Mauricio Guerrero A.</p>
+          <p class="me2" id="me2">Ingeniero de Sistemas - Fullstack Developer</p>
+          <p id="about_description">
+            Apasionado por la tecnología, el diseño y la innovación. Me especializo en construir
+            experiencias digitales funcionales, accesibles y visualmente atractivas. Me encanta resolver
+            problemas, aprender constantemente y trabajar en equipo para lograr productos de alto impacto.
+          </p>
+        </div>
+
+        <div class="about__highlights">
+          <div class="about__highlight">
+            <i class="lucide lucide-monitor-smartphone"></i>
+            <h3 id="highlight_experience_title">Experiencia</h3>
+            <p id="highlight_experience_text">+2 años desarrollando proyectos frontend y fullstack.</p>
+          </div>
+          <div class="about__highlight">
+            <i class="lucide lucide-graduation-cap"></i>
+            <h3 id="highlight_education_title">Educación</h3>
+            <p id="highlight_education_text">Ingeniero de Sistemas – Formación universitaria en desarrollo web.</p>
+          </div>
+          <div class="about__highlight">
+            <i class="lucide lucide-globe"></i>
+            <h3 id="highlight_languages_title">Idiomas</h3>
+            <p id="highlight_languages_text">Español nativo, Inglés intermedio (B2).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__cards">
+        <div class="about__card">
+          <h3 id="about_card1_title">Frontend</h3>
+          <p id="about_card1_text">HTML5, CSS3, SASS, BEM, JavaScript, React, React Native</p>
+        </div>
+        <div class="about__card">
+          <h3 id="about_card2_title">Backend</h3>
+          <p id="about_card2_text">Node.js, Express.js, MongoDB, REST APIs</p>
+        </div>
+        <div class="about__card">
+          <h3 id="about_card3_title">Herramientas</h3>
+          <p id="about_card3_text">Git, GitHub, Figma, Postman, Vite, npm, Netlify</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+
+
+      <section class="section__projects scroll-section" id="projects">
+    <div class="projects__container">
+  <h2 class="projects__title" id="projects.title" data-i18n="projects.title">Proyectos</h2>
+      <div class="projects__filters">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Buscar proyectos..."
+          aria-label="Buscar proyectos"
+        />
+        <ul id="suggestionsList" class="suggestions"></ul>
+
+        <select id="categoryFilter" aria-label="Filtrar por categoría">
+          <option id="all" value="all">Todos</option>
+          <option id="html" value="HTML - CSS - JavaScript">HTML - CSS - JavaScript</option>
+          <option id="layout" value="Layout">Layout</option>
+          <option id="react" value="React Js">React Js</option>
+          <option id="native" value="React Native">React Native</option>
+        </select>
+      </div>
+        <button class="scroll-btn left" aria-label="Scroll izquierdo">&#10094;</button>
+        <button class="scroll-btn right" aria-label="Scroll derecho">&#10095;</button>
+      <div class="projects__carousel" id="projectsCarousel">
+
+        <div class="project__item" data-img="./assets/images/the game awards.png" data-category="Layout">
+          <img src="./assets/images/the game awards.png" alt="Diseño moderno de sitio promocional para los Game Awards. Enfocado en la estética visual y estructura tipo layout." />
+          <h3>The Game Awards</h3>
+          <p id="projects.theGameAwards">Diseño moderno de sitio promocional para los Game Awards. Enfocado en la estética visual y estructura tipo layout.</p>
+          <div class="project__link">
+            <a href="https://github.com/Mauricio-Guerrero-Arciniegas/The_Game_Awards" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
+              <i data-lucide="github" class="github__icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project__item" data-img="./assets/images/Madlife.png" data-category="React Js">
+          <img src="./assets/images/Madlife.png" alt="Tienda online completa desarrollada en React. Integra carrito, filtros de productos y diseño responsive." />
+          <h3>Madlife E-commerce</h3>
+          <p id="projects.maflife">Tienda online completa desarrollada en React. Integra carrito, filtros de productos y diseño responsive.</p>
+          <div class="project__link">
+            <a href="https://github.com/Mauricio-Guerrero-Arciniegas/madlife" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
+              <i data-lucide="github" class="github__icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project__item" data-img="./assets/images/Avatar.png" data-category="Layout">
+          <img src="./assets/images/Avatar.png" alt="Landing page inspirada en la película Avatar. Animaciones sutiles y estilo visual inmersivo." />
+          <h3>Avatar</h3>
+          <p id="projects.avatar">Landing page inspirada en la película Avatar. Animaciones sutiles y estilo visual inmersivo.</p>
+          <div class="project__link">
+            <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Avatar-The-way-of-Water" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
+              <i data-lucide="github" class="github__icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project__item" data-img="./assets/images/Calculator.png" data-category="HTML - CSS - JavaScript">
+          <img src="./assets/images/Calculator.png" alt="Calculadora funcional hecha con HTML, CSS y JavaScript. Diseño limpio y validaciones básicas." />
+          <h3>Calculator Js</h3>
+          <p id="projects.calculator">Calculadora funcional hecha con HTML, CSS y JavaScript. Diseño limpio y validaciones básicas.</p>
+          <div class="project__link">
+            <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Calculator" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
+              <i data-lucide="github" class="github__icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project__item" data-img="./assets/images/Chat App.png" data-category="React Native">
+          <img src="./assets/images/Chat App.png" alt="Aplicación de mensajería en tiempo real creada con React Native. Chat fluido y notificaciones integradas." />
+          <h3>Chat App</h3>
+          <p id="projects.chatApp">Aplicación de mensajería en tiempo real creada con React Native. Chat fluido y notificaciones integradas.</p>
+          <div class="project__link">
+            <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Whatsapp-React-native" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
+              <i data-lucide="github" class="github__icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project__item" data-img="./assets/images/Facebook.png" data-category="React Native" >
+          <img src="./assets/images/Facebook.png" alt="Diseño de red social estilo Facebook usando React Native. Interfaz intuitiva y componentes reutilizables." />
+          <h3>Social Media</h3>
+          <p id="projects.socialMedia">Diseño de red social estilo Facebook usando React Native. Interfaz intuitiva y componentes reutilizables.</p>
+          <div class="project__link">
+            <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Friends-App-React-native" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
+              <i data-lucide="github" class="github__icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project__item" data-img="./assets/images/Homeopathy.png" data-category="React Js">
+          <img src="./assets/images/Homeopathy.png" alt="Sitio web informativo sobre homeopatía. Sección de servicios, contacto y blog integrada con React." />
+          <h3>Homeopathy</h3>
+          <p id="projects.homeopathy">Sitio web informativo sobre homeopatía. Sección de servicios, contacto y blog integrada con React.</p>
+          <div class="project__link">
+            <a href="https://github.com/Mauricio-Guerrero-Arciniegas/homeophatics-webpage-beta" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
+              <i data-lucide="github" class="github__icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project__item" data-img="./assets/images/Tinder.png" data-category="Layout">
+          <img src="./assets/images/Tinder.png" alt="Clon de la interfaz de Tinder con animaciones swipe y diseño centrado en la experiencia móvil." />
+          <h3>Tinder</h3>
+          <p id="projects.tinder">Clon de la interfaz de Tinder con animaciones swipe y diseño centrado en la experiencia móvil.</p>
+          <div class="project__link">
+            <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Tinder-clone" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
+              <i data-lucide="github" class="github__icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project__item" data-img="./assets/images/Rick and Morty.png" data-category="React Js">
+          <img src="./assets/images/Rick and Morty.png" alt="Consumo de API de Rick & Morty en React. Filtros por personaje y búsqueda dinámica." />
+          <h3>Rick & Morty</h3>
+          <p id="projects.rickAndMorty">Consumo de API de Rick & Morty en React. Filtros por personaje y búsqueda dinámica.</p>
+          <div class="project__link">
+            <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Rick-Morty" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
+              <i data-lucide="github" class="github__icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project__item" data-img="./assets/images/Specialized.png" data-category="React Js">
+          <img src="./assets/images/Specialized.png" alt="Página web de e-commerce para bicicletas. Catálogo interactivo, filtros y diseño visualmente atractivo." />
+          <h3>Specialized</h3>
+          <p id="projects.specialized">Página web de e-commerce para bicicletas. Catálogo interactivo, filtros y diseño visualmente atractivo.</p>
+          <div class="project__link">
+            <a href="https://github.com/Mauricio-Guerrero-Arciniegas/Ecommerce" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
+              <i data-lucide="github" class="github__icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project__item" data-img="./assets/images/Nike.png" data-category="React Js">
+          <img src="./assets/images/Nike.png" alt="Clon de tienda online de Nike. Productos con zoom, carrito funcional y diseño moderno con React." />
+          <h3>Nike E-commerce</h3>
+          <p id="projects.nike">Clon de tienda online de Nike. Productos con zoom, carrito funcional y diseño moderno con React.</p>
+          <div class="project__link">
+            <a href="https://github.com/Mauricio-Guerrero-Arciniegas/NikeApp" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
+              <i data-lucide="github" class="github__icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="project__item" data-img="./assets/images/Weather App.png" data-category="React Js">
+          <img src="./assets/images/Weather App.png" alt="App del clima en tiempo real utilizando una API. Ubicación automática y pronóstico extendido." />
+          <h3>Weather App</h3>
+          <p id="projects.weatherApp">App del clima en tiempo real utilizando una API. Ubicación automática y pronóstico extendido.</p>
+          <div class="project__link">
+            <a href="https://github.com/Mauricio-Guerrero-Arciniegas/WeatherApp" target="_blank" rel="noopener noreferrer" aria-label="Ver en GitHub">
+              <i data-lucide="github" class="github__icon"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project__fullscreen" id="fullscreenViewer" role="dialog" aria-modal="true" aria-label="Vista ampliada del proyecto">
+      <div class="overlay__background" id="overlayBackground"></div>
+      <button class="close__btn" id="closeViewer" aria-label="Cerrar vista ampliada">&times;</button>
+      <img src="" alt="" id="fullscreenImage" />
+    </div>
+  </section>
+
+
+
+      <section id="contact" class="section__contact scroll-section">
+    <div class="contact__container">
+      <h2 id="contact_title" data-i18n="contact_title">Contact Me</h2>
+      <p id="contact_description" data-i18n="contact_description">Feel free to reach out via any method below.</p>
+
+      <div class="contact__methods">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fas fa-envelope"></i>
+              <span id="contact_email">Email</span>
+            </div>
+            <div class="flip-card-back">
+              <a href="mailto:yourmail@example.com" target="_blank" rel="noopener">
+                <i class="fas fa-envelope"></i>
+                <span data-i18n="contact_email">Send Email</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card mobile-only">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fas fa-sms"></i>
+              <span id="contact_sms">SMS</span>
+            </div>
+            <div class="flip-card-back">
+              <a href="#" id="smsLink">
+                <i class="fas fa-sms"></i>
+                <span data-i18n="contact_sms">Send SMS</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <i class="fab fa-whatsapp"></i>
+              <span id="contact_whatsapp">WhatsApp</span>
+            </div>
+            <div class="flip-card-back">
+              <a href="https://wa.me/1234567890" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i>
+                <span data-i18n="contact_whatsapp">Send Message</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <footer class="footer scroll-section">
+    <div class="footer__content">
+      <h3 class="footer__name" id="footer_name">Mauricio Guerrero</h3>
+      
+      <ul class="footer__nav">
+        <li><a href="#hero" id="footer_nav_home">Inicio</a></li>
+        <li><a href="#about" id="footer_nav_about">Sobre Mí</a></li>
+        <li><a href="#projects" id="footer_nav_projects">Proyectos</a></li>
+        <li><a href="#contact" id="footer_nav_contact">Contacto</a></li>
+      </ul>
+
+      <div class="footer__socials">
+        <a href="https://github.com/Mauricio-Guerrero-Arciniegas" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mauricio-guerrero-827582220/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+
+      <p class="footer__copy" id="footer_text">© 2025 Mauricio Guerrero. Todos los derechos reservados.</p>
+    </div>
+
+    
+  </footer>
 
 
 
 
-		</main>
-		<script src="https://unpkg.com/scrollreveal"></script>
-	</body>
+      </main>
+      <script src="https://unpkg.com/scrollreveal"></script>
+  </body>
 </html>

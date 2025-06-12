@@ -1,4 +1,4 @@
-// Loader animado y aparición del Hero
+// ANIMATED LOADER
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
 
@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
   }, 3500);
 });
 
-// Modo oscuro
+// DARK MODE
 const toggleBtn = document.getElementById("dark-mode-toggle");
 
 function updateDarkModeIcon() {
@@ -41,7 +41,7 @@ toggleBtn.addEventListener("click", () => {
 
 updateDarkModeIcon();
 
-// Multilenguaje con bandera
+// MULTIlINGUAL
 let langData = {};
 let currentLang = localStorage.getItem("lang") || "en";
 
@@ -95,7 +95,7 @@ if (langBtn) {
 
 loadLang();
 
-// Ajustar altura viewport
+// VIEWPORT
 function setVh() {
   const vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);

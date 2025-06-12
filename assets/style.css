@@ -1,4 +1,4 @@
-/* Reset y base */
+/* RESET */
 * {
 	margin: 0;
 	padding: 0;
@@ -18,7 +18,6 @@
 	--card-glow: rgba(255, 255, 255, 0.2);
 	--about-bg-light: linear-gradient(135deg, #000000 0%, #f2f2f2 100%);
 	--about-bg-dark: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 100%);
-	/* Paleta de colores personalizada */
 	--color-bg: #f9fafb;
 	--color-bg-secondary: #ffffff;
 	--color-text-main: #06141b;
@@ -74,7 +73,7 @@ main > section {
 	align-items: center;
 	justify-content: center;
 	padding: 2rem;
-	scroll-snap-align: start; /* opcional si quieres snap */
+	scroll-snap-align: start; 
 }
 
 html,
@@ -82,10 +81,10 @@ body {
 	margin: 0;
 	padding: 0;
 	height: calc(var(--vh, 1vh) * 100);
-	overflow: hidden; /* evitar scroll doble */
+	overflow: hidden;
 }
 
-/* Loader */
+/* LOADER */
 #loader {
 	position: fixed;
 	inset: 0;
@@ -146,7 +145,6 @@ body {
 	}
 }
 
-/* Ocultar contenido detrás mientras carga */
 body.loading main,
 body.loading header,
 body.loading footer {
@@ -173,7 +171,6 @@ body.loaded footer {
 	z-index: 4;
 }
 
-/* h1 */
 .section__hero .name {
 	max-width: 90vw;
 	font-size: clamp(40px, 6vw, 80px);
@@ -187,7 +184,6 @@ body.loaded footer {
 	z-index: 4;
 }
 
-/* Fondo visible a través del texto */
 .container {
 	position: relative;
 	width: 100vw;
@@ -195,7 +191,6 @@ body.loaded footer {
 	overflow: hidden;
 }
 
-/* Fondo real */
 .background {
 	position: absolute;
 	inset: 0;
@@ -203,29 +198,26 @@ body.loaded footer {
 	z-index: 1;
 }
 
-/* Glassmorphism encima */
 .glass {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 49%; /* ajusta el ancho según lo que necesites */
+	width: 49%; 
 	height: calc(var(--vh, 1vh) * 100);
 
-	/* Degradado para que el glass se desvanezca hacia abajo */
+	
 	background: linear-gradient(
 		to bottom,
 		rgba(255, 255, 255, 0.15) 0%,
-		/* parte superior con glass */ rgba(255, 255, 255, 0.15) 50%,
-		/* hasta el 70% sigue igual */ rgba(255, 255, 255, 0) 100%
-			/* y se desvanece completamente */
-	);
+		rgba(255, 255, 255, 0.15) 50%,
+		rgba(255, 255, 255, 0) 100%
+		);
 
 	backdrop-filter: blur(12px);
 	-webkit-backdrop-filter: blur(12px);
 	z-index: 2;
 }
 
-/* Texto que "recorta" y deja ver fondo debajo del glass */
 .cutout-text {
 	position: relative;
 	z-index: 3;
@@ -260,7 +252,6 @@ body.loaded footer {
     -webkit-text-stroke: 1px white;
     text-stroke: 1px white;
   }
-  
 }
 
 .text-wrapper {
@@ -280,7 +271,6 @@ body.loaded footer {
 	color: #ffffffce;
 }
 
-/* Efecto especial: por ejemplo, escala y cambio de color */
 .special-letter {
 	color: rgba(0, 255, 255, 0.507);
 	font-weight: 900;
@@ -290,14 +280,13 @@ body.loaded footer {
 	text-stroke: 1px rgba(0, 255, 255, 0.493);
 }
 
-/* También puedes animar el efecto para que sea más cool */
 .special-letter:hover {
 	transform: scale(1.5) rotate(10deg);
 	color: #0ff;
 	text-shadow: 0 0 15px #0ff, 0 0 30px rgba(0, 255, 255, 0.438);
 }
 
-/* Navbar */
+/* NAVBAR */
 .navbar {
 	display: flex;
 	justify-content: space-between;
@@ -351,7 +340,6 @@ body.loaded footer {
 	width: 100%;
 }
 
-/* Botones */
 .nav-buttons {
 	display: flex;
 	gap: 0.5rem;
@@ -413,7 +401,6 @@ body.loaded footer {
 	outline: none;
 }
 
-/* Hamburguesa */
 .hamburger {
 	display: none;
 	font-size: 2rem;
@@ -432,7 +419,6 @@ body.loaded footer {
 	color: #66aaff;
 }
 
-/* Responsive móvil */
 @media (max-width: 600px) {
 	.navbar {
 		height: 4em;
@@ -489,7 +475,6 @@ body.loaded footer {
 	}
 }
 
-/* Modo oscuro */
 body.dark-mode {
 	background-color: #121212;
 	color: #e0e0e0;
@@ -507,7 +492,6 @@ body.dark-mode #loader {
 	background-color: #121212;
 }
 
-/* Secciones */
 .section__hero {
 	height: calc(var(--vh, 1vh) * 100);
 	display: flex;
@@ -528,7 +512,6 @@ body.dark-mode #loader {
 	z-index: 3;
 }
 
-/* Contenedor social dentro del hero */
 .hero__socials {
 	margin-top: 12rem;
 	position: absolute;
@@ -543,7 +526,6 @@ body.dark-mode #loader {
 	z-index: 4;
 }
 
-/* Íconos SVG tamaño y color */
 .social-icon {
 	width: 32px;
 	height: 32px;
@@ -558,13 +540,11 @@ body.dark-mode #loader {
 	outline: none;
 }
 
-/* Cuando el body tiene la clase loaded, activamos animación */
 body.loaded .hero__socials {
 	opacity: 1;
 	transform: translateY(-50%) translateX(0);
 }
 
-/* Responsive: mover a posición inferior derecha en móvil */
 @media (max-width: 600px) {
 	.hero__socials {
 		top: auto;
@@ -579,7 +559,6 @@ body.loaded .hero__socials {
 	}
 }
 
-/* Animación rotación */
 @keyframes bounce {
 	from {
 		transform: translateY(0px);
@@ -680,7 +659,6 @@ body.loaded .hero__socials {
   text-align: center;
 }
 
-/* Título principal */
 #about_title {
   font-size: 2.8rem;
   margin-bottom: 2rem;
@@ -689,7 +667,6 @@ body.loaded .hero__socials {
   letter-spacing: 1px;
 }
 
-/* Perfil */
 .about__content {
   display: flex;
   flex-direction: column;
@@ -731,7 +708,6 @@ body.loaded .hero__socials {
   margin-bottom: 3rem;
 }
 
-/* Highlights */
 .about__highlights {
   display: flex;
   justify-content: center;
@@ -772,7 +748,6 @@ body.loaded .hero__socials {
   color: #d0d0d0;
 }
 
-/* Cards */
 .about__cards {
   display: flex;
   justify-content: center;
@@ -809,7 +784,6 @@ body.loaded .hero__socials {
   color: var(--color-text-muted);
 }
 
-/* DARK MODE */
 body.dark .section__about {
   background:
     linear-gradient(
@@ -871,7 +845,6 @@ body.dark .about__card p {
   font-weight: 300;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .about__highlights {
     flex-direction: column;
@@ -884,7 +857,7 @@ body.dark .about__card p {
   }
 }
 
-/* PROJECTS SECTION*/
+/* PROJECTS SECTION */
 .section__projects {
   position: relative;
   overflow: hidden;
@@ -899,7 +872,6 @@ body.dark .about__card p {
 	height: auto;
 }
 
-/* Fondo translúcido con degradado y textura */
 .section__projects::before {
   content: "";
   position: absolute;
@@ -931,7 +903,6 @@ body.dark .about__card p {
   z-index: 2;
 }
 
-/* FILTERS */
 .projects__filters {
   display: flex;
   gap: 1rem;
@@ -986,7 +957,6 @@ body.dark .about__card p {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-/* CARRUSEL */
 .projects__carousel {
   display: flex;
   overflow-x: auto;
@@ -1054,7 +1024,6 @@ body.dark .about__card p {
   color: var(--color-accent);
 }
 
-/* FULL SCREEN VIEW */
 .project__fullscreen {
   position: fixed;
   inset: 0;
@@ -1106,7 +1075,6 @@ body.dark .about__card p {
   border-radius: 0.5rem;
 }
 
-/* SCROLLBOTONES */
 .scroll-btn {
   position: absolute;
   transform: translateY(-50%);
@@ -1133,7 +1101,6 @@ body.dark .about__card p {
   right: 1rem;
 }
 
-/* OCULTAR SCROLLBAR */
 .projects__carousel::-webkit-scrollbar {
   display: none;
 }
@@ -1142,7 +1109,6 @@ body.dark .about__card p {
   scrollbar-width: none;
 }
 
-/* DARK MODE */
 body.dark .section__projects {
   background: #11212d;
 }
@@ -1179,7 +1145,6 @@ body.dark .project__item p {
   color: #ccd0cf;
 }
 
-/* RESPONSIVE */
 @media (max-width: 600px) {
   .section__projects {
     padding: 3rem 1rem;
@@ -1250,7 +1215,6 @@ body.dark .project__item p {
 	height: auto;
 }
 
-/* Fondo visual con imagen y degradado */
 .section__contact::before {
   content: "";
   position: absolute;
@@ -1288,7 +1252,6 @@ body.dark .project__item p {
   color: #333;
 }
 
-/* FLIP CARDS */
 .contact__methods {
   display: flex;
   flex-wrap: wrap;
@@ -1365,7 +1328,6 @@ body.dark .project__item p {
   color: #10243d;
 }
 
-/* DARK MODE */
 body.dark .section__contact {
   background: #11212d;
   color: #ccd0cf;
@@ -1401,7 +1363,6 @@ body.dark .flip-card-back a:hover {
   color: #ccd0cf;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .section__contact {
     padding: 4rem 1rem;
@@ -1431,7 +1392,6 @@ body.dark .flip-card-back a:hover {
   }
 }
 
-/* Mostrar SMS solo en móvil */
 .mobile-only {
   display: none;
 }
@@ -1441,7 +1401,6 @@ body.dark .flip-card-back a:hover {
     display: inline-block;
   }
 }
-
 
  /* FOOTER SECTION */
 .footer {
@@ -1494,4 +1453,18 @@ body.dark .flip-card-back a:hover {
 	font-size: 0.9rem;
 	margin-top: 1.5rem;
 	color: #9ba8ab;
+}
+
+/* SCROLL SNAP */
+
+.scroll-container {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.scroll-section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100%;
 }
