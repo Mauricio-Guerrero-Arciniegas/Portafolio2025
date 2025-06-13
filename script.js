@@ -21,10 +21,10 @@ window.addEventListener("load", () => {
         setTimeout(() => {
           void el.offsetHeight;
           el.classList.add("visible");
-        }, 400 * (i + 1));
+        }, 300 * (i + 1));
       });
-    }, 200);
-  }, 3500);
+    }, 0);
+  }, 3000);
 });
 
 // DARK MODE
