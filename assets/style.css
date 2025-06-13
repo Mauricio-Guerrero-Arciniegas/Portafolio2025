@@ -861,7 +861,6 @@ body.dark .about__card p {
 .section__projects {
   position: relative;
   overflow: hidden;
-  z-index: 0;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -934,8 +933,8 @@ body.dark .about__card p {
   list-style: none;
   padding: 0.5rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background: #11212d;
-  color: #9ba8ab;
+  background: var(--color-bg);
+  color: var(--color-text-main);
   position: absolute;
   top: 100%;
   left: 0;
@@ -1009,13 +1008,12 @@ body.dark .about__card p {
 }
 
 .project__item img {
-  width: 90%;
-  height: 70%;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
   border-radius: 0.5rem;
-  object-fit: cover;
-  pointer-events: none;
-  display: block;
   margin: 0 auto;
+  max-height: 250px;
 }
 
 .project__item h3 {
@@ -1027,14 +1025,16 @@ body.dark .about__card p {
 .project__fullscreen {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.85);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 4;
-  padding: 0rem;
-  transition: opacity 0.3s ease;
+  z-index: 999;
+  overflow: hidden;
   opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .project__fullscreen.active {
@@ -1043,11 +1043,14 @@ body.dark .about__card p {
 }
 
 .project__fullscreen img {
-  max-width: 90%;
-  max-height: 80vh;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
   object-fit: contain;
-  cursor: zoom-out;
-  z-index: 2;
+  border-radius: 1rem;
+  margin: 0 auto;
+  display: block;
 }
 
 .close__btn {
@@ -1055,24 +1058,24 @@ body.dark .about__card p {
   top: 1rem;
   right: 1rem;
   font-size: 2rem;
-  background: none;
+  background: rgba(0, 0, 0, 0.3);
   border: none;
-  color: white;
-  z-index: 3;
+  color: #fff;
+  z-index: 1000;
   cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.close__btn:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .overlay__background {
   position: absolute;
   inset: 0;
   z-index: 1;
-}
-
-#fullscreenViewer img {
-  width: 90%;
-  height: 70vh;
-  object-fit: cover;
-  border-radius: 0.5rem;
 }
 
 .scroll-btn {
